@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Js基础用法]]></title>
+      <url>/12/Js%E5%9F%BA%E7%A1%80/</url>
+      <content type="html"><![CDATA[<p>通过本节的学习，主要掌握到Js的常态知识点。重点掌握的是思想。获取DOM，封装函数。以及FOR循环的思想</p>
+<h2 id="JS效果三要素"><a href="#JS效果三要素" class="headerlink" title="JS效果三要素:"></a>JS效果三要素:</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h3 id="运动轨迹-分步骤来实现先死后活法逐步来"><a href="#运动轨迹-分步骤来实现先死后活法逐步来" class="headerlink" title="运动轨迹(分步骤来实现先死后活法逐步来)"></a>运动轨迹(分步骤来实现先死后活法逐步来)</h3><hr>
+<h2 id="获取元素三种途径"><a href="#获取元素三种途径" class="headerlink" title="获取元素三种途径 :"></a>获取元素三种途径 :</h2><ul>
+<li>getElementById()—-静态方法,前面只能跟随document</li>
+<li>document.body,document.title —-页面上只有一个的元素</li>
+<li>getElementsByTagName()—–动态方法,前面可以是document也可以跟其他元素，返回的是一个类似数组的集合<br>(1)有类似数组的length<br>(2)有类似数组的应用方式例如:ali[0]<br>(3)再用TagName的时候必须要加上[]<br>(4)所谓的动态方法,是指通过js动态添加的元素，getElementsByTagName()也可以找到<br>   但是document.getElementById是找不到的</li>
+</ul>
+<h2 id="事件-1"><a href="#事件-1" class="headerlink" title="事件:"></a>事件:</h2><h3 id="事件-鼠标事件，键盘事件-系统事件-表单事件-自定义事件等等"><a href="#事件-鼠标事件，键盘事件-系统事件-表单事件-自定义事件等等" class="headerlink" title="事件:鼠标事件，键盘事件,系统事件,表单事件,自定义事件等等"></a>事件:鼠标事件，键盘事件,系统事件,表单事件,自定义事件等等</h3><ul>
+<li>onclick</li>
+<li>onmouseover</li>
+<li>onmouseleave</li>
+<li>onmousedown</li>
+<li>onmouseout</li>
+<li>onmouseup</li>
+<li>onmousemove</li>
+<li>……</li>
+</ul>
+<h3 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h3><p>元素.onmouseover</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数可以理解为方法,工具比如</p>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+function abc(){
+  /*要做的事情*/
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>直接调用就是abc()</li>
+<li>事件调用: 元素.事件 = 函数名</li>
+<li>匿名函数</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+  元素.onmouseover = function(){}
+  window.alert(1);  window.alert(&quot;ok&quot;);
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是变化的量,由数字，字母，下划线，美元($)组成.但是开头不能用数字。定义一个变量必须用var也可以用window[“xxx”]</p>
+<ul>
+<li>var li = document.getElementById(“list”);</li>
+<li>var num = 123;</li>
+<li>var name = “leo”;</li>
+</ul>
+<h2 id="JS属性操作-重点"><a href="#JS属性操作-重点" class="headerlink" title="JS属性操作(重点)"></a><a href="">JS属性操作</a>(重点)</h2><ul>
+<li>属性名</li>
+<li>属性值</li>
+<li>属性的读取操作:获取,找到元素.属性名</li>
+<li>属性的写操作:替换，修改 元素.属性名 = 新的值 添加的话需要用+=</li>
+<li>innerHTML读取元素内所有的HTML代码</li>
+</ul>
+<h3 id="属性读写操作的注意事项"><a href="#属性读写操作的注意事项" class="headerlink" title="属性读写操作的注意事项"></a>属性读写操作的注意事项</h3><ul>
+<li>JS属性中不允许出现”-“,例如font-size改为fontSize</li>
+<li>class在JS里面是保留字,在JS作用class要用className</li>
+<li><p>4个绝对不要判断<br>1.相对路径(src ,href)<br>2.颜色值<br>3.innerHTML值也不要(IE678可能有空格)<br>4.type类型也不要判断.因为IE678下面type更改不了</p>
+</li>
+<li><p>中括号[]的使用</p>
+<ol>
+<li>点”.”后面的值无法修改</li>
+<li>[]里面的值可以修改,JS允许把.替换成[] 例如style[attr]这样的</li>
+</ol>
+</li>
+</ul>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="if"><a href="#if" class="headerlink" title="if(){}"></a>if(){}</h3><h3 id="if-else"><a href="#if-else" class="headerlink" title="if(){}else{}"></a>if(){}else{}</h3><h3 id="if-else-if-else-if"><a href="#if-else-if-else-if" class="headerlink" title="if(){}else if(){}else if(){}"></a>if(){}else if(){}else if(){}</h3><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>放数据的仓库</li>
+<li>中括号[],间隔用逗号,最后一个数据不要加逗号</li>
+<li>数组的length属性</li>
+</ul>
+<h2 id="自定义索引和属性"><a href="#自定义索引和属性" class="headerlink" title="自定义索引和属性"></a><a href="">自定义索引和属性</a></h2><p>自定义属性  abtn[0].abc = 123;   //自定义属性<br>自定义属性赋值 obj.timer = setInterval(function(){},1000);   //自定义属性赋值</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><a href="">数据类型</a></h2><h2 id="6大类"><a href="#6大类" class="headerlink" title="6大类"></a>6大类</h2><ul>
+<li>空</li>
+<li>对象</li>
+<li>undefined</li>
+<li>Boolean</li>
+<li>String</li>
+<li>number</li>
+</ul>
+<blockquote>
+<p>(1)要是基础类型可以用typeOf()来判断字符串方法charAt(),获取到字符串第几个charCodeAt()获取到UniCode编码。然后在计算。再利用fromCharCode()换算成字符<br>(2)要是引用类型可以用instanceOf Array;instanceOf Object 来判断<br>Number()方法能转化字符串数字，空，空数组，要是前面有0比如00100转化的结果就是100<br>parseInt()相当于把前面的数字部分转化为数字，后面的字符直接舍弃.他转化不了空，真要是转化空结果就是NaN<br>parseFloat()同上<br>isNaN()判断是不是NaN</p>
+</blockquote>
+<h2 id="作用域重点"><a href="#作用域重点" class="headerlink" title="作用域重点"></a><a href="">作用域重点</a></h2><ul>
+<li>域：空间，范围，区域</li>
+<li>作用:读，写</li>
+</ul>
+<blockquote>
+<p>(1)在JS找到变量前，他要做的就是先找到一些关键字 var function,参数然后在正是运行代码之前他把这些都提前付了一个值,undefined<br>遇到重名的只留一个<br>(2)逐行解读代码。每读一行就是到库里面去看看，要是有值就替换，改变表达式的值</p>
+</blockquote>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+alert(a); //弹出：function a(){alert(4);}
+var a=1; //预解析中的a改为了1
+alert(a);  //弹出1
+function a(){alert(2);}//函数声明，没有改变a的值。什么也没发生。
+alert(a); //继续弹出1，因为a在预处理库里面的值没有被改过。
+var a=3; //预处理中a的值变为3
+alert(a); //弹出3
+function a(){alert(4);} //函数声明，什么也没有发生
+alert(a); //继续弹出3
+a(); //报错 a is not a function
+第一步:
+       预编译他会先找一些关键字存储到内存中。 比如var function 参数等等
+       他找到var a 先看左边，不看右边.上来都给他一个未定义 var a = undefined;要是function他就直接替换了
+       比如上面a从undefined直接变成了方法
+       他根本不考虑后面的值
+第二步:
+        在一步步执行代码
+        要是遇见表达式（表达式就是 var a = xxx）他才会重新替换或者赋值
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="函数的作用域要区分全局变量和局部变量"><a href="#函数的作用域要区分全局变量和局部变量" class="headerlink" title="函数的作用域要区分全局变量和局部变量"></a>函数的作用域要区分全局变量和局部变量</h2><p>在方法内部写var的都是局部。在方法外面的都是全局变量。要是在方法里面不加var,那他改变的就是全局的值.</p>
+<h3 id="特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域"><a href="#特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域" class="headerlink" title="特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域"></a>特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域</h3><h2 id="真和假"><a href="#真和假" class="headerlink" title="真和假"></a><a href="">真和假</a></h2><ul>
+<li>真:非0的数字,字符串,true,函数,object,[],{}都是真的</li>
+<li>假:就记住6个为假其余都真 0,NaN,空字符串,null,false,undefined</li>
+</ul>
+<h2 id="函数返回值return"><a href="#函数返回值return" class="headerlink" title="函数返回值return"></a>函数返回值return</h2><h3 id="这里特别注意下"><a href="#这里特别注意下" class="headerlink" title="这里特别注意下:"></a>这里特别注意下:</h3><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+alert fn1();
+function fn1(){
+    return function(){
+        alert(1);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h4 id="返回的值就是function-alert-1"><a href="#返回的值就是function-alert-1" class="headerlink" title="返回的值就是function(){alert(1)}"></a>返回的值就是function(){alert(1)}</h4><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+alert fn1()();
+function fn1(){
+    return function(){
+        alert(1);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h4 id="返回的值就是1"><a href="#返回的值就是1" class="headerlink" title="返回的值就是1"></a>返回的值就是1</h4><h2 id="arguments参数合集"><a href="#arguments参数合集" class="headerlink" title="arguments参数合集"></a>arguments参数合集</h2><h3 id="arguments表示所有的参数合集"><a href="#arguments表示所有的参数合集" class="headerlink" title="arguments表示所有的参数合集"></a>arguments表示所有的参数合集</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+lert(sum(1,2,3));
+function sum(){
+    var n=0;
+    for(var i=0; i&lt;arguments.length; i++){
+        n += arguments[i];
+    }
+    return n;
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="获取到样式"><a href="#获取到样式" class="headerlink" title="获取到样式"></a>获取到样式</h3><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+function getStyle(obj,attr)
+{
+  return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr]
+}
+&lt;/script&gt;
+&lt;html&gt;
+</code></pre><h3 id="兼容IE678-获取到样式合集-获取到元素的属性值"><a href="#兼容IE678-获取到样式合集-获取到元素的属性值" class="headerlink" title="兼容IE678 获取到样式合集.获取到元素的属性值"></a>兼容IE678 获取到样式合集.获取到元素的属性值</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+运动函数
+//封装运动函数
+    //既然是运动函数就需要传递几个条件(参数)
+    // 1.对象(你得知道让谁动吧)
+    // 2.方向(你得告诉他朝哪边走吧)
+    // 3.速度 (你得告诉他一次走多少吧)
+    // 4.终点(你得告诉他什么时候停止吧)
+    // 5.回调函数(到达终点以后干点什么吧)
+    function Imove(obj,attr,step,target,endfn)
+    {
+        //防止累加,越来越快。这样一上来我都从0开始计算
+        clearTimeout(obj.timer);
+        //主要是判断速度是正的还是负的，上来先比较。我的思路是要是目标的位置比初始的位置大，则速度肯定是正的，要是小则速度肯定是负的
+        step =  target&gt;parseInt(getStyle(obj,attr))? step:-step;
+        obj.timer = setInterval(function(){
+            var dis = parseInt(getStyle(obj,attr))+step;   //获取到每次走了之后距离最开始的位置
+            //判断一下当走的距离要是超过了终点，则必须拉回来。要是没超过。则继续走.
+            if(dis&gt;=target&amp;&amp;step&gt;0||dis&lt;target&amp;&amp;step&lt;0)
+            {
+                dis = target;
+            }
+            obj.style[attr] = dis+&quot;px&quot;;   //给这个对象赋值，让他自己慢慢走。
+            if(dis==target)               //当到达了终点了，就不让他走了。这个时候你需要清除定时器了。因为没用了。
+            {
+                clearInterval(obj.timer);   //清除定时器
+                endfn&amp;&amp;endfn();           //执行回调方法
+            }
+        },100)
+    }
+    //封装运动函数结束
+    &lt;/script&gt;
+    &lt;/html&gt;
+</code></pre><h3 id="下面是抖动函数封装"><a href="#下面是抖动函数封装" class="headerlink" title="下面是抖动函数封装"></a>下面是抖动函数封装</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+抖动函数封装
+function shake(obj,attr,endfn) {
+        var arr = [];
+        for (var i = 20; i &gt; 0; i -= 2)
+        {
+            arr.push(i,-i);
+        }
+        arr.push(0);
+        clearInterval(obj.shaker);
+        var index = 0 ;
+        obj.shaker = setInterval(function(){
+            var speed = (parseInt(getStyle(obj,attr))+arr[index]);
+            obj.style[attr] = speed +&quot;px&quot;;
+            ++index;
+            if(index==arr.length)
+            {
+                clearInterval(obj.shaker);
+                endfn&amp;&amp;endfn();
+            }
+        },10)
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="下面是滤镜opacity函数封装"><a href="#下面是滤镜opacity函数封装" class="headerlink" title="下面是滤镜opacity函数封装"></a>下面是滤镜opacity函数封装</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+function doopacity(obj,step,target,endfn)
+    {
+      var first = getStyle(obj,&quot;opacity&quot;)*100;  //获取到滤镜的初始值
+       step = target&gt;first?step:-step;    //一步走的距离是正的是负的
+        clearInterval(obj.opacity);       //一上来清除定时器。防止累加
+         obj.opacity = setInterval(function(){
+           var speed = getStyle(obj,&quot;opacity&quot;)*100+step;     //改变opacity
+           if(speed&gt;=target&amp;&amp;step&gt;0&amp;&amp;speed&lt;=target&amp;&amp;step&lt;0)
+           {
+               speed = target;        //变成目标值
+           }
+           if(speed==target)
+           {
+               clearInterval(obj.opacity);   //要是相当则清空
+               endfn&amp;&amp;endfn();                //执行回调函数
+           }
+             obj.style[&quot;opacity&quot;] = speed/100;   //DIV滤镜效果
+             obj.style.filter = &#39;alpha(opacity:&#39; + speed + &#39;)&#39;;  //为了兼容性
+        },100)
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="时间函数"><a href="#时间函数" class="headerlink" title="时间函数"></a>时间函数</h3><ul>
+<li>getFullYear() //获取到年份</li>
+<li>getMonth()   //这里特别注意的一定要+1因为他从0开始</li>
+<li>getDate()   //获取到多少号</li>
+<li>getDay()    //获取到星期几，得到是一个数值，要是星期天，则得到数字0</li>
+<li>getHours()   //获取到小时</li>
+<li>getMinutes()        //获取到分钟</li>
+<li>getSeconds()  //获取到秒数</li>
+</ul>
+<hr>
+<h3 id="Date对象参数"><a href="#Date对象参数" class="headerlink" title="Date对象参数"></a>Date对象参数</h3><h4 id="数字形式-new-Date-2014-4-1-9-48-12-特别注意月份从0开始，所以他实际找的是5月"><a href="#数字形式-new-Date-2014-4-1-9-48-12-特别注意月份从0开始，所以他实际找的是5月" class="headerlink" title="数字形式:new Date(2014,4,1,9,48,12)  //特别注意月份从0开始，所以他实际找的是5月"></a>数字形式:new Date(2014,4,1,9,48,12)  //特别注意月份从0开始，所以他实际找的是5月</h4><pre><code>&lt;html&gt;
+&lt;script&gt;
+var iNow = new Date();
+var iNew = new Date(2014, 10, 26, 21, 56, 0);  //获取的是11月
+var t = Math.floor((iNew - iNow)/1000); 
+var str = Math.floor(t/86400) + &#39;天&#39; +  Math.floor(t%86400/3600) + &#39;时&#39; + Math.floor(t%86400%3600/60) + &#39;分&#39; +  t%60 + &#39;秒&#39;;
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>天: Math.floor(t/86400);</li>
+<li>时: Math.floor(t%86400/3600);</li>
+<li>分:Math.floor(t%86400%3600/60);</li>
+<li>秒:Math.floor(t%60);</li>
+</ul>
+<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><h4 id="getTime-返回的就是格林威治时间1970年-1月1日0点0分0秒0毫秒到现在的毫秒数"><a href="#getTime-返回的就是格林威治时间1970年-1月1日0点0分0秒0毫秒到现在的毫秒数" class="headerlink" title="getTime();返回的就是格林威治时间1970年 1月1日0点0分0秒0毫秒到现在的毫秒数"></a>getTime();返回的就是格林威治时间1970年 1月1日0点0分0秒0毫秒到现在的毫秒数</h4><h2 id="字符串获取，封装，截取，查找，检测"><a href="#字符串获取，封装，截取，查找，检测" class="headerlink" title="字符串获取，封装，截取，查找，检测"></a>字符串获取，封装，截取，查找，检测</h2><ul>
+<li>length 空格也算长度</li>
+<li>charAt()找到子字符串，括号要是什么也不写。默认找到第0个</li>
+<li>charCodeAt()得到指定字符串的unicode编码</li>
+<li>String.fromCharCode():根据字符编码。返回一个字符。例如:String.fromCharCode(22937);返回的就是妙字</li>
+<li>要是想获取到多个，可以String.fromCharCode(22937,22938);</li>
+</ul>
+<hr>
+<h3 id="查找indexOf-lastIndexOf"><a href="#查找indexOf-lastIndexOf" class="headerlink" title="查找indexOf,lastIndexOf"></a>查找indexOf,lastIndexOf</h3><ul>
+<li>indexof()返回某个字符或字符串的位置.string.indexOf(‘m’,5)代表从str字符串中的第5位开始以后找到m的位置.如果要是找不到则返回-1</li>
+<li>lastIndexOf()从右边往前找，也可以带数字参数，表示从哪里找</li>
+</ul>
+<hr>
+<h3 id="比较类，截取类"><a href="#比较类，截取类" class="headerlink" title="比较类，截取类"></a>比较类，截取类</h3><ul>
+<li>substring(n,m)表示从第n截取，到第m位置结束.如果没有m默认截取到最后一位,包前不包后.</li>
+<li>slice(n,m),str.slice(0,2)与str.slice(2,0)这样的结果完全不一样。后者找不到结果。因为slice()方法不会判断里面的参数大小并交换参数位置.</li>
+<li>slice(-2);截取的是从最后一位到倒数第二位,-1表示的最后一位.str.slice(-4,-2);截取的是倒数第四位到倒数第二位</li>
+</ul>
+<hr>
+<ul>
+<li>toUpperCase()转换为大写</li>
+<li>toLowerCase()转换为小写</li>
+<li>split()讲字符串切割成数组</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+var str = &#39;www.miaov.com&#39;;
+str.split(&#39;.&#39;); =&gt; [“www”, “miaov”, “com”];
+var str1 = &#39;leo&#39;; 
+str1.split(); =&gt; [&#39;leo&#39;];
+str2 = ‘leo’; 
+str2.split(‘’); =&gt; [“l”, “e”, “o”]；
+var str3 = ‘/www.miaov.com/’; 
+str3.split(‘/’); =&gt; [””, “www.miaov.com”, “”]；
+var str4 = ‘2013-11-29-23-07’;
+str4.split(‘-‘, 3); =&gt; [“2013”, “11”, “29”]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="join方法用来把数组变成字符串"><a href="#join方法用来把数组变成字符串" class="headerlink" title="join方法用来把数组变成字符串"></a><a href="">join方法用来把数组变成字符串</a></h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [‘aa’, ‘bb’, ‘cc]; 
+arr.join(); =&gt; ‘aa,bb,cc’ .join()括号中什么也不写，默认就是用逗号隔开。
+arr.join(‘’); =&gt; ‘aabbcc’ ；
+ arr.join(‘-‘); =&gt; ‘aa-bb-cc’
+ &lt;/script&gt;
+ &lt;/html&gt;
+</code></pre><hr>
+<h3 id="下面是所有的字符串操作总结"><a href="#下面是所有的字符串操作总结" class="headerlink" title="下面是所有的字符串操作总结"></a>下面是所有的字符串操作总结</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var str = &#39;妙味课堂-WWW.miaov.com&#39;;
+
+str.charAt(1); //味
+str.charCodeAt(1); //21619
+String.fromCharCode(22937, 21619); //妙味
+
+str.indexOf(&#39;m&#39;, 3); //9
+str.lastIndexOf(&#39;o&#39;); //16
+
+&#39;1000&#39; &lt; &#39;2&#39; //true
+&#39;1000&#39; &gt; 2 //true
+
+str.substring(0, 4); //妙味课堂
+str.slice(-3); //&#39;com&#39;
+
+str.toUpperCase(); //&#39;妙味课堂-WWW.MIAOV.COM&#39;
+str.toLowerCase(); //&#39;妙味课堂-www.miaov.com&#39;
+
+str.split(&#39;.&#39;, 2); //[&#39;秒微课堂-www&#39;, &#39;miaov&#39;]
+
+var arr = [&#39;www&#39;, &#39;miaov&#39;, &#39;com&#39;];
+arr.join(&#39;.&#39;); //&#39;www.miaov.com&#39;
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="for-in-循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性"><a href="#for-in-循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性" class="headerlink" title="for-in 循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性"></a>for-in 循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var json4 = { &#39;name&#39;: &#39;miaov&#39;, &#39;age&#39;: 3, &#39;fun&#39;: &#39;前端开发&#39;};
+for(var attr in json4){
+    alert(attr);
+    alert(json4[attr]);
+}
+
+var json5 = { 
+    url: [&#39;img/1.png&#39;, &#39;img/2.png&#39;],
+    text: [&#39;图片一&#39;, &#39;图片二&#39;]
+};
+
+for(var attr in json5) {
+    for(var i=0; i&lt;json5[attr].length; i++){
+        alert(json5[attr][i]);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h2 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>可以通过修改数组的length属性来清空数组。</li>
+<li>从后面添加数组push() arr.push()往数组最后一位加内容..push()方法是有返回值得。返回是数组的新长度</li>
+<li>前面添加数组unshift() arr.unshift()往数组的最前面添加内容，返回值为数组的新长度(IE6,7不支持)</li>
+<li>删除pop() arr.pop()表示从后面删除一个数组元素。返回值就是要删除的数组</li>
+<li>删除shift() arr.shift()删除数组的第一个返回值是被扔掉的值</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;TM&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;];
+arr.unshift(arr.pop()); //数组变为：[&#39;Leo&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;TM&#39;]
+或
+arr.push(arr.shift()); //数组变为：[&#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;, &#39;TM&#39;]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="splice-方法"><a href="#splice-方法" class="headerlink" title="splice()方法"></a>splice()方法</h3><h4 id="splice-a-b-c-a表示起始位置-b表示个数-c表示要替换的值-b要是为0表示插入，c要是什么也不写表示删除。"><a href="#splice-a-b-c-a表示起始位置-b表示个数-c表示要替换的值-b要是为0表示插入，c要是什么也不写表示删除。" class="headerlink" title="splice(a,b,c) a表示起始位置,b表示个数,c表示要替换的值.b要是为0表示插入，c要是什么也不写表示删除。"></a>splice(a,b,c) a表示起始位置,b表示个数,c表示要替换的值.b要是为0表示插入，c要是什么也不写表示删除。</h4><hr>
+<h3 id="代码见下"><a href="#代码见下" class="headerlink" title="代码见下"></a>代码见下</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;TM&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;];
+//删除
+//arr.splice(0, 1); //删掉第0位，删1个。两个参数第一个是从第几位开始，第二个是删掉几个。splice删除的时候有返回值，返回的是被删除的内容
+//替换
+//arr.splice(0, 1, &#39;莫涛&#39;); //替换第0位，替换1个，替换为&#39;莫涛&#39;。返回的还是删除的东西
+//添加
+arr.splice(1, 0, &#39;李贤&#39;); //在第1位那里，删除0个，添加了一个&#39;李贤&#39;到了第1位，&#39;钟毅&#39;就变成了arr[2]了。后面也可以添加多个。如果splice删除了0个，那么就没有返回值。
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [1, 2, 2, 4, 2];
+for ( var i=0; i&lt;arr.length; i++ ) {
+    for ( var j = i+1; j&lt;arr.length; j++) {
+        if( arr[i]==arr[j] ){
+            arr.splice( j, 1 );
+            j--;
+        }
+    }
+}
+也可以使用indexOf
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="Sort排序"><a href="#Sort排序" class="headerlink" title="Sort排序"></a>Sort排序</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;e&#39;];
+arr.sort(); // &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; 按照unicode编码排序
+
+var arr2 = [4, 3, 5, 76, 2, 0, 8];
+// arr2.sort(); // 0, 2, 3, 4, 5, 76, 8 sort默认是将数组中的每一个按照字符串来排序的，因此出现了76排在8前面的情况
+
+// arr2. sort(function( a, b ){
+    return a - b; //如果a-b返回正数，就a、b两个数字换个序。如果a-b是负数，就不换序
+}) //返回数字从小到大 0, 2, 3, 4, 5, 8, 76
+
+// arr2. sort(function( a, b ){
+    return b - a;
+}) //返回数字从大到小 76,, 8, 5, 4, 3, 2, 0
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3><h4 id="Math-round-Math-random-80-20-返回20-100之间的随机整数"><a href="#Math-round-Math-random-80-20-返回20-100之间的随机整数" class="headerlink" title="Math.round( Math.random()*80 + 20 ); //返回20~100之间的随机整数"></a>Math.round( Math.random()*80 + 20 ); //返回20~100之间的随机整数</h4><hr>
+<h3 id="connect连接-表示把2个数组拼接起来"><a href="#connect连接-表示把2个数组拼接起来" class="headerlink" title="connect连接,表示把2个数组拼接起来"></a>connect连接,表示把2个数组拼接起来</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = [7, 8, 9];
+
+arr1.concat(arr2); //[1, 2, 3, 4, 5, 6] 新数组与原来数组没什么关系。
+arr1.concat(arr2, arr3); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="reverse反转"><a href="#reverse反转" class="headerlink" title="reverse反转"></a>reverse反转</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr1 = [1, 2, 3];
+arr1.reverse();
+alert(arr1); // [3, 2, 1]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="以上JS基础全部基础点"><a href="#以上JS基础全部基础点" class="headerlink" title="以上JS基础全部基础点"></a>以上JS基础全部基础点</h2><h3 id="对应的链接是"><a href="#对应的链接是" class="headerlink" title="对应的链接是:"></a>对应的链接是:</h3><p><a href="https://youngjudge.github.io/JsBasic/" target="_blank" rel="external">基础知识点所有效果点击这里</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Js基础用法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Js基础 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MarkDown]]></title>
+      <url>/09/MarkDown/</url>
+      <content type="html"><![CDATA[<p>本节主要是介绍 Markdown语法的使用，里面介绍了关于Markdown的大致用法,方便后期记忆</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>   标题一对应的就是#标题<br>   标题二对应的就是##标题</p>
+<blockquote>
+<p>这里特别注意的就是标题二经常使用<br>因为他自己会加下划线</p>
+</blockquote>
+<p>   标题三对应的就是###标题<br>   标题四对应的就是####标题<br>   标题五对应的就是#####标题<br>   标题六对应的就是######标题<br>   标题一的字体最大，标题六的字体最小。一般情况下使用标题二</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表里面分为2种<br>第一种是无序列表<br>第二种是有序列表</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>第一个无序列表(无序列表就是*加空格)</li>
+<li>第二个无序列表(无序列表就是*加空格)</li>
+<li>第三个无序列表(无需列表就是*加空格)</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol>
+<li>有序列表第一个(就是序号加.加空格比如1.+空格)</li>
+<li>有序列表第二个(就是序号加.加空格比如2.+空格)</li>
+<li>有序列表第三个(就是序号加.加空格比如3.+空格)</li>
+</ol>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>这一段就是引用<br>可能颜色有点浅。但是后期能调。不过我习惯了.<br>引用的符号就是&gt;后面加文字<br>引用要是想结束就是回车加换行</p>
+</blockquote>
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><blockquote>
+<p>代码框的引入就是被3个`前后包起来即可。</p>
+</blockquote>
+<pre><code>&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;JS测试第一篇&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;div1&quot; style=&quot;background:red;width:100px;height:100px&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;btn1&quot;&gt;点击我&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>图片的格式就是<img src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png" alt="图片的名称"><br>调用本地的图片格式就是</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3709419-d635c2c09c3b9034.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<blockquote>
+<p>调用的法则就是![图片的名称]+(图片的地址)<br>要是调用本地的图片就是(![图片名称]+(本地图片地址。要是不知道可以直接把图片拖拽到浏览器里))</p>
+</blockquote>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><blockquote>
+<p>调用法则就是[链接的名称]+(链接的地址)他和图片比起来就少了一个感叹号</p>
+</blockquote>
+<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>粗体就是文字被2个星号包裹起来比如:<strong>粗体</strong><br>斜体就是文字被一个星号包裹起来<em>斜体</em><br>你要是又要粗体又要斜体只有<strong><em>文字</em></strong><br>让内容被3个星号包裹起来</p>
+<h2 id="Tab用来缩进"><a href="#Tab用来缩进" class="headerlink" title="Tab用来缩进"></a>Tab用来缩进</h2><p>一大段文字前面要是想缩进就可以按Tab键，这样直接就缩进了。还有边框。省时省力。</p>
+<h2 id="这个时候你要是需要一条分割线"><a href="#这个时候你要是需要一条分割线" class="headerlink" title="这个时候你要是需要一条分割线"></a>这个时候你要是需要一条分割线</h2><hr>
+<p>三个星号表示的就是分割线。</p>
+<h2 id="以上就是Markdown最浅显的使用指南。"><a href="#以上就是Markdown最浅显的使用指南。" class="headerlink" title="以上就是Markdown最浅显的使用指南。"></a>以上就是Markdown最浅显的使用指南。</h2><p>一共11个标签方便各位能够更好的记录</p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h2><ol>
+<li>windows环境下个人建议用Haroopad-v0.13.1-win-ia32.msi</li>
+<li>在 Mac OS X 上，我强烈建议你用 Mou 这款免费且十分好用的 Markdown 编辑器</li>
+<li>在IOS上 Ulysses for iPad</li>
+<li>Web端请使用简书</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MarkDown语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
+</search>

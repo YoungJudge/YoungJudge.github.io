@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            Js基础用法 | 
+        
+        我的前端之路
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+        <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Eric Yin">
+    <meta name="description" itemprop="description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
+    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue,Js基础">
+
+    <!-- Site Verification -->
+    
+    <meta name="baidu-site-verification" content="86FCmCVySf" />
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="我的前端之路">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://www.uiyin.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Js基础用法 | 我的前端之路">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
+    <meta property="og:article:tag" content="Js基础"> 
+
+    
+        <meta property="article:published_time" content="1月 12, 2015" />
+        <meta property="article:modified_time" content="1月 12, 2015" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Js基础用法 | 我的前端之路">
+    <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://www.uiyin.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://www.uiyin.com/12/Js基础/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "Js基础用法",
+    "url": "http://www.uiyin.com/12/Js基础/index.html",
+    "datePublished": "1月 12, 2015",
+    "dateModified": "1月 12, 2015",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    .footer-sns-weibo {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzUuMiA3OWMtOC42IDMtMjIuOCAxMi40LTMyLjggMjEuOC04LjIgNy44LTIyLjIgMzEtMjQuNiA0MC42LTEgNC4yLTEuNiAxNjctMS42IDM2NC42IDAgMjg0LjguNCAzNTguNCAyLjYgMzY0IDEuNCAzLjggNi44IDEzIDEyIDIwLjQgOC44IDEyLjggMjQgMjUuNCA0MS44IDM1IDYgMy40IDI3IDMuNiAzNjcuNCAzLjYgMjg2LjIgMCAzNjIuNi0uNiAzNjktMi42IDE5LjgtNi4yIDUxLjItMzcuNiA1Ny40LTU3LjQgMi02LjQgMi42LTgyLjYgMi42LTM2OFYxNDFsLTQuMi05Yy0xMS42LTI0LTM5LjItNDkuOC01OC4yLTU0LjItNC4yLTEtMTY4LjYtMS42LTM2NS42LTEuNi0zMDAgMC0zNTkuMi40LTM2NS44IDIuOHptNTU4LjYgMTY5YzguNiAxLjIgMTYuNCA0IDI0IDguNiA2LjIgMy42IDE1LjIgOC4yIDIwLjIgMTAuMiA1LjggMi4yIDE0LjYgOC44IDI1IDE4LjggMjUuNCAyNC44IDMyLjggMzQuOCAzNy44IDUxIDIuNiA4IDcuNCAxOS44IDEwLjggMjYuNCA3LjggMTQuNiAxMS42IDQyLjYgOS40IDY5LTEgMTQuMi0yLjIgMTguNi03LjQgMjYuNC0zLjIgNS4yLTkgMTIuMi0xMi44IDE1LjYtMTMuOCAxMi0zNCA1LjgtMzguOC0xMi0xLjYtNi0xLjQtMTEuNCAxLjItMjMuNCA0LjItMjAgMy00Ni0yLjYtNTguNi0yLjItNS04LTEyLjYtMTIuOC0xNi44LTQuOC00LjItMTQuNi0xNi40LTIxLjgtMjYuOC03LjItMTAuNi0xNS4yLTIwLjgtMTgtMjIuOC0yLjgtMi0xMi42LTYtMjItOS0xNC40LTQuNC0yMC44LTUuNC00My01LjYtMjgtLjItMzEuNC0xLjItNDIuNC0xMS42LTcuNC03LTguNi0xNS42LTMuOC0yNS4yIDctMTMuMiAxNi40LTE2IDU0LjItMTYgMTYuNiAwIDM1LjguOCA0Mi44IDEuOHptLTIxMy42IDc1LjZjMjAuMiAxNS40IDIwLjYgMTYuNCAyMiA0OCAuNiAxNSAxLjggMjkgMi42IDMxIDIuOCA2LjIgMTEgNi42IDIxLjYuNiA1LjQtMy4yIDE0LTUuOCAyMC02LjQgNS44LS42IDE4LjgtMi40IDI5LTQuMiAxNy4yLTMgMTkuNC0zIDM2IC40IDMyIDYuNiAzNS44IDkuMiA0NC4yIDMxLjYgNS4yIDE0IDUuNCAyMS40IDEuMiAzMi44LTIuMiA1LjQtMi44IDExLTIgMTUuNCAxLjggMTAgMTcuNiAyMy40IDM1IDMwLjIgMTEuMiA0LjIgMTYuMiA3LjYgMjcgMTkgMTkuMiAxOS44IDIwLjIgMjMgMjAgNTktLjIgMzUtLjQgMzUuNC0xOS44IDYzLjYtMTMuOCAxOS44LTMyLjQgMzguNi00OSA1MC01IDMuNC0xMi4yIDguOC0xNS44IDEyLTMuOCAzLjItMTEuNiA4LTE3LjIgMTAuNC01LjYgMi42LTE0LjYgNy40LTE5LjggMTAuNi01LjIgMy40LTE1LjggNy42LTIzLjggOS40LTggMi0yMS4yIDYuNi0yOS42IDEwLjItMjIuNCAxMC0zNi4yIDExLjItMTIxLjggMTAuNGwtNzUtLjYtMTktOC40Yy0xMC42LTQuNi0yNS40LTkuOC0zMy0xMS42LTcuNi0xLjYtMTgtNS44LTIzLTlzLTE0LjItOC0yMC40LTEwLjhjLTE4LTgtNTkuNC00Ni4yLTY2LTYxLjItMi4yLTUtNy40LTE0LjQtMTEuNC0yMC44bC03LjItMTJWNTQ5bDcuNi0xMy42YzQuMi03LjQgOS40LTE4LjYgMTEuNi0yNC44IDMuOC0xMS40IDEzLjQtMjcuOCAyNC44LTQyLjYgMjAuMi0yNi4yIDM4LjQtNDYuOCA1My02MCA5LjItOC4yIDIxLTE4LjYgMjYtMjMuMiA1LTQuNCAxMy4yLTExIDE4LjYtMTQuNiA1LjItMy40IDkuNC03LjIgOS40LTggMC0xIDUuNi00LjYgMTIuNi04LjIgNi44LTMuOCAxNi40LTkuNiAyMS40LTEzLjIgNS0zLjYgMTQuNC04IDIxLTkuOCA2LjYtMiAxNy44LTYuNiAyNS0xMC4yIDEyLTYuMiAxNC40LTYuOCAzMi40LTYuOGgxOS40bDEyLjQgOS42em0yMDMuNiAxMy4yYzMgMS42IDYuNiA0LjQgOCA2IDEuNiAxLjggOS40IDcgMTcuNCAxMS42IDE3IDkuNiAxOSAxMyAyNCA0MiAzLjQgMjAuNCAyLjYgMzIuMi0zLjQgNDMuOC03LjYgMTUuMi0yMi44IDIwLjYtMzEuMiAxMS4yLTctNy42LTkuMi0xMy44LTEwLjYtMjkuNi0xLjItMTMuMi0yLjQtMTYuNC05LjYtMjcuMi0xMS0xNi0xNi44LTIwLjYtMjcuMi0yMC42LTEwIDAtMjQtNi4yLTI3LTExLjYtNS44LTEwLjguNC0yNC42IDEyLjQtMjguNCA4LjYtMi42IDQwLjItLjggNDcuMiAyLjh6Ii8+PHBhdGggZD0iTTQyNCA0NzcuNGMtMzIuNiAzLjYtNDcuOCA3LTYxLjggMTMuOC04IDQtMTkgOC40LTI0LjIgMTAtNS4yIDEuNi0xMi40IDUtMTYuMiA3LjgtMy44IDIuNi0xMSA3LjYtMTYuMiAxMS0xMy40IDguOC0zNSAzMy4yLTM4LjggNDQtMS44IDUtNS40IDE0LjQtOC4yIDIxLTguOCAyMS4yLTguMiAyNi44IDQgNTMgMTAuNiAyMi42IDExIDIzLjIgMjcuNiAzNi40IDIxIDE2LjggMjMuNiAxOC40IDUwLjggMjguMiAyMC4yIDcuMiAyNC42IDggNTQgMTAgMTcuNiAxLjIgNDUuNiAyLjIgNjIgMi4ybDMwIC4yIDE3LjQtOC40YzkuNi00LjYgMjIuNC05LjYgMjguMi0xMS40IDYtMS44IDE1LjQtNi4yIDIwLjgtMTAgNS40LTMuNiAxMy40LTguNiAxNy42LTEwLjggOS4yLTQuNiAzOS0zNC40IDM5LTM5IDAtMS42IDMuOC0xMC4yIDguNC0xOC44IDcuOC0xNC4yIDguNi0xNi44IDguNC0yOS42LS4yLTEyLjgtMS0xNS44LTEwLjYtMzQuNi0xMy40LTI2LjItMzAuNC00My42LTUwLjItNTEuNC03LjItMi44LTE2LjItNy0yMC05LjYtMTEuNC03LjYtMTcuNi05LjItNDguOC0xMi40LTI3LjYtMi44LTU2LjYtMy40LTczLjItMS42em0zOS40IDQ0LjRjMTEuMiAyLjIgMjIuNiA1IDI1IDYuNCA3IDMuNiAyNiAyMS44IDMwLjggMjkuNCA4LjYgMTMuNCAxMSA1NCA0LjYgNzctMi42IDkuNi0xOC44IDI3LjYtMzkuNCA0NC4yLTE1LjYgMTIuNC0xNyAxMy0yOS44IDE0LTcuNi44LTIyLjQgMi4yLTMzIDMuNi0yMi42IDIuNi00NS42IDEtNTMuOC0zLjgtMy4yLTItOC02LjgtMTAuOC0xMC44LTIuNi00LjItOC40LTEwLjQtMTIuOC0xMy44LTguMi02LjgtMTMuNC0xNi40LTE5LjQtMzctMy44LTEzLjItMi44LTIxLjggNS4yLTQ3LjYgMy4yLTEwLjQgNi0xNC42IDE3LjQtMjUuOCAxMi40LTEyLjIgMjMuOC0yMi4yIDMzLjItMjkuNiA0LTMgMzguNi05LjQgNTMuNC05LjggNSAwIDE4LjIgMS42IDI5LjQgMy42eiIvPjxwYXRoIGQ9Ik0zODcuMiA2MDZjLTEyLjIgMy44LTE4LjIgMTMuNC0xNSAyNC42IDUuOCAyMS4yIDI3LjggMjUuOCA0MC42IDguNiA2LjYtOC44IDcuOC0xNi4yIDQuMi0yNC00LjgtMTAuMi0xNS40LTEzLjQtMjkuOC05LjJ6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS效果三要素"><span class="post-toc-number">1.</span> <span class="post-toc-text">JS效果三要素:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运动轨迹-分步骤来实现先死后活法逐步来"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">运动轨迹(分步骤来实现先死后活法逐步来)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取元素三种途径"><span class="post-toc-number">2.</span> <span class="post-toc-text">获取元素三种途径 :</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件-1"><span class="post-toc-number">3.</span> <span class="post-toc-text">事件:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件-鼠标事件，键盘事件-系统事件-表单事件-自定义事件等等"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">事件:鼠标事件，键盘事件,系统事件,表单事件,自定义事件等等</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加事件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">添加事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">4.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量"><span class="post-toc-number">5.</span> <span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS属性操作-重点"><span class="post-toc-number">6.</span> <span class="post-toc-text">JS属性操作(重点)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性读写操作的注意事项"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">属性读写操作的注意事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件判断"><span class="post-toc-number">7.</span> <span class="post-toc-text">条件判断</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#if"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">if(){}</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#if-else"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">if(){}else{}</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#if-else-if-else-if"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">if(){}else if(){}else if(){}</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组"><span class="post-toc-number">8.</span> <span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义索引和属性"><span class="post-toc-number">9.</span> <span class="post-toc-text">自定义索引和属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">10.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6大类"><span class="post-toc-number">11.</span> <span class="post-toc-text">6大类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作用域重点"><span class="post-toc-number">12.</span> <span class="post-toc-text">作用域重点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数的作用域要区分全局变量和局部变量"><span class="post-toc-number">13.</span> <span class="post-toc-text">函数的作用域要区分全局变量和局部变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#真和假"><span class="post-toc-number">14.</span> <span class="post-toc-text">真和假</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数返回值return"><span class="post-toc-number">15.</span> <span class="post-toc-text">函数返回值return</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#这里特别注意下"><span class="post-toc-number">15.1.</span> <span class="post-toc-text">这里特别注意下:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#返回的值就是function-alert-1"><span class="post-toc-number">15.1.1.</span> <span class="post-toc-text">返回的值就是function(){alert(1)}</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#返回的值就是1"><span class="post-toc-number">15.1.2.</span> <span class="post-toc-text">返回的值就是1</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#arguments参数合集"><span class="post-toc-number">16.</span> <span class="post-toc-text">arguments参数合集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#arguments表示所有的参数合集"><span class="post-toc-number">16.1.</span> <span class="post-toc-text">arguments表示所有的参数合集</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工具类"><span class="post-toc-number">17.</span> <span class="post-toc-text">工具类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取到样式"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">获取到样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兼容IE678-获取到样式合集-获取到元素的属性值"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">兼容IE678 获取到样式合集.获取到元素的属性值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下面是抖动函数封装"><span class="post-toc-number">17.3.</span> <span class="post-toc-text">下面是抖动函数封装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下面是滤镜opacity函数封装"><span class="post-toc-number">17.4.</span> <span class="post-toc-text">下面是滤镜opacity函数封装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间函数"><span class="post-toc-number">17.5.</span> <span class="post-toc-text">时间函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Date对象参数"><span class="post-toc-number">17.6.</span> <span class="post-toc-text">Date对象参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数字形式-new-Date-2014-4-1-9-48-12-特别注意月份从0开始，所以他实际找的是5月"><span class="post-toc-number">17.6.1.</span> <span class="post-toc-text">数字形式:new Date(2014,4,1,9,48,12)  //特别注意月份从0开始，所以他实际找的是5月</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间戳"><span class="post-toc-number">17.7.</span> <span class="post-toc-text">时间戳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#getTime-返回的就是格林威治时间1970年-1月1日0点0分0秒0毫秒到现在的毫秒数"><span class="post-toc-number">17.7.1.</span> <span class="post-toc-text">getTime();返回的就是格林威治时间1970年 1月1日0点0分0秒0毫秒到现在的毫秒数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串获取，封装，截取，查找，检测"><span class="post-toc-number">18.</span> <span class="post-toc-text">字符串获取，封装，截取，查找，检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找indexOf-lastIndexOf"><span class="post-toc-number">18.1.</span> <span class="post-toc-text">查找indexOf,lastIndexOf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较类，截取类"><span class="post-toc-number">18.2.</span> <span class="post-toc-text">比较类，截取类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#join方法用来把数组变成字符串"><span class="post-toc-number">18.3.</span> <span class="post-toc-text">join方法用来把数组变成字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下面是所有的字符串操作总结"><span class="post-toc-number">18.4.</span> <span class="post-toc-text">下面是所有的字符串操作总结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for-in-循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性"><span class="post-toc-number">18.5.</span> <span class="post-toc-text">for-in 循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组-1"><span class="post-toc-number">19.</span> <span class="post-toc-text">数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#splice-方法"><span class="post-toc-number">19.1.</span> <span class="post-toc-text">splice()方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#splice-a-b-c-a表示起始位置-b表示个数-c表示要替换的值-b要是为0表示插入，c要是什么也不写表示删除。"><span class="post-toc-number">19.1.1.</span> <span class="post-toc-text">splice(a,b,c) a表示起始位置,b表示个数,c表示要替换的值.b要是为0表示插入，c要是什么也不写表示删除。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码见下"><span class="post-toc-number">19.2.</span> <span class="post-toc-text">代码见下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组去重"><span class="post-toc-number">19.3.</span> <span class="post-toc-text">数组去重</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sort排序"><span class="post-toc-number">19.4.</span> <span class="post-toc-text">Sort排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#随机数"><span class="post-toc-number">19.5.</span> <span class="post-toc-text">随机数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Math-round-Math-random-80-20-返回20-100之间的随机整数"><span class="post-toc-number">19.5.1.</span> <span class="post-toc-text">Math.round( Math.random()*80 + 20 ); //返回20~100之间的随机整数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#connect连接-表示把2个数组拼接起来"><span class="post-toc-number">19.6.</span> <span class="post-toc-text">connect连接,表示把2个数组拼接起来</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#reverse反转"><span class="post-toc-number">19.7.</span> <span class="post-toc-text">reverse反转</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以上JS基础全部基础点"><span class="post-toc-number">20.</span> <span class="post-toc-text">以上JS基础全部基础点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对应的链接是"><span class="post-toc-number">20.1.</span> <span class="post-toc-text">对应的链接是:</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Js基础用法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>1月 12, 2015</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQZLjIBAEQP//07MPmLWmihbI4UhOPsgSyQGI6n79fPV44eHh4eHh4eHhfRjvFY/f//r9hv98LP7vuyfrueHh4eEd4f2x1V4+k7yhXZTJ3PDw8PBO8t5tuNfPXD//bkL5t/K54eHh4X0yb7KJJwA8PDy87+a9ez4PKfJn8PDw8D6NtxYitJHu2sFwKGvBw8PDi3l5ken876P1PTw8PLyAV7c0lW0EbUPAz3jg4eHh7ea1xa2koJWXu5KgoZ4PHh4e3kO8PErYHdrmcQYeHh7eU7w8CGiXIAePwmI8PDy8zby8GNa2Q7Ul/7Z1oI5x8fDw8G7iTTbx9ndyEc9buPDw8PCe4rWRQb5NXy9Texgk13c8PDy8M7x2WnnrQHsAtDFEkbXg4eHhbePNGwXy9qwceUPrAB4eHt423uRqmx8Sedms/ToeHh7eGd5aWJCPNsBto1s8PDy8p3jt5ttemvcV2/64UuPh4eFt403ihvYavRgxrIUReHh4eBt4bYNUfjm+t7iVwPDw8PDO8xJSftVOppscMPUlHg8PD+84bzLRJCBem3QRkeDh4eEd5K1R6wLVUjNBsdx4eHh4x3l5gb9doLWL+A09ZXh4eHi38toxiW7Xpntz6wAeHh7emHdX4+kkkM0bWKNoAw8PD+8Irw1h24ihba5amwMeHh7eeV67Qc9DhLyd67aeMjw8PLyHeGvhb34kJO+/IaXGw8PDO86bRLeTw6COcfHw8PC28SYBQX75nkQP0QGDh4eHd4SXb83Xx8Akuk3eEy0NHh4e3mbe9w08PDw8PDw8PLwPGP8Ab+bOSq72NPEAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Js基础/">Js基础</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Js基础用法&url=http://www.uiyin.com/12/Js基础/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=Js基础用法&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/12/Js基础/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>通过本节的学习，主要掌握到Js的常态知识点。重点掌握的是思想。获取DOM，封装函数。以及FOR循环的思想</p>
+<h2 id="JS效果三要素"><a href="#JS效果三要素" class="headerlink" title="JS效果三要素:"></a>JS效果三要素:</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h3 id="运动轨迹-分步骤来实现先死后活法逐步来"><a href="#运动轨迹-分步骤来实现先死后活法逐步来" class="headerlink" title="运动轨迹(分步骤来实现先死后活法逐步来)"></a>运动轨迹(分步骤来实现先死后活法逐步来)</h3><hr>
+<h2 id="获取元素三种途径"><a href="#获取元素三种途径" class="headerlink" title="获取元素三种途径 :"></a>获取元素三种途径 :</h2><ul>
+<li>getElementById()—-静态方法,前面只能跟随document</li>
+<li>document.body,document.title —-页面上只有一个的元素</li>
+<li>getElementsByTagName()—–动态方法,前面可以是document也可以跟其他元素，返回的是一个类似数组的集合<br>(1)有类似数组的length<br>(2)有类似数组的应用方式例如:ali[0]<br>(3)再用TagName的时候必须要加上[]<br>(4)所谓的动态方法,是指通过js动态添加的元素，getElementsByTagName()也可以找到<br>   但是document.getElementById是找不到的</li>
+</ul>
+<h2 id="事件-1"><a href="#事件-1" class="headerlink" title="事件:"></a>事件:</h2><h3 id="事件-鼠标事件，键盘事件-系统事件-表单事件-自定义事件等等"><a href="#事件-鼠标事件，键盘事件-系统事件-表单事件-自定义事件等等" class="headerlink" title="事件:鼠标事件，键盘事件,系统事件,表单事件,自定义事件等等"></a>事件:鼠标事件，键盘事件,系统事件,表单事件,自定义事件等等</h3><ul>
+<li>onclick</li>
+<li>onmouseover</li>
+<li>onmouseleave</li>
+<li>onmousedown</li>
+<li>onmouseout</li>
+<li>onmouseup</li>
+<li>onmousemove</li>
+<li>……</li>
+</ul>
+<h3 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h3><p>元素.onmouseover</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数可以理解为方法,工具比如</p>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+function abc(){
+  /*要做的事情*/
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>直接调用就是abc()</li>
+<li>事件调用: 元素.事件 = 函数名</li>
+<li>匿名函数</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+  元素.onmouseover = function(){}
+  window.alert(1);  window.alert(&quot;ok&quot;);
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量就是变化的量,由数字，字母，下划线，美元($)组成.但是开头不能用数字。定义一个变量必须用var也可以用window[“xxx”]</p>
+<ul>
+<li>var li = document.getElementById(“list”);</li>
+<li>var num = 123;</li>
+<li>var name = “leo”;</li>
+</ul>
+<h2 id="JS属性操作-重点"><a href="#JS属性操作-重点" class="headerlink" title="JS属性操作(重点)"></a><a href="">JS属性操作</a>(重点)</h2><ul>
+<li>属性名</li>
+<li>属性值</li>
+<li>属性的读取操作:获取,找到元素.属性名</li>
+<li>属性的写操作:替换，修改 元素.属性名 = 新的值 添加的话需要用+=</li>
+<li>innerHTML读取元素内所有的HTML代码</li>
+</ul>
+<h3 id="属性读写操作的注意事项"><a href="#属性读写操作的注意事项" class="headerlink" title="属性读写操作的注意事项"></a>属性读写操作的注意事项</h3><ul>
+<li>JS属性中不允许出现”-“,例如font-size改为fontSize</li>
+<li>class在JS里面是保留字,在JS作用class要用className</li>
+<li><p>4个绝对不要判断<br>1.相对路径(src ,href)<br>2.颜色值<br>3.innerHTML值也不要(IE678可能有空格)<br>4.type类型也不要判断.因为IE678下面type更改不了</p>
+</li>
+<li><p>中括号[]的使用</p>
+<ol>
+<li>点”.”后面的值无法修改</li>
+<li>[]里面的值可以修改,JS允许把.替换成[] 例如style[attr]这样的</li>
+</ol>
+</li>
+</ul>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="if"><a href="#if" class="headerlink" title="if(){}"></a>if(){}</h3><h3 id="if-else"><a href="#if-else" class="headerlink" title="if(){}else{}"></a>if(){}else{}</h3><h3 id="if-else-if-else-if"><a href="#if-else-if-else-if" class="headerlink" title="if(){}else if(){}else if(){}"></a>if(){}else if(){}else if(){}</h3><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>放数据的仓库</li>
+<li>中括号[],间隔用逗号,最后一个数据不要加逗号</li>
+<li>数组的length属性</li>
+</ul>
+<h2 id="自定义索引和属性"><a href="#自定义索引和属性" class="headerlink" title="自定义索引和属性"></a><a href="">自定义索引和属性</a></h2><p>自定义属性  abtn[0].abc = 123;   //自定义属性<br>自定义属性赋值 obj.timer = setInterval(function(){},1000);   //自定义属性赋值</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><a href="">数据类型</a></h2><h2 id="6大类"><a href="#6大类" class="headerlink" title="6大类"></a>6大类</h2><ul>
+<li>空</li>
+<li>对象</li>
+<li>undefined</li>
+<li>Boolean</li>
+<li>String</li>
+<li>number</li>
+</ul>
+<blockquote>
+<p>(1)要是基础类型可以用typeOf()来判断字符串方法charAt(),获取到字符串第几个charCodeAt()获取到UniCode编码。然后在计算。再利用fromCharCode()换算成字符<br>(2)要是引用类型可以用instanceOf Array;instanceOf Object 来判断<br>Number()方法能转化字符串数字，空，空数组，要是前面有0比如00100转化的结果就是100<br>parseInt()相当于把前面的数字部分转化为数字，后面的字符直接舍弃.他转化不了空，真要是转化空结果就是NaN<br>parseFloat()同上<br>isNaN()判断是不是NaN</p>
+</blockquote>
+<h2 id="作用域重点"><a href="#作用域重点" class="headerlink" title="作用域重点"></a><a href="">作用域重点</a></h2><ul>
+<li>域：空间，范围，区域</li>
+<li>作用:读，写</li>
+</ul>
+<blockquote>
+<p>(1)在JS找到变量前，他要做的就是先找到一些关键字 var function,参数然后在正是运行代码之前他把这些都提前付了一个值,undefined<br>遇到重名的只留一个<br>(2)逐行解读代码。每读一行就是到库里面去看看，要是有值就替换，改变表达式的值</p>
+</blockquote>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+alert(a); //弹出：function a(){alert(4);}
+var a=1; //预解析中的a改为了1
+alert(a);  //弹出1
+function a(){alert(2);}//函数声明，没有改变a的值。什么也没发生。
+alert(a); //继续弹出1，因为a在预处理库里面的值没有被改过。
+var a=3; //预处理中a的值变为3
+alert(a); //弹出3
+function a(){alert(4);} //函数声明，什么也没有发生
+alert(a); //继续弹出3
+a(); //报错 a is not a function
+第一步:
+       预编译他会先找一些关键字存储到内存中。 比如var function 参数等等
+       他找到var a 先看左边，不看右边.上来都给他一个未定义 var a = undefined;要是function他就直接替换了
+       比如上面a从undefined直接变成了方法
+       他根本不考虑后面的值
+第二步:
+        在一步步执行代码
+        要是遇见表达式（表达式就是 var a = xxx）他才会重新替换或者赋值
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="函数的作用域要区分全局变量和局部变量"><a href="#函数的作用域要区分全局变量和局部变量" class="headerlink" title="函数的作用域要区分全局变量和局部变量"></a>函数的作用域要区分全局变量和局部变量</h2><p>在方法内部写var的都是局部。在方法外面的都是全局变量。要是在方法里面不加var,那他改变的就是全局的值.</p>
+<h3 id="特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域"><a href="#特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域" class="headerlink" title="特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域"></a>特别注意的就是在JS里面只有方法有作用域。for和if里面都没有作用域</h3><h2 id="真和假"><a href="#真和假" class="headerlink" title="真和假"></a><a href="">真和假</a></h2><ul>
+<li>真:非0的数字,字符串,true,函数,object,[],{}都是真的</li>
+<li>假:就记住6个为假其余都真 0,NaN,空字符串,null,false,undefined</li>
+</ul>
+<h2 id="函数返回值return"><a href="#函数返回值return" class="headerlink" title="函数返回值return"></a>函数返回值return</h2><h3 id="这里特别注意下"><a href="#这里特别注意下" class="headerlink" title="这里特别注意下:"></a>这里特别注意下:</h3><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+alert fn1();
+function fn1(){
+    return function(){
+        alert(1);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h4 id="返回的值就是function-alert-1"><a href="#返回的值就是function-alert-1" class="headerlink" title="返回的值就是function(){alert(1)}"></a>返回的值就是function(){alert(1)}</h4><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+alert fn1()();
+function fn1(){
+    return function(){
+        alert(1);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h4 id="返回的值就是1"><a href="#返回的值就是1" class="headerlink" title="返回的值就是1"></a>返回的值就是1</h4><h2 id="arguments参数合集"><a href="#arguments参数合集" class="headerlink" title="arguments参数合集"></a>arguments参数合集</h2><h3 id="arguments表示所有的参数合集"><a href="#arguments表示所有的参数合集" class="headerlink" title="arguments表示所有的参数合集"></a>arguments表示所有的参数合集</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+lert(sum(1,2,3));
+function sum(){
+    var n=0;
+    for(var i=0; i&lt;arguments.length; i++){
+        n += arguments[i];
+    }
+    return n;
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="获取到样式"><a href="#获取到样式" class="headerlink" title="获取到样式"></a>获取到样式</h3><pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+function getStyle(obj,attr)
+{
+  return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr]
+}
+&lt;/script&gt;
+&lt;html&gt;
+</code></pre><h3 id="兼容IE678-获取到样式合集-获取到元素的属性值"><a href="#兼容IE678-获取到样式合集-获取到元素的属性值" class="headerlink" title="兼容IE678 获取到样式合集.获取到元素的属性值"></a>兼容IE678 获取到样式合集.获取到元素的属性值</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+运动函数
+//封装运动函数
+    //既然是运动函数就需要传递几个条件(参数)
+    // 1.对象(你得知道让谁动吧)
+    // 2.方向(你得告诉他朝哪边走吧)
+    // 3.速度 (你得告诉他一次走多少吧)
+    // 4.终点(你得告诉他什么时候停止吧)
+    // 5.回调函数(到达终点以后干点什么吧)
+    function Imove(obj,attr,step,target,endfn)
+    {
+        //防止累加,越来越快。这样一上来我都从0开始计算
+        clearTimeout(obj.timer);
+        //主要是判断速度是正的还是负的，上来先比较。我的思路是要是目标的位置比初始的位置大，则速度肯定是正的，要是小则速度肯定是负的
+        step =  target&gt;parseInt(getStyle(obj,attr))? step:-step;
+        obj.timer = setInterval(function(){
+            var dis = parseInt(getStyle(obj,attr))+step;   //获取到每次走了之后距离最开始的位置
+            //判断一下当走的距离要是超过了终点，则必须拉回来。要是没超过。则继续走.
+            if(dis&gt;=target&amp;&amp;step&gt;0||dis&lt;target&amp;&amp;step&lt;0)
+            {
+                dis = target;
+            }
+            obj.style[attr] = dis+&quot;px&quot;;   //给这个对象赋值，让他自己慢慢走。
+            if(dis==target)               //当到达了终点了，就不让他走了。这个时候你需要清除定时器了。因为没用了。
+            {
+                clearInterval(obj.timer);   //清除定时器
+                endfn&amp;&amp;endfn();           //执行回调方法
+            }
+        },100)
+    }
+    //封装运动函数结束
+    &lt;/script&gt;
+    &lt;/html&gt;
+</code></pre><h3 id="下面是抖动函数封装"><a href="#下面是抖动函数封装" class="headerlink" title="下面是抖动函数封装"></a>下面是抖动函数封装</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+抖动函数封装
+function shake(obj,attr,endfn) {
+        var arr = [];
+        for (var i = 20; i &gt; 0; i -= 2)
+        {
+            arr.push(i,-i);
+        }
+        arr.push(0);
+        clearInterval(obj.shaker);
+        var index = 0 ;
+        obj.shaker = setInterval(function(){
+            var speed = (parseInt(getStyle(obj,attr))+arr[index]);
+            obj.style[attr] = speed +&quot;px&quot;;
+            ++index;
+            if(index==arr.length)
+            {
+                clearInterval(obj.shaker);
+                endfn&amp;&amp;endfn();
+            }
+        },10)
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="下面是滤镜opacity函数封装"><a href="#下面是滤镜opacity函数封装" class="headerlink" title="下面是滤镜opacity函数封装"></a>下面是滤镜opacity函数封装</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+function doopacity(obj,step,target,endfn)
+    {
+      var first = getStyle(obj,&quot;opacity&quot;)*100;  //获取到滤镜的初始值
+       step = target&gt;first?step:-step;    //一步走的距离是正的是负的
+        clearInterval(obj.opacity);       //一上来清除定时器。防止累加
+         obj.opacity = setInterval(function(){
+           var speed = getStyle(obj,&quot;opacity&quot;)*100+step;     //改变opacity
+           if(speed&gt;=target&amp;&amp;step&gt;0&amp;&amp;speed&lt;=target&amp;&amp;step&lt;0)
+           {
+               speed = target;        //变成目标值
+           }
+           if(speed==target)
+           {
+               clearInterval(obj.opacity);   //要是相当则清空
+               endfn&amp;&amp;endfn();                //执行回调函数
+           }
+             obj.style[&quot;opacity&quot;] = speed/100;   //DIV滤镜效果
+             obj.style.filter = &#39;alpha(opacity:&#39; + speed + &#39;)&#39;;  //为了兼容性
+        },100)
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="时间函数"><a href="#时间函数" class="headerlink" title="时间函数"></a>时间函数</h3><ul>
+<li>getFullYear() //获取到年份</li>
+<li>getMonth()   //这里特别注意的一定要+1因为他从0开始</li>
+<li>getDate()   //获取到多少号</li>
+<li>getDay()    //获取到星期几，得到是一个数值，要是星期天，则得到数字0</li>
+<li>getHours()   //获取到小时</li>
+<li>getMinutes()        //获取到分钟</li>
+<li>getSeconds()  //获取到秒数</li>
+</ul>
+<hr>
+<h3 id="Date对象参数"><a href="#Date对象参数" class="headerlink" title="Date对象参数"></a>Date对象参数</h3><h4 id="数字形式-new-Date-2014-4-1-9-48-12-特别注意月份从0开始，所以他实际找的是5月"><a href="#数字形式-new-Date-2014-4-1-9-48-12-特别注意月份从0开始，所以他实际找的是5月" class="headerlink" title="数字形式:new Date(2014,4,1,9,48,12)  //特别注意月份从0开始，所以他实际找的是5月"></a>数字形式:new Date(2014,4,1,9,48,12)  //特别注意月份从0开始，所以他实际找的是5月</h4><pre><code>&lt;html&gt;
+&lt;script&gt;
+var iNow = new Date();
+var iNew = new Date(2014, 10, 26, 21, 56, 0);  //获取的是11月
+var t = Math.floor((iNew - iNow)/1000); 
+var str = Math.floor(t/86400) + &#39;天&#39; +  Math.floor(t%86400/3600) + &#39;时&#39; + Math.floor(t%86400%3600/60) + &#39;分&#39; +  t%60 + &#39;秒&#39;;
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>天: Math.floor(t/86400);</li>
+<li>时: Math.floor(t%86400/3600);</li>
+<li>分:Math.floor(t%86400%3600/60);</li>
+<li>秒:Math.floor(t%60);</li>
+</ul>
+<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><h4 id="getTime-返回的就是格林威治时间1970年-1月1日0点0分0秒0毫秒到现在的毫秒数"><a href="#getTime-返回的就是格林威治时间1970年-1月1日0点0分0秒0毫秒到现在的毫秒数" class="headerlink" title="getTime();返回的就是格林威治时间1970年 1月1日0点0分0秒0毫秒到现在的毫秒数"></a>getTime();返回的就是格林威治时间1970年 1月1日0点0分0秒0毫秒到现在的毫秒数</h4><h2 id="字符串获取，封装，截取，查找，检测"><a href="#字符串获取，封装，截取，查找，检测" class="headerlink" title="字符串获取，封装，截取，查找，检测"></a>字符串获取，封装，截取，查找，检测</h2><ul>
+<li>length 空格也算长度</li>
+<li>charAt()找到子字符串，括号要是什么也不写。默认找到第0个</li>
+<li>charCodeAt()得到指定字符串的unicode编码</li>
+<li>String.fromCharCode():根据字符编码。返回一个字符。例如:String.fromCharCode(22937);返回的就是妙字</li>
+<li>要是想获取到多个，可以String.fromCharCode(22937,22938);</li>
+</ul>
+<hr>
+<h3 id="查找indexOf-lastIndexOf"><a href="#查找indexOf-lastIndexOf" class="headerlink" title="查找indexOf,lastIndexOf"></a>查找indexOf,lastIndexOf</h3><ul>
+<li>indexof()返回某个字符或字符串的位置.string.indexOf(‘m’,5)代表从str字符串中的第5位开始以后找到m的位置.如果要是找不到则返回-1</li>
+<li>lastIndexOf()从右边往前找，也可以带数字参数，表示从哪里找</li>
+</ul>
+<hr>
+<h3 id="比较类，截取类"><a href="#比较类，截取类" class="headerlink" title="比较类，截取类"></a>比较类，截取类</h3><ul>
+<li>substring(n,m)表示从第n截取，到第m位置结束.如果没有m默认截取到最后一位,包前不包后.</li>
+<li>slice(n,m),str.slice(0,2)与str.slice(2,0)这样的结果完全不一样。后者找不到结果。因为slice()方法不会判断里面的参数大小并交换参数位置.</li>
+<li>slice(-2);截取的是从最后一位到倒数第二位,-1表示的最后一位.str.slice(-4,-2);截取的是倒数第四位到倒数第二位</li>
+</ul>
+<hr>
+<ul>
+<li>toUpperCase()转换为大写</li>
+<li>toLowerCase()转换为小写</li>
+<li>split()讲字符串切割成数组</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;scirpt&gt;
+var str = &#39;www.miaov.com&#39;;
+str.split(&#39;.&#39;); =&gt; [“www”, “miaov”, “com”];
+var str1 = &#39;leo&#39;; 
+str1.split(); =&gt; [&#39;leo&#39;];
+str2 = ‘leo’; 
+str2.split(‘’); =&gt; [“l”, “e”, “o”]；
+var str3 = ‘/www.miaov.com/’; 
+str3.split(‘/’); =&gt; [””, “www.miaov.com”, “”]；
+var str4 = ‘2013-11-29-23-07’;
+str4.split(‘-‘, 3); =&gt; [“2013”, “11”, “29”]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="join方法用来把数组变成字符串"><a href="#join方法用来把数组变成字符串" class="headerlink" title="join方法用来把数组变成字符串"></a><a href="">join方法用来把数组变成字符串</a></h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [‘aa’, ‘bb’, ‘cc]; 
+arr.join(); =&gt; ‘aa,bb,cc’ .join()括号中什么也不写，默认就是用逗号隔开。
+arr.join(‘’); =&gt; ‘aabbcc’ ；
+ arr.join(‘-‘); =&gt; ‘aa-bb-cc’
+ &lt;/script&gt;
+ &lt;/html&gt;
+</code></pre><hr>
+<h3 id="下面是所有的字符串操作总结"><a href="#下面是所有的字符串操作总结" class="headerlink" title="下面是所有的字符串操作总结"></a>下面是所有的字符串操作总结</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var str = &#39;妙味课堂-WWW.miaov.com&#39;;
+
+str.charAt(1); //味
+str.charCodeAt(1); //21619
+String.fromCharCode(22937, 21619); //妙味
+
+str.indexOf(&#39;m&#39;, 3); //9
+str.lastIndexOf(&#39;o&#39;); //16
+
+&#39;1000&#39; &lt; &#39;2&#39; //true
+&#39;1000&#39; &gt; 2 //true
+
+str.substring(0, 4); //妙味课堂
+str.slice(-3); //&#39;com&#39;
+
+str.toUpperCase(); //&#39;妙味课堂-WWW.MIAOV.COM&#39;
+str.toLowerCase(); //&#39;妙味课堂-www.miaov.com&#39;
+
+str.split(&#39;.&#39;, 2); //[&#39;秒微课堂-www&#39;, &#39;miaov&#39;]
+
+var arr = [&#39;www&#39;, &#39;miaov&#39;, &#39;com&#39;];
+arr.join(&#39;.&#39;); //&#39;www.miaov.com&#39;
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="for-in-循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性"><a href="#for-in-循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性" class="headerlink" title="for-in 循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性"></a>for-in 循环遍历json因为json是个对象。没有长度。类似键值对。循环的是属性</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var json4 = { &#39;name&#39;: &#39;miaov&#39;, &#39;age&#39;: 3, &#39;fun&#39;: &#39;前端开发&#39;};
+for(var attr in json4){
+    alert(attr);
+    alert(json4[attr]);
+}
+
+var json5 = { 
+    url: [&#39;img/1.png&#39;, &#39;img/2.png&#39;],
+    text: [&#39;图片一&#39;, &#39;图片二&#39;]
+};
+
+for(var attr in json5) {
+    for(var i=0; i&lt;json5[attr].length; i++){
+        alert(json5[attr][i]);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h2 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>可以通过修改数组的length属性来清空数组。</li>
+<li>从后面添加数组push() arr.push()往数组最后一位加内容..push()方法是有返回值得。返回是数组的新长度</li>
+<li>前面添加数组unshift() arr.unshift()往数组的最前面添加内容，返回值为数组的新长度(IE6,7不支持)</li>
+<li>删除pop() arr.pop()表示从后面删除一个数组元素。返回值就是要删除的数组</li>
+<li>删除shift() arr.shift()删除数组的第一个返回值是被扔掉的值</li>
+</ul>
+<pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;TM&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;];
+arr.unshift(arr.pop()); //数组变为：[&#39;Leo&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;TM&#39;]
+或
+arr.push(arr.shift()); //数组变为：[&#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;, &#39;TM&#39;]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="splice-方法"><a href="#splice-方法" class="headerlink" title="splice()方法"></a>splice()方法</h3><h4 id="splice-a-b-c-a表示起始位置-b表示个数-c表示要替换的值-b要是为0表示插入，c要是什么也不写表示删除。"><a href="#splice-a-b-c-a表示起始位置-b表示个数-c表示要替换的值-b要是为0表示插入，c要是什么也不写表示删除。" class="headerlink" title="splice(a,b,c) a表示起始位置,b表示个数,c表示要替换的值.b要是为0表示插入，c要是什么也不写表示删除。"></a>splice(a,b,c) a表示起始位置,b表示个数,c表示要替换的值.b要是为0表示插入，c要是什么也不写表示删除。</h4><hr>
+<h3 id="代码见下"><a href="#代码见下" class="headerlink" title="代码见下"></a>代码见下</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;TM&#39;, &#39;钟毅&#39;, &#39;张森&#39;, &#39;杜鹏&#39;, &#39;Leo&#39;];
+//删除
+//arr.splice(0, 1); //删掉第0位，删1个。两个参数第一个是从第几位开始，第二个是删掉几个。splice删除的时候有返回值，返回的是被删除的内容
+//替换
+//arr.splice(0, 1, &#39;莫涛&#39;); //替换第0位，替换1个，替换为&#39;莫涛&#39;。返回的还是删除的东西
+//添加
+arr.splice(1, 0, &#39;李贤&#39;); //在第1位那里，删除0个，添加了一个&#39;李贤&#39;到了第1位，&#39;钟毅&#39;就变成了arr[2]了。后面也可以添加多个。如果splice删除了0个，那么就没有返回值。
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [1, 2, 2, 4, 2];
+for ( var i=0; i&lt;arr.length; i++ ) {
+    for ( var j = i+1; j&lt;arr.length; j++) {
+        if( arr[i]==arr[j] ){
+            arr.splice( j, 1 );
+            j--;
+        }
+    }
+}
+也可以使用indexOf
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="Sort排序"><a href="#Sort排序" class="headerlink" title="Sort排序"></a>Sort排序</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr = [&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;e&#39;];
+arr.sort(); // &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; 按照unicode编码排序
+
+var arr2 = [4, 3, 5, 76, 2, 0, 8];
+// arr2.sort(); // 0, 2, 3, 4, 5, 76, 8 sort默认是将数组中的每一个按照字符串来排序的，因此出现了76排在8前面的情况
+
+// arr2. sort(function( a, b ){
+    return a - b; //如果a-b返回正数，就a、b两个数字换个序。如果a-b是负数，就不换序
+}) //返回数字从小到大 0, 2, 3, 4, 5, 8, 76
+
+// arr2. sort(function( a, b ){
+    return b - a;
+}) //返回数字从大到小 76,, 8, 5, 4, 3, 2, 0
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3><h4 id="Math-round-Math-random-80-20-返回20-100之间的随机整数"><a href="#Math-round-Math-random-80-20-返回20-100之间的随机整数" class="headerlink" title="Math.round( Math.random()*80 + 20 ); //返回20~100之间的随机整数"></a>Math.round( Math.random()*80 + 20 ); //返回20~100之间的随机整数</h4><hr>
+<h3 id="connect连接-表示把2个数组拼接起来"><a href="#connect连接-表示把2个数组拼接起来" class="headerlink" title="connect连接,表示把2个数组拼接起来"></a>connect连接,表示把2个数组拼接起来</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = [7, 8, 9];
+
+arr1.concat(arr2); //[1, 2, 3, 4, 5, 6] 新数组与原来数组没什么关系。
+arr1.concat(arr2, arr3); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h3 id="reverse反转"><a href="#reverse反转" class="headerlink" title="reverse反转"></a>reverse反转</h3><pre><code>&lt;html&gt;
+&lt;script&gt;
+var arr1 = [1, 2, 3];
+arr1.reverse();
+alert(arr1); // [3, 2, 1]
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="以上JS基础全部基础点"><a href="#以上JS基础全部基础点" class="headerlink" title="以上JS基础全部基础点"></a>以上JS基础全部基础点</h2><h3 id="对应的链接是"><a href="#对应的链接是" class="headerlink" title="对应的链接是:"></a>对应的链接是:</h3><p><a href="https://youngjudge.github.io/JsBasic/" target="_blank" rel="external">基础知识点所有效果点击这里</a></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="12/Js基础/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt8WGown';
+var conf = 'prod_7f128a445aeb761f8f67a4cff4b26cac';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/09/MarkDown/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Eric Yin's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        yinjiephp@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:yinjiephp@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://www.17cry.com" target="_blank" title="个人主页">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">bookmark</i>
+                        
+                        个人主页
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2015/01/">一月 2015<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Js基础用法/">Js基础用法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/MarkDown语法/">MarkDown语法<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/timeline" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时光隧道">
+                
+                    <i class="material-icons sidebar-material-icons">alarm</i>
+                
+                时光隧道
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="图库">
+                
+                    <i class="material-icons sidebar-material-icons">theaters</i>
+                
+                图库
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">code</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">2</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/u/5454673606/home" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://youngjudge.github.io/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>我的前端之路
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt8WGown">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
