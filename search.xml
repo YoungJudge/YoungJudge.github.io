@@ -654,14 +654,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
