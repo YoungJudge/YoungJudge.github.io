@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[微信小程序第二天]]></title>
-      <url>/11/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%AC%E4%BA%8C%E5%A4%A9/</url>
+      <url>/11/SmallWeChattwo/</url>
       <content type="html"><![CDATA[<p>本节主要就是介绍微信小程序的一个小DEMO</p>
 <h4 id="会涉及到渲染数据，循环，发送请求，等3个知识点"><a href="#会涉及到渲染数据，循环，发送请求，等3个知识点" class="headerlink" title="会涉及到渲染数据，循环，发送请求，等3个知识点."></a>会涉及到渲染数据，循环，发送请求，等3个知识点.</h4><h4 id="最终实现的效果如下图"><a href="#最终实现的效果如下图" class="headerlink" title="最终实现的效果如下图"></a>最终实现的效果如下图</h4><p><img src="http://www.uiyin.com/tuku/weixin/second1.gif" alt="效果图"></p>
 <h4 id="步骤开始（2步写一个小程序）"><a href="#步骤开始（2步写一个小程序）" class="headerlink" title="步骤开始（2步写一个小程序）"></a>步骤开始（2步写一个小程序）</h4><h5 id="第一步在wxml里面写代码"><a href="#第一步在wxml里面写代码" class="headerlink" title="第一步在wxml里面写代码"></a>第一步在wxml里面写代码</h5><pre><code>&lt;!--index.wxml--&gt;
@@ -87,7 +87,7 @@ Page({
     
     <entry>
       <title><![CDATA[Js基础用法]]></title>
-      <url>/12/Js%E5%9F%BA%E7%A1%80/</url>
+      <url>/12/JsBasic/</url>
       <content type="html"><![CDATA[<p>通过本节的学习，主要掌握到Js的常态知识点。重点掌握的是思想。获取DOM，封装函数。以及FOR循环的思想</p>
 <h2 id="JS效果三要素"><a href="#JS效果三要素" class="headerlink" title="JS效果三要素:"></a>JS效果三要素:</h2><h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h3 id="运动轨迹-分步骤来实现先死后活法逐步来"><a href="#运动轨迹-分步骤来实现先死后活法逐步来" class="headerlink" title="运动轨迹(分步骤来实现先死后活法逐步来)"></a>运动轨迹(分步骤来实现先死后活法逐步来)</h3><hr>
 <h2 id="获取元素三种途径"><a href="#获取元素三种途径" class="headerlink" title="获取元素三种途径 :"></a>获取元素三种途径 :</h2><ul>
@@ -623,12 +623,6 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[友情链接]]></title>
-      <url>/links/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[时光隧道]]></title>
       <url>/timeline/index.html</url>
       <content type="html"></content>
@@ -637,6 +631,12 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[标签云]]></title>
       <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
