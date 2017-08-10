@@ -3,6 +3,128 @@
   
     
     <entry>
+      <title><![CDATA[微信小程序第三天]]></title>
+      <url>/12/SmallWeChatthree/</url>
+      <content type="html"><![CDATA[<p>本节主要是介绍页面的配置，窗口的配置，tabbar配置,网络超时，页面配置等</p>
+<h3 id="本节主要分为5个部分"><a href="#本节主要分为5个部分" class="headerlink" title="本节主要分为5个部分"></a>本节主要分为5个部分</h3><h4 id="1-App的页面配置"><a href="#1-App的页面配置" class="headerlink" title="(1) App的页面配置"></a>(1) App的页面配置</h4><h4 id="2-App的窗口配置"><a href="#2-App的窗口配置" class="headerlink" title="(2) App的窗口配置"></a>(2) App的窗口配置</h4><h4 id="3-APP的tabbar配置"><a href="#3-APP的tabbar配置" class="headerlink" title="(3) APP的tabbar配置"></a>(3) APP的tabbar配置</h4><h4 id="4-网络超时和debug的开启配置"><a href="#4-网络超时和debug的开启配置" class="headerlink" title="(4) 网络超时和debug的开启配置"></a>(4) 网络超时和debug的开启配置</h4><h4 id="5-页面配置"><a href="#5-页面配置" class="headerlink" title="(5) 页面配置"></a>(5) 页面配置</h4><h4 id="6-小程序的生命周期和app对象的使用"><a href="#6-小程序的生命周期和app对象的使用" class="headerlink" title="(6) 小程序的生命周期和app对象的使用"></a>(6) 小程序的生命周期和app对象的使用</h4><hr>
+<h2 id="1-APP的页面配置针对app-json"><a href="#1-APP的页面配置针对app-json" class="headerlink" title="(1) APP的页面配置针对app.json"></a>(1) APP的页面配置针对app.json</h2><p>具体见下面代码:</p>
+<pre><code>{
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;black&quot;
+  }
+}
+</code></pre><h3 id="Pages说明"><a href="#Pages说明" class="headerlink" title="Pages说明:"></a>Pages说明:</h3><h4 id="数组的第一项代表小程序的初始页面。小程序中新增-减少页面，都需要对-pages-数组进行修改-需要添加或者删除"><a href="#数组的第一项代表小程序的初始页面。小程序中新增-减少页面，都需要对-pages-数组进行修改-需要添加或者删除" class="headerlink" title="数组的第一项代表小程序的初始页面。小程序中新增/减少页面，都需要对 pages 数组进行修改,需要添加或者删除"></a>数组的第一项代表小程序的初始页面。小程序中新增/减少页面，都需要对 pages 数组进行修改,需要添加或者删除</h4><h4 id="这里特别注意的就是要是想tabbar显示出来。则必须第一个放index，要是放其他的则显示不出来。"><a href="#这里特别注意的就是要是想tabbar显示出来。则必须第一个放index，要是放其他的则显示不出来。" class="headerlink" title="这里特别注意的就是要是想tabbar显示出来。则必须第一个放index，要是放其他的则显示不出来。"></a>这里特别注意的就是要是想tabbar显示出来。则必须第一个放index，要是放其他的则显示不出来。</h4><h3 id="2-APP的窗口配置"><a href="#2-APP的窗口配置" class="headerlink" title="(2) APP的窗口配置"></a>(2) APP的窗口配置</h3><h4 id="window里面放的就是window的配置文件。具体说明如下"><a href="#window里面放的就是window的配置文件。具体说明如下" class="headerlink" title="window里面放的就是window的配置文件。具体说明如下:"></a>window里面放的就是window的配置文件。具体说明如下:</h4><blockquote>
+<p>backgroundTextStyle : 下拉背景字体,loading图的样式。仅支持dark/light<br>navigationBarBackgroundColor: 导航栏背景颜色 十六进制数字 “#000000”<br>navigationBarTitleText: 导航栏标题文字内容<br>navigationBarTextStyle: 导航栏标题颜色，仅支持black/white<br>backgroundColor：窗口的背景颜色 仅支持十六进制数字<br>enablePullDownRefresh: false 是否开启下拉刷新 .false就是不开启</p>
+</blockquote>
+<p>以上就是window头部导航条的全部配置内容。要是每个页面都需要不同的可以在每个页面的xxx,json里面修改</p>
+<h3 id="3-TabBar-底部导航栏目"><a href="#3-TabBar-底部导航栏目" class="headerlink" title="(3) TabBar(底部导航栏目)"></a>(3) TabBar(底部导航栏目)</h3><p>具体看代码: 这里特别说明底部导航栏配置最少2个，最多5个，tab按数组的顺序来排序</p>
+<pre><code>  &quot;tabBar&quot;: {
+    &quot;color&quot;: &quot;#F86A2C&quot;, 
+    &quot;selectedColor&quot;: &quot;#000000&quot;, 
+    &quot;backgroundColor&quot;: &quot;#0451A5&quot;, 
+    &quot;borderStyle&quot;: &quot;#eeee&quot;, 
+    &quot;position&quot;: &quot;top&quot;,
+    &quot;list&quot;: [
+      {
+        &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+        &quot;text&quot;: &quot;首页&quot;,
+        &quot;iconPath&quot;: &quot;images/home.png&quot;,
+        &quot;selectedIconPath&quot;: &quot;images/home.png&quot;
+      },
+      {
+        &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,
+        &quot;text&quot;: &quot;备注&quot;,
+        &quot;iconPath&quot;: &quot;images/gift.png&quot;,
+        &quot;selectedIconPath&quot;: &quot;images/gift.png&quot;
+      }
+    ]
+  }
+</code></pre><p>针对每个参数的解释和说明:</p>
+<blockquote>
+<p>“color” : “#F86A2C”, /<em>没选中的颜色</em>/<br>“selectedColor” : “#000000”, /<em>选中后的颜色</em>/<br>“backgroundColor”: “#0451A5”, /<em>背景颜色</em>/<br>“borderStyle” : “black”,   /<em>导航上边的边框颜色仅仅支持white和black</em>/<br>“position”: “bottom”, /<em>默认是bottom要是top的话，则设置icon不会显示</em>/<br>“list”:接受一个数组,数组里面每一个都是对象<br>“pagePath”:”路径”指向页面的路径<br>“text” : “导航条上面的文字”<br>“iconPath”: “图片路径”大小限制是 40KB，建议尺寸是81PX<em>81PX,当position为top的时候此参数无效<br>“selectedIconPath”:”选中后的路径”大小限制是 40KB，建议尺寸是81PX</em>81PX,当position为top的时候此参数无效</p>
+</blockquote>
+<h3 id="4-网络超时和debug的开启"><a href="#4-网络超时和debug的开启" class="headerlink" title="(4)网络超时和debug的开启"></a>(4)网络超时和debug的开启</h3><h4 id="networkTimeout"><a href="#networkTimeout" class="headerlink" title="networkTimeout"></a>networkTimeout</h4><p>可以设置各种网络请求的超时时间</p>
+<pre><code>  &quot;networkTimeout&quot;: {
+    &quot;request&quot;: 20000,
+    &quot;connectSocket&quot;: 20000,
+    &quot;uploadFile&quot;: 20000,
+    &quot;downloadFile&quot;: 20000
+  }
+</code></pre><p>针对每个参数的解释和说明:</p>
+<blockquote>
+<p>request 设置wx.request的超时时间单位是毫秒:默认就是60000<br>connectSocket 设置wx.connectSocket的超时时间，单位毫秒 默认同上<br>uploadFile 设置wx.uploadFile的超时时间单位毫秒。默认是60000<br>downloadFile 设置wx.downloadFile单位毫秒 默认就是60000</p>
+</blockquote>
+<hr>
+<h4 id="debug模式"><a href="#debug模式" class="headerlink" title="debug模式"></a>debug模式</h4><pre><code>debug:true
+</code></pre><p>开启debug模式。在开发者工具的控制台面板。调试信息以info的形式给出。其包含信息有Page的注册，页面路由，数据更新，事件触发等等</p>
+<hr>
+<h3 id="5-页面配置-1"><a href="#5-页面配置-1" class="headerlink" title="(5)页面配置"></a>(5)页面配置</h3><p>当新建一个页面以后，必须需要4个文件与之对应</p>
+<ul>
+<li>第一个xxx.wxml (类似HTML文档)</li>
+<li>第二个xxx.wxss (类似css文件)</li>
+<li>第三个xxx.json (配置文件)</li>
+<li>第四个xxx.js   (逻辑代码,逻辑层)</li>
+</ul>
+<blockquote>
+<p>备注说明:当你要是在app.json里面写了代码。但是你在XXX.json里面也写了代码。那么xxx.json代码会覆盖掉app.json里面的文件<br>同样的道理适用于wxss json 等</p>
+</blockquote>
+<hr>
+<h3 id="6-小程序函数的生命周期和APP对象的使用（传递参数）-针对xxx-js"><a href="#6-小程序函数的生命周期和APP对象的使用（传递参数）-针对xxx-js" class="headerlink" title="(6)小程序函数的生命周期和APP对象的使用（传递参数）(针对xxx.js)"></a>(6)小程序函数的生命周期和APP对象的使用（传递参数）(针对xxx.js)</h3><h4 id="APP的生命周期"><a href="#APP的生命周期" class="headerlink" title="APP的生命周期"></a>APP的生命周期</h4><p>onLauch 读取 onShow显示 onLoad 加载 onHide(切换成后台的时候显示)(后台就是接电话等等) onUnload:页面关闭。（返回按钮不管用）</p>
+<p>要是在app.js里面写好了xxx方法,然后你的页面里又想调用.那只能</p>
+<p>var app = getApp();</p>
+<p>app.xxxx()</p>
+<p>同理适合变量</p>
+<hr>
+<p>页面函数的生命周期:</p>
+<p>onLoad:页面初始化.onReady :页面渲染完成.onShow:页面显示.onHide:页面隐藏。onUnload:页面关闭.</p>
+<h4 id="页面跳转这里千万要注意不能和tabbar的地址重复否则不会跳转"><a href="#页面跳转这里千万要注意不能和tabbar的地址重复否则不会跳转" class="headerlink" title="页面跳转这里千万要注意不能和tabbar的地址重复否则不会跳转"></a>页面跳转这里千万要注意不能和tabbar的地址重复否则不会跳转</h4><p>第一种跳转方法:</p>
+<pre><code>    wx.navigateTo({
+      url: &#39;../logs/logs&#39;
+    })
+
+   wx.redirectTo({
+  url: &#39;test?id=1&#39;
+})
+</code></pre><blockquote>
+<p>要是用了redirect则不会返回原页面了切记，切记</p>
+</blockquote>
+<p>第二种跳转方法:</p>
+<pre><code>&lt;navigator url=&quot;../ask/ask&quot; hover-class=&quot;navigator-hover&quot;&gt;跳转到新页面&lt;/navigator&gt;
+</code></pre><hr>
+<h4 id="页面传值2种方法"><a href="#页面传值2种方法" class="headerlink" title="页面传值2种方法"></a>页面传值2种方法</h4><h5 id="第一种发送数据"><a href="#第一种发送数据" class="headerlink" title="第一种发送数据:"></a>第一种发送数据:</h5><pre><code>    wx.navigateTo({
+      url: &#39;../logs/logs?id=1&amp;&amp;name=hello&#39;
+    })
+</code></pre><h5 id="第一种接受数据"><a href="#第一种接受数据" class="headerlink" title="第一种接受数据:"></a>第一种接受数据:</h5><pre><code>onLoad:function(options){
+console.log(“options”+options.id+options.name);
+//获取以后再用setData({更新到本地})
+}
+</code></pre><h5 id="第二种发送数据"><a href="#第二种发送数据" class="headerlink" title="第二种发送数据:"></a>第二种发送数据:</h5><pre><code>&lt;navigator url=” ../logs/logs?username=hello&amp;&amp;password=123” redirect&gt;
+</code></pre><p>同wx.redirectTo({url:”xxxx”})</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 微信小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[微信小程序第二天]]></title>
       <url>/11/SmallWeChattwo/</url>
       <content type="html"><![CDATA[<p>本节主要就是介绍微信小程序的一个小DEMO</p>
@@ -725,8 +847,14 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -737,14 +865,8 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
