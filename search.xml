@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[微信小程序总纲]]></title>
+      <url>/21/SmallWeChatAll/</url>
+      <content type="html"><![CDATA[<hr>
+<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>微信小程序是运行在微信环境中的应用，它只能在微信中运行。不能运行在浏览器中，微信小程序提供了专门的开发工具。用于微信小程序的开发，还提供了丰富的API，让我们的小程序能够具备与手机设计和微信交互的能力。比如获取摄像头拍照，访问文件系统等等。那么与微信交互主要体现三个方面。</p>
+<ol>
+<li>获取登陆微信用户的用户信息 </li>
+<li>微信支付</li>
+<li>使用模板消息向微信发送通知信息</li>
+</ol>
+<hr>
+<h2 id="本次系列将分成-六-个部分来阐述微信小程序开发"><a href="#本次系列将分成-六-个部分来阐述微信小程序开发" class="headerlink" title="本次系列将分成 六 个部分来阐述微信小程序开发"></a>本次系列将分成 六 个部分来阐述微信小程序开发</h2><p> 通过本次的学习让你对微信小程序有个最基础的认识和了解</p>
+<h2 id="第一部分-准备工作"><a href="#第一部分-准备工作" class="headerlink" title="第一部分 准备工作"></a>第一部分 准备工作</h2><ol>
+<li>开发工具下载和安装</li>
+<li>新建第一个小程序</li>
+<li>目录结构和页面组成详解</li>
+</ol>
+<h2 id="第二部分-组件详解"><a href="#第二部分-组件详解" class="headerlink" title="第二部分 组件详解"></a>第二部分 组件详解</h2><p> 1.组件之view<br> 2.组件之scroll-view<br> 3.组件之swiper<br> 4.组件之form<br> 5.组件之所有fields(checkbox,input,radio,slider,switch等)<br> 6.组件之操作反馈类<br> 7.组件之导航<br> 8.组件之媒体组件</p>
+<h2 id="第三部分-WXSS解析"><a href="#第三部分-WXSS解析" class="headerlink" title="第三部分 WXSS解析"></a>第三部分 WXSS解析</h2><p> 1.概述<br> 2.样式之尺寸单位<br> 3.样式之宽度，高度<br> 4.样式之内间距<br> 5.样式之外间距<br> 6.样式之边框<br> 7.样式之颜色<br> 8.样式之背景<br> 9.样式之字体<br> 10 样式之布局技巧<br> 11 样式之css</p>
+<h2 id="第四部分-wxml详解"><a href="#第四部分-wxml详解" class="headerlink" title="第四部分 wxml详解"></a>第四部分 wxml详解</h2><ol>
+<li>数据绑定</li>
+<li>条件渲染</li>
+<li>列表渲染</li>
+<li>模板</li>
+<li>事件</li>
+<li>引用</li>
+</ol>
+<h2 id="第五部分-API-详解"><a href="#第五部分-API-详解" class="headerlink" title="第五部分 API 详解"></a>第五部分 API 详解</h2><p> 1.网络<br> 2.媒体<br> 3.数据<br> 4.位置<br> 5.设备<br> 6.界面<br> 7.开放端口</p>
+<h2 id="第六部分-实战讲解外卖餐馆的小程序"><a href="#第六部分-实战讲解外卖餐馆的小程序" class="headerlink" title="第六部分 实战讲解外卖餐馆的小程序"></a>第六部分 实战讲解外卖餐馆的小程序</h2><p> 1.外卖首页<br> 2.外卖菜单<br> 3.购物车</p>
+<h2 id="通过这六个部分的讲述吗，对小程序有个大概的了解"><a href="#通过这六个部分的讲述吗，对小程序有个大概的了解" class="headerlink" title="通过这六个部分的讲述吗，对小程序有个大概的了解"></a>通过这六个部分的讲述吗，对小程序有个大概的了解</h2><h2 id="能够独立创造书属于自己的小程序"><a href="#能够独立创造书属于自己的小程序" class="headerlink" title="能够独立创造书属于自己的小程序"></a>能够独立创造书属于自己的小程序</h2>]]></content>
+      
+        <categories>
+            
+            <category> 微信小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[微信小程序第三天]]></title>
       <url>/12/SmallWeChatthree/</url>
       <content type="html"><![CDATA[<p>本节主要是介绍页面的配置，窗口的配置，tabbar配置,网络超时，页面配置等</p>

@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017/1 | 
+            微信小程序总纲 | 
         
         我的前端之路
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eric Yin">
     <meta name="description" itemprop="description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue">
+    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue,微信小程序">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.uiyin.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/1 | 我的前端之路">
+    <meta property="og:title" content="微信小程序总纲 | 我的前端之路">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    
+    <meta property="og:article:tag" content="微信小程序"> 
 
+    
+        <meta property="article:published_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="8月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017/1 | 我的前端之路">
+    <meta name="twitter:title" content="微信小程序总纲 | 我的前端之路">
     <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.uiyin.com/archives/2017/01/index.html" />
+        <link rel="canonical" href="http://www.uiyin.com/21/SmallWeChatAll/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "微信小程序总纲",
+    "url": "http://www.uiyin.com/21/SmallWeChatAll/index.html",
+    "datePublished": "8月 21, 2017",
+    "dateModified": "8月 21, 2017",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
 
 
     
@@ -273,239 +306,242 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
-            
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信小程序"><span class="post-toc-number">1.</span> <span class="post-toc-text">微信小程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本次系列将分成-六-个部分来阐述微信小程序开发"><span class="post-toc-number">2.</span> <span class="post-toc-text">本次系列将分成 六 个部分来阐述微信小程序开发</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一部分-准备工作"><span class="post-toc-number">3.</span> <span class="post-toc-text">第一部分 准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二部分-组件详解"><span class="post-toc-number">4.</span> <span class="post-toc-text">第二部分 组件详解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三部分-WXSS解析"><span class="post-toc-number">5.</span> <span class="post-toc-text">第三部分 WXSS解析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四部分-wxml详解"><span class="post-toc-number">6.</span> <span class="post-toc-text">第四部分 wxml详解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五部分-API-详解"><span class="post-toc-number">7.</span> <span class="post-toc-text">第五部分 API 详解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第六部分-实战讲解外卖餐馆的小程序"><span class="post-toc-number">8.</span> <span class="post-toc-text">第六部分 实战讲解外卖餐馆的小程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过这六个部分的讲述吗，对小程序有个大概的了解"><span class="post-toc-number">9.</span> <span class="post-toc-text">通过这六个部分的讲述吗，对小程序有个大概的了解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#能够独立创造书属于自己的小程序"><span class="post-toc-number">10.</span> <span class="post-toc-text">能够独立创造书属于自己的小程序</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/09/SmallWeChatOne/"><span>[Top]</span>微信小程序第一天</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要就是介绍微信小程序的开发指南调试工具和渲染原则。初级部分
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/09/SmallWeChatOne/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 09, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/微信小程序/">微信小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::09/SmallWeChatOne/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/12/SmallWeChatthree/">微信小程序第三天</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要是介绍页面的配置，窗口的配置，tabbar配置,网络超时，页面配置等
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/12/SmallWeChatthree/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 12, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/微信小程序/">微信小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::12/SmallWeChatthree/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/11/SmallWeChattwo/">微信小程序第二天</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要就是介绍微信小程序的一个小DEMO
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/11/SmallWeChattwo/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/微信小程序/">微信小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::11/SmallWeChattwo/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                微信小程序总纲
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>8月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aW3LDIBAEQN//0skBUlZmFokQV/OlKutB8wF42NfXR7cXHh4eHh4eHh7eYbxX3N6+7sev189e37/eNzw8PLw9vF+m2qCL7VPvrm/4Ch4eHt5G3rsJ9/r63f35dJ8PwXXf8PDw8P4Lr53EczAeHh7eJ/GuQ4EkyEgiCTw8PLzzeckf/rwT7dS/stjg4eHh7eflh0z7r7ee7+Hh4eEFvLqk6bHu5otBUXSFh4eH9wCv/XwSJdz167AIDA8PD+9h3kqZVD4QbYnVytvw8PDwnublr2i7lcS11+9sw2I8PDy8Pbz2eGl2VDYbsrYcAQ8PD28PL/lAHkkkx/+zAoIiFsHDw8N7mJcvAPnUnHQ62V4PQ2E8PDy8LbyVyCAZjjpQiOPjGw7A8PDw8BZ4begwCxpmS8IjWQseHh7eQs6Zb15nW+p2gbk5a8HDw8N7jHf9uhVYvpy0fcDDw8P7W14emK481d5TLzN4eHh4G3mzbfGssCCHtZt7PDw8vJ28Nk6tP1xGHsOSBTw8PLyNvLY4YLYAJNFtXspw27qHh4eHV/LyjezsYCz5SgFowwg8PDy8x3hJV/Ktdjtk7bEcHh4e3gm8ZLpvD7HabXrbBzw8PLz9vLatH/PP4g88PDy8c3ivuLVhbluY1RZgDWvK8PDw8G7itYtBvsnOywLahQEPDw/vBN76BJ3EuHnXZ5EEHh4e3pm8WWlpHu+2BbJ4eHh45/PyQLYtFGi34FvXPTw8PLzRlnf9iGtlaPDw8PDO4c0igLwIIAks7tqg4+Hh4T3N+7yGh4eHh4eHh4d3QPsGRjVdydhuNTIAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/微信小程序/">微信小程序</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=微信小程序总纲&url=http://www.uiyin.com/21/SmallWeChatAll/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=微信小程序总纲&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/21/SmallWeChatAll/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>微信小程序是运行在微信环境中的应用，它只能在微信中运行。不能运行在浏览器中，微信小程序提供了专门的开发工具。用于微信小程序的开发，还提供了丰富的API，让我们的小程序能够具备与手机设计和微信交互的能力。比如获取摄像头拍照，访问文件系统等等。那么与微信交互主要体现三个方面。</p>
+<ol>
+<li>获取登陆微信用户的用户信息 </li>
+<li>微信支付</li>
+<li>使用模板消息向微信发送通知信息</li>
+</ol>
+<hr>
+<h2 id="本次系列将分成-六-个部分来阐述微信小程序开发"><a href="#本次系列将分成-六-个部分来阐述微信小程序开发" class="headerlink" title="本次系列将分成 六 个部分来阐述微信小程序开发"></a>本次系列将分成 六 个部分来阐述微信小程序开发</h2><p> 通过本次的学习让你对微信小程序有个最基础的认识和了解</p>
+<h2 id="第一部分-准备工作"><a href="#第一部分-准备工作" class="headerlink" title="第一部分 准备工作"></a>第一部分 准备工作</h2><ol>
+<li>开发工具下载和安装</li>
+<li>新建第一个小程序</li>
+<li>目录结构和页面组成详解</li>
+</ol>
+<h2 id="第二部分-组件详解"><a href="#第二部分-组件详解" class="headerlink" title="第二部分 组件详解"></a>第二部分 组件详解</h2><p> 1.组件之view<br> 2.组件之scroll-view<br> 3.组件之swiper<br> 4.组件之form<br> 5.组件之所有fields(checkbox,input,radio,slider,switch等)<br> 6.组件之操作反馈类<br> 7.组件之导航<br> 8.组件之媒体组件</p>
+<h2 id="第三部分-WXSS解析"><a href="#第三部分-WXSS解析" class="headerlink" title="第三部分 WXSS解析"></a>第三部分 WXSS解析</h2><p> 1.概述<br> 2.样式之尺寸单位<br> 3.样式之宽度，高度<br> 4.样式之内间距<br> 5.样式之外间距<br> 6.样式之边框<br> 7.样式之颜色<br> 8.样式之背景<br> 9.样式之字体<br> 10 样式之布局技巧<br> 11 样式之css</p>
+<h2 id="第四部分-wxml详解"><a href="#第四部分-wxml详解" class="headerlink" title="第四部分 wxml详解"></a>第四部分 wxml详解</h2><ol>
+<li>数据绑定</li>
+<li>条件渲染</li>
+<li>列表渲染</li>
+<li>模板</li>
+<li>事件</li>
+<li>引用</li>
+</ol>
+<h2 id="第五部分-API-详解"><a href="#第五部分-API-详解" class="headerlink" title="第五部分 API 详解"></a>第五部分 API 详解</h2><p> 1.网络<br> 2.媒体<br> 3.数据<br> 4.位置<br> 5.设备<br> 6.界面<br> 7.开放端口</p>
+<h2 id="第六部分-实战讲解外卖餐馆的小程序"><a href="#第六部分-实战讲解外卖餐馆的小程序" class="headerlink" title="第六部分 实战讲解外卖餐馆的小程序"></a>第六部分 实战讲解外卖餐馆的小程序</h2><p> 1.外卖首页<br> 2.外卖菜单<br> 3.购物车</p>
+<h2 id="通过这六个部分的讲述吗，对小程序有个大概的了解"><a href="#通过这六个部分的讲述吗，对小程序有个大概的了解" class="headerlink" title="通过这六个部分的讲述吗，对小程序有个大概的了解"></a>通过这六个部分的讲述吗，对小程序有个大概的了解</h2><h2 id="能够独立创造书属于自己的小程序"><a href="#能够独立创造书属于自己的小程序" class="headerlink" title="能够独立创造书属于自己的小程序"></a>能够独立创造书属于自己的小程序</h2>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/12/SmallWeChatthree/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
