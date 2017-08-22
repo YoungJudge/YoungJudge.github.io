@@ -3,46 +3,231 @@
   
     
     <entry>
-      <title><![CDATA[微信小程序总纲]]></title>
-      <url>/21/SmallWeChatAll/</url>
-      <content type="html"><![CDATA[<hr>
-<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>微信小程序是运行在微信环境中的应用，它只能在微信中运行。不能运行在浏览器中，微信小程序提供了专门的开发工具。用于微信小程序的开发，还提供了丰富的API，让我们的小程序能够具备与手机设计和微信交互的能力。比如获取摄像头拍照，访问文件系统等等。那么与微信交互主要体现三个方面。</p>
-<ol>
-<li>获取登陆微信用户的用户信息 </li>
+      <title><![CDATA[小程序学习(一)]]></title>
+      <url>/22/Wechatfirst/</url>
+      <content type="html"><![CDATA[<h2 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h2><ul>
+<li>初步了解小程序</li>
+<li>下载开发工具</li>
+<li>获取APPID</li>
+<li>了解对应文件的作用</li>
+</ul>
+<h2 id="小程序的概述"><a href="#小程序的概述" class="headerlink" title="小程序的概述"></a>小程序的概述</h2><p>微信小程序是运行在微信环境中的应用，它只能在微信中运行。不能运行在浏览器中，微信小程序提供了专门的开发工具。用于微信小程序的开发，还提供了丰富的API，让我们的小程序能够具备与手机设计和微信交互的能力。比如获取摄像头拍照，访问文件系统等等。那么与微信交互主要体现在三个方面</p>
+<ul>
+<li>获取登录微信用户的用户信息</li>
 <li>微信支付</li>
-<li>使用模板消息向微信发送通知信息</li>
-</ol>
+<li>使用模板消息向微信发送通知消息</li>
+</ul>
+<h2 id="第一步-获取开发小程序的APPID"><a href="#第一步-获取开发小程序的APPID" class="headerlink" title="第一步 获取开发小程序的APPID"></a>第一步 获取开发小程序的APPID</h2><ul>
+<li>点击<a href="https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&amp;lang=zh_CN" target="_blank" rel="external">注册</a>选择小程序即可。这里需要用户手拿身份证注册拍照，获取认证。具体步骤请见百度</li>
+<li>点击 <a href="https://mp.weixin.qq.com" target="_blank" rel="external">登陆</a>就可在网站的”设置” - “开发者设置”中，查看到微信小程序的AppId,注意不可直接使用服务号或者订阅号的APPID</li>
+</ul>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay4.png" alt="查到APPID"></p>
+<p>注意:如果要以非管理员微信号上在手机上体验该小程序，那么必须还需要操作”绑定开发者”，即在用户身份，“开发者”模块，绑定需要体验该小程序的微信号。本教程默认注册账号，体验都是使用管理员微信号</p>
+<h2 id="第二步-下载小程序的开发工具"><a href="#第二步-下载小程序的开发工具" class="headerlink" title="第二步 下载小程序的开发工具"></a>第二步 下载小程序的开发工具</h2><ul>
+<li>为了更简单，更方便的开发小程序只有使用微信自带的开发者工具了，WeStrom,SublimeText，等等都不支持. <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="external">点击下载此工具</a></li>
+<li>安装不用多说了。直接下一步就好了。安装好以后每次登陆的时候必须要联网，必须要扫码。单机无法操作 具体使用步骤请看第二节开发工具的使用 </li>
+</ul>
+<h2 id="第三步-创建第一个项目"><a href="#第三步-创建第一个项目" class="headerlink" title="第三步 创建第一个项目"></a>第三步 创建第一个项目</h2><ul>
+<li>当用微信扫码登陆，选择创建”项目”，填入刚才获取的APPID，设置一个本地项目的名称(非小程序名称),比如”我的第一个项目”，并选择一个本地的文件夹作为代码的存储的目录，点击”新建项目”就可以了.</li>
+<li>在创建过程中，如果选择的本地文件夹是个空文件夹，开发者工具会提示：是否需要创建一个quick start目录，在这个项目上选择勾，开发者工具会自动在开发目录里生成一个简单的demo</li>
+</ul>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay4.png" alt="创建项目"></p>
+<h2 id="第四步-简要说说个个文件的作用。后续会说明的。"><a href="#第四步-简要说说个个文件的作用。后续会说明的。" class="headerlink" title="第四步 简要说说个个文件的作用。后续会说明的。"></a>第四步 简要说说个个文件的作用。后续会说明的。</h2><p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay4.png" alt="文件的作用"></p>
+<h3 id="小程序项目在根目录必不可少的3个文件"><a href="#小程序项目在根目录必不可少的3个文件" class="headerlink" title="小程序项目在根目录必不可少的3个文件:"></a>小程序项目在根目录必不可少的3个文件:</h3><ul>
+<li>app.js </li>
+<li>app.json </li>
+<li>app.wxss </li>
+</ul>
 <hr>
-<h2 id="本次系列将分成-六-个部分来阐述微信小程序开发"><a href="#本次系列将分成-六-个部分来阐述微信小程序开发" class="headerlink" title="本次系列将分成 六 个部分来阐述微信小程序开发"></a>本次系列将分成 六 个部分来阐述微信小程序开发</h2><p> 通过本次的学习让你对微信小程序有个最基础的认识和了解</p>
-<h2 id="第一部分-准备工作"><a href="#第一部分-准备工作" class="headerlink" title="第一部分 准备工作"></a>第一部分 准备工作</h2><ol>
-<li>开发工具下载和安装</li>
-<li>新建第一个小程序</li>
-<li>目录结构和页面组成详解</li>
-</ol>
-<h2 id="第二部分-组件详解"><a href="#第二部分-组件详解" class="headerlink" title="第二部分 组件详解"></a>第二部分 组件详解</h2><p> 1.组件之view<br> 2.组件之scroll-view<br> 3.组件之swiper<br> 4.组件之form<br> 5.组件之所有fields(checkbox,input,radio,slider,switch等)<br> 6.组件之操作反馈类<br> 7.组件之导航<br> 8.组件之媒体组件</p>
-<h2 id="第三部分-WXSS解析"><a href="#第三部分-WXSS解析" class="headerlink" title="第三部分 WXSS解析"></a>第三部分 WXSS解析</h2><p> 1.概述<br> 2.样式之尺寸单位<br> 3.样式之宽度，高度<br> 4.样式之内间距<br> 5.样式之外间距<br> 6.样式之边框<br> 7.样式之颜色<br> 8.样式之背景<br> 9.样式之字体<br> 10 样式之布局技巧<br> 11 样式之css</p>
-<h2 id="第四部分-wxml详解"><a href="#第四部分-wxml详解" class="headerlink" title="第四部分 wxml详解"></a>第四部分 wxml详解</h2><ol>
-<li>数据绑定</li>
-<li>条件渲染</li>
-<li>列表渲染</li>
-<li>模板</li>
-<li>事件</li>
-<li>引用</li>
-</ol>
-<h2 id="第五部分-API-详解"><a href="#第五部分-API-详解" class="headerlink" title="第五部分 API 详解"></a>第五部分 API 详解</h2><p> 1.网络<br> 2.媒体<br> 3.数据<br> 4.位置<br> 5.设备<br> 6.界面<br> 7.开放端口</p>
-<h2 id="第六部分-实战讲解外卖餐馆的小程序"><a href="#第六部分-实战讲解外卖餐馆的小程序" class="headerlink" title="第六部分 实战讲解外卖餐馆的小程序"></a>第六部分 实战讲解外卖餐馆的小程序</h2><p> 1.外卖首页<br> 2.外卖菜单<br> 3.购物车</p>
-<h2 id="通过这六个部分的讲述吗，对小程序有个大概的了解"><a href="#通过这六个部分的讲述吗，对小程序有个大概的了解" class="headerlink" title="通过这六个部分的讲述吗，对小程序有个大概的了解"></a>通过这六个部分的讲述吗，对小程序有个大概的了解</h2><h2 id="能够独立创造书属于自己的小程序"><a href="#能够独立创造书属于自己的小程序" class="headerlink" title="能够独立创造书属于自己的小程序"></a>能够独立创造书属于自己的小程序</h2>]]></content>
+<h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><p>app.js是小程序的脚本代码，我们可以在文件中监听并处理小程序的生命周期函数，声明全局变量，调用框架提供的丰富的API，具体的后续请参照小程序API文档。</p>
+<pre><code>//app.js
+App({
+  onLaunch: function () {
+    // 展示本地存储能力
+    var logs = wx.getStorageSync(&#39;logs&#39;) || []
+    logs.unshift(Date.now())
+    wx.setStorageSync(&#39;logs&#39;, logs)
+
+    // 登录
+    wx.login({
+      success: res =&gt; {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      }
+    })
+    // 获取用户信息
+    wx.getSetting({
+      success: res =&gt; {
+        if (res.authSetting[&#39;scope.userInfo&#39;]) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res =&gt; {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo
+
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+  globalData: {
+    userInfo: null
+  }
+})
+</code></pre><h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><p>app.json是对整个小程序的全局配置。我们可以在这个文件中配置小程序是由哪些页面组成，配置小程序的窗口背景色，配置导航条样式，配置默认标题。（JSON包）</p>
+<blockquote>
+<h4 id="重要的事情说三遍。这里特别注意不可以加任何注释！-不能加任何注释-不能加任何注释"><a href="#重要的事情说三遍。这里特别注意不可以加任何注释！-不能加任何注释-不能加任何注释" class="headerlink" title="重要的事情说三遍。这里特别注意不可以加任何注释！ 不能加任何注释! 不能加任何注释!"></a>重要的事情说三遍。这里特别注意不可以加任何注释！ 不能加任何注释! 不能加任何注释!</h4></blockquote>
+<pre><code>{
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;black&quot;
+  }
+}
+</code></pre><h3 id="app-wxss"><a href="#app-wxss" class="headerlink" title="app.wxss"></a>app.wxss</h3><p>app.wxss是整个小程序的公共样式表。我们可以在页面组件的class属性上直接使用app.wxss样式规则<br>(类似里面的CSS文件)</p>
+<pre><code>/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+</code></pre><hr>
+<p>上面3个是通配每见一个小程序都必须要有的。下面说的是单独怎么建页面</p>
+<hr>
+<h2 id="自创页面"><a href="#自创页面" class="headerlink" title="自创页面"></a>自创页面</h2><p>自创的页面都只能在pages目录下面。微信小程序的每一个页面的[路径+页面名]都需要写在app.json的pages中，且pages中的第一个页面是小程序的首页.</p>
+<p>每一个小程序是由同路径下同名的四个不同后缀文件的组成：如index.js,index.wxml,index.wxss,index.json<br>.js后缀的文件是脚本文件。<br>.json后缀的文件是配置文件<br>.wxss后缀是样式表文件<br>.wxml后缀的文件就是页面结构文件.</p>
+<p>index.wxml是页面的结构文件</p>
+<pre><code>&lt;!--index.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;userinfo&quot;&gt;
+    &lt;block wx:if=&quot;{{hasUserInfo}}&quot;&gt;
+      &lt;image bindtap=&quot;bindViewTap&quot; class=&quot;userinfo-avatar&quot; src=&quot;{{userInfo.avatarUrl}}&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;
+      &lt;text class=&quot;userinfo-nickname&quot;&gt;{{userInfo.nickName}}&lt;/text&gt;
+    &lt;/block&gt;
+    &lt;button wx:else open-type=&quot;getUserInfo&quot; bindgetuserinfo=&quot;getUserInfo&quot;&gt; 获取头像昵称 &lt;/button&gt;
+  &lt;/view&gt;
+  &lt;view class=&quot;usermotto&quot;&gt;
+    &lt;text class=&quot;user-motto&quot;&gt;{{motto}}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><p>本例中使用了<view> <image> <text>来搭建页面结构，绑定数据和交互处理函数。</text></image></view></p>
+<p>index.js是页面的脚本文件，在这个文件中我们可以监听并处理页面的生命周期函数，获取小程序实例，声明并处理数据，响应页面交互事件等。</p>
+<pre><code>//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    motto: &#39;Hello World&#39;,
+    userInfo: {},
+    hasUserInfo: false
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: &#39;../logs/logs&#39;
+    })
+  },
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res =&gt; {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    }
+  },
+  getUserInfo: function(e) {
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  }
+})
+</code></pre><p>index.wxss是页面的样式表:</p>
+<pre><code>/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+</code></pre><p>页面的样式表是非必要的，当有页面样式表时，页面的样式表中的样式规则会层叠覆盖app.wxss中的样式规则，如果不指定页面的样式表，也可以在页面的结构文件中直接使用app.wxss中指定的样式规则</p>
+<p>index.json是页面的配置文件</p>
+<p>页面的配置文件是非必要的。当有页面的配置文件时，配置项在该页面会覆盖app.json的window中相同的配置项。如果没有指定的页面配置文件，则在该页面直接使用app.json中的默认配置。</p>
+<p>logs的页面结构</p>
+<pre><code>&lt;!--logs.wxml--&gt;
+&lt;view class=&quot;container log-list&quot;&gt;
+  &lt;block wx:for=&quot;{{logs}}&quot; wx:for-item=&quot;log&quot;&gt;
+    &lt;text class=&quot;log-item&quot;&gt;{{index + 1}}. {{log}}&lt;/text&gt;
+  &lt;/block&gt;
+&lt;/view&gt;
+</code></pre><p>logs页面使用<block>控制标签来组织代码，在<block>上使用wx:for绑定logs数据，并将logs数据循环展开节点</block></block></p>
+<pre><code>//logs.js
+const util = require(&#39;../../utils/util.js&#39;)
+
+Page({
+  data: {
+    logs: []
+  },
+  onLoad: function () {
+    this.setData({
+      logs: (wx.getStorageSync(&#39;logs&#39;) || []).map(log =&gt; {
+        return util.formatTime(new Date(log))
+      })
+    })
+  }
+})
+</code></pre><p>运行结果如下:<br><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay4.png" alt="运行结果"></p>
+<h2 id="手机预览"><a href="#手机预览" class="headerlink" title="手机预览"></a>手机预览</h2><p>开发者工具左侧菜单栏选择”项目”点击预览，扫码后即可在微信客户端中体验。<br><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay4.png" alt="运行结果"></p>
+]]></content>
       
         <categories>
             
-            <category> 微信小程序 </category>
+            <category> 小程序 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 微信小程序 </tag>
+            <tag> 小程序 </tag>
             
         </tags>
         
@@ -586,14 +771,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[友情链接]]></title>
-      <url>/links/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
