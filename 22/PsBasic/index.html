@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2015 | 
+            PS基础(一) | 
         
         我的前端之路
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eric Yin">
     <meta name="description" itemprop="description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue">
+    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue,PSBasic">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.uiyin.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2015 | 我的前端之路">
+    <meta property="og:title" content="PS基础(一) | 我的前端之路">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    
+    <meta property="og:article:tag" content="PSBasic"> 
 
+    
+        <meta property="article:published_time" content="8月 22, 2017" />
+        <meta property="article:modified_time" content="8月 22, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2015 | 我的前端之路">
+    <meta name="twitter:title" content="PS基础(一) | 我的前端之路">
     <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.uiyin.com/archives/2015/index.html" />
+        <link rel="canonical" href="http://www.uiyin.com/22/PsBasic/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "PS基础(一)",
+    "url": "http://www.uiyin.com/22/PsBasic/index.html",
+    "datePublished": "8月 22, 2017",
+    "dateModified": "8月 22, 2017",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
 
 
     
@@ -273,171 +306,250 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PhotoShop-入门基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">PhotoShop 入门基础</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本节知识点"><span class="post-toc-number">2.</span> <span class="post-toc-text">本节知识点:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-PS三要素"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">(1) PS三要素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-色彩模式总结"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">(2) 色彩模式总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一部分-PhototShop三要素"><span class="post-toc-number">3.</span> <span class="post-toc-text">第一部分: PhototShop三要素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ps最主要的就是三点"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Ps最主要的就是三点:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-色彩-HSB"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">(一) 色彩(HSB)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-光的三原色-所有发光体发出的颜色"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">(1) 光的三原色(所有发光体发出的颜色)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-每一种模式对应着一种媒介"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">(2) 每一种模式对应着一种媒介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#i-RGB-对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体"><span class="post-toc-number">3.2.2.1.</span> <span class="post-toc-text">(i) RGB 对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ii-CMYK-对应的就是青色，品红色，黄色，黑色-专注于印刷体"><span class="post-toc-number">3.2.2.2.</span> <span class="post-toc-text">(ii) CMYK 对应的就是青色，品红色，黄色，黑色(专注于印刷体)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。"><span class="post-toc-number">3.2.2.3.</span> <span class="post-toc-text">我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#特别注意的就是光和色是分不开的。"><span class="post-toc-number">3.2.2.4.</span> <span class="post-toc-text">特别注意的就是光和色是分不开的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#特别注意的就是青色会把红色完全吸收。"><span class="post-toc-number">3.2.2.5.</span> <span class="post-toc-text">特别注意的就是青色会把红色完全吸收。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红"><span class="post-toc-number">3.2.2.6.</span> <span class="post-toc-text">虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。"><span class="post-toc-number">3.2.2.7.</span> <span class="post-toc-text">所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（二）分辨率"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">（二）分辨率</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#位图和矢量图的区别"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">位图和矢量图的区别:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#位图是基于像素的，而矢量图是基于路径的。"><span class="post-toc-number">3.3.1.0.1.</span> <span class="post-toc-text">位图是基于像素的，而矢量图是基于路径的。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好"><span class="post-toc-number">3.3.1.0.2.</span> <span class="post-toc-text">所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#所以要做1010印刷体的话，则必须尺寸变成10-610-6，分辨率变成300，因为印刷体要做上下，3MM的填充"><span class="post-toc-number">3.3.1.0.3.</span> <span class="post-toc-text">所以要做1010印刷体的话，则必须尺寸变成10.610.6，分辨率变成300，因为印刷体要做上下，3MM的填充</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。"><span class="post-toc-number">3.3.1.0.4.</span> <span class="post-toc-text">如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（三）图层"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">（三）图层</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/12/JsBasic/">Js基础用法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            通过本节的学习，主要掌握到Js的常态知识点。重点掌握的是思想。获取DOM，封装函数。以及FOR循环的思想
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/12/JsBasic/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 12, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Js基础用法/">Js基础用法</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::12/JsBasic/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/09/MarkDown/">MarkDown</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要是介绍 Markdown语法的使用，里面介绍了关于Markdown的大致用法,方便后期记忆
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/09/MarkDown/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 09, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/MarkDown语法/">MarkDown语法</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::09/MarkDown/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                PS基础(一)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>8月 22, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB30lEQVR42u3aQXbDMAgFQN//0u0F6vQj7CQWo1Xfi+MwWqggOH62WAcGBgYGBgYGxtcwjnglz5+9+Y8g4neevh8DA2MY45+j7STE19uRsxdjwMDAGMmo/szrZ84+TZ5MYsDAwMDIgzhLBKupIQYGBsa1jOQAzdNBDAwMjGuL2OQA7SSRb6rFMTAwHsioNgbu+PsD/Q0MDIyHMMojDvGFfhLox2ZGMDAwHsW4bxgi2Y7q6AYGBsZMRqfUTAbC3jQWhoGBsTWjc9GfI6vjra3rNgwMjO0YSZMyH5IoBFH8LgYGxmRGMuaVIKuBro3JYmBgzGTkKeDauFh+mJY3DgMDYyRj7aKtD8i3CQMDYyYjT9E6xefaqFm5iMXAwNiakRe0heuwpUu0QlQYGBjDGEkrsXPU5hdql/3fwMDA2IhRbRLcV8RWtwADA2MyY628zIdfr0oiMTAw5jD6B1819MXBegwMjMGM6kp+pro1eXqKgYExk1E9/tYGudY+XRy2wMDA2JSRtwSSUPJtqhbSGBgYGP2xrWriWOVhYGBgdC761y7OWu0EDAwMjEbzMk/+qgklBgYGRl7EdlqVedFbHrbAwMDYmlFtDKw1NZNA86ExDAyMOYznLgwMDAwMDAyMj65fRsWhXsI+cfUAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/PSBasic/">PSBasic</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=PS基础(一)&url=http://www.uiyin.com/22/PsBasic/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=PS基础(一)&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/22/PsBasic/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="PhotoShop-入门基础"><a href="#PhotoShop-入门基础" class="headerlink" title="PhotoShop 入门基础"></a>PhotoShop 入门基础</h2><p>通过本节的学习对PhotoShop有个大概的了解。</p>
+<h2 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点:"></a>本节知识点:</h2><h4 id="1-PS三要素"><a href="#1-PS三要素" class="headerlink" title="(1) PS三要素"></a>(1) PS三要素</h4><h4 id="2-色彩模式总结"><a href="#2-色彩模式总结" class="headerlink" title="(2) 色彩模式总结"></a>(2) 色彩模式总结</h4><hr>
+<h2 id="第一部分-PhototShop三要素"><a href="#第一部分-PhototShop三要素" class="headerlink" title="第一部分: PhototShop三要素"></a>第一部分: PhototShop三要素</h2><p>PhotoShop 简称PS，它是平面图像合成软件</p>
+<h3 id="Ps最主要的就是三点"><a href="#Ps最主要的就是三点" class="headerlink" title="Ps最主要的就是三点:"></a>Ps最主要的就是三点:</h3><p> (1) 色彩    (2) 分辨率   (3) 图层</p>
+<h3 id="一-色彩-HSB"><a href="#一-色彩-HSB" class="headerlink" title="(一) 色彩(HSB)"></a>(一) 色彩(HSB)</h3><p>(i) 色相 : 赤橙黄绿青蓝紫 简称 H 特别注意黑和白没有色相</p>
+<p>(ii)纯度 : 也叫做饱和度，因为可能有中间色 简称 S</p>
+<p>(iii)亮度 : 明与暗 简称 B</p>
+<h4 id="1-光的三原色-所有发光体发出的颜色"><a href="#1-光的三原色-所有发光体发出的颜色" class="headerlink" title="(1) 光的三原色(所有发光体发出的颜色)"></a>(1) 光的三原色(所有发光体发出的颜色)</h4><p>红,绿,蓝（简称R,G,B）<br>R G B 里面从0-255 ，一共有256种调色板，所以色彩总共有256<em>256</em>256种，一共有1678万颜色<br>rgb(200,20,70)  //他可能就是偏红色的<br>rgb(255,255,255)  //他就是白色，因为红绿蓝都打开，眼前就是一片白光.  我们管这个叫做加色模式。<br>rgb(50,50,50),rgb(100,100,100) //只要rgb三个值相等，就没有色相，他就是灰色</p>
+<h4 id="2-每一种模式对应着一种媒介"><a href="#2-每一种模式对应着一种媒介" class="headerlink" title="(2) 每一种模式对应着一种媒介"></a>(2) 每一种模式对应着一种媒介</h4><h5 id="i-RGB-对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体"><a href="#i-RGB-对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体" class="headerlink" title="(i) RGB 对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体"></a>(i) RGB 对应的就是人的肉眼，比如显示器，比如灯泡，一切能发光的物体</h5><blockquote>
+<p>一般网页模式发光的物体都用的是RGB(因为他发光)类似RGB(128,200,278)<br>rgb(255,255,255)形成白光，我们管这个叫加色模式，RGB加色模式</p>
+</blockquote>
+<h5 id="ii-CMYK-对应的就是青色，品红色，黄色，黑色-专注于印刷体"><a href="#ii-CMYK-对应的就是青色，品红色，黄色，黑色-专注于印刷体" class="headerlink" title="(ii) CMYK 对应的就是青色，品红色，黄色，黑色(专注于印刷体)"></a>(ii) CMYK 对应的就是青色，品红色，黄色，黑色(专注于印刷体)</h5><blockquote>
+<p>在这里他与RGB不同的是他是按照百分比来划分的，油墨很浓百分比就高，油墨很淡，百分比就低<br>在cmyk模式下 3个都是0%,0%,0% 他就是白色，3个要都是100% 他就是黑色(但是现在的油墨技术做不到)<br>但是理论上能做得到，所以加个黑色。黑色就是K就是因为B 被RGB抢注了，所以只能用K<br>所以黑色就是(100%,100%,100%,100%)<br>我们管黑色模式就是减色模式。</p>
+</blockquote>
+<h5 id="我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。"><a href="#我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。" class="headerlink" title="我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。"></a>我们一般看到的红色不是他本身是红色的。而是他把其他颜色都吸收到了，只有红色给你返回回来，所以你就认为红色。</h5><h5 id="特别注意的就是光和色是分不开的。"><a href="#特别注意的就是光和色是分不开的。" class="headerlink" title="特别注意的就是光和色是分不开的。"></a>特别注意的就是光和色是分不开的。</h5><blockquote>
+<p>讲复杂点 当你把RGB三色组合在一起的时候，两两交接合成的元素就是青色，品红，黄(印刷三元色)<br>2个加色何在一起组合成一个减色。(红色和绿色相加得到就是黄)（红色和蓝色相加就是品红）（蓝色和绿色相加就是青色）</p>
+</blockquote>
+<p><img src="http://www.uiyin.com/tuku/PS/PsBasic/PsBasic1.png" alt="三元色"></p>
+<h5 id="特别注意的就是青色会把红色完全吸收。"><a href="#特别注意的就是青色会把红色完全吸收。" class="headerlink" title="特别注意的就是青色会把红色完全吸收。"></a>特别注意的就是青色会把红色完全吸收。</h5><h5 id="虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红"><a href="#虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红" class="headerlink" title="虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红"></a>虚线是相对的，减色会吸收掉加色比如青色会吸收掉红色，品红色会吸收掉绿色，黄色会吸收掉蓝色。品红加绿色还是品红</h5><h5 id="所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。"><a href="#所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。" class="headerlink" title="所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。"></a>所以刚开始工作的时候，需要变成RGB模式，等到了最后一步再转化成CMYK模式。</h5><h3 id="（二）分辨率"><a href="#（二）分辨率" class="headerlink" title="（二）分辨率"></a>（二）分辨率</h3><p>(1)分辨率越大越好吗？<br>(2)分辨率的单位究竟是什么</p>
+<h4 id="位图和矢量图的区别"><a href="#位图和矢量图的区别" class="headerlink" title="位图和矢量图的区别:"></a>位图和矢量图的区别:</h4><h6 id="位图是基于像素的，而矢量图是基于路径的。"><a href="#位图是基于像素的，而矢量图是基于路径的。" class="headerlink" title="位图是基于像素的，而矢量图是基于路径的。"></a>位图是基于像素的，而矢量图是基于路径的。</h6><p>PS就是基于像素来创建的，所以像素是PS里面的最小单位<br>像素是正方形的，一个像素只能有一个颜色。<br>网页的分辨率一般都是72PPI，意味着每英寸里面有72个像素<br>但是印刷里面必须有300PPI，意味着每英寸有300个像素(因为看的是墨点)<br>后面的一定要接单位<br>PPI每英寸所拥有的像素数目(PPI越高)，表示显示屏能够以越高的密度显示图像，所以PPI越高，细节就越丰富。<br>DPI表示鼠标每移动一英寸在屏幕上移动的点数。</p>
+<blockquote>
+<p>所以当你以网页72PPI做完图以后，想变成印刷体，你要是强把PPI变成300，你就会发现图片被放大的很多，因为许多没有的颜色他会复制到旁边的颜色作为填充，图片会显得非常模糊。<br>插入值得方式有3种模式:<br>邻近:只对比左右，这样的话速度最快，适合灰色位图<br>两次线性:对比上下左右<br>两次立方:对比上下左右，上左，上右，下左，下右，然后算一个平均值。</p>
+</blockquote>
+<h6 id="所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好"><a href="#所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好" class="headerlink" title="所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好"></a>所以色彩要是很丰富的话，两次立方效果会比较好，色彩单一的话，邻近的比较好</h6><h6 id="所以要做1010印刷体的话，则必须尺寸变成10-610-6，分辨率变成300，因为印刷体要做上下，3MM的填充"><a href="#所以要做1010印刷体的话，则必须尺寸变成10-610-6，分辨率变成300，因为印刷体要做上下，3MM的填充" class="headerlink" title="所以要做1010印刷体的话，则必须尺寸变成10.610.6，分辨率变成300，因为印刷体要做上下，3MM的填充"></a>所以要做10<em>10印刷体的话，则必须尺寸变成10.6</em>10.6，分辨率变成300，因为印刷体要做上下，3MM的填充</h6><h6 id="如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。"><a href="#如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。" class="headerlink" title="如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。"></a>如果非要在原图上修改的话，只有牺牲长度和宽度，把重定向图像宽度和高度去掉，这样就变成了一个缩略图。</h6><p><img src="http://www.uiyin.com/tuku/PS/PsBasic/PsBasic3.png" alt="三元色"></p>
+<p>上图就意味着 66乘以44乘以72乘以72 = 4752乘以3168 ，无论怎么变化像素的总值是不变的。</p>
+<h3 id="（三）图层"><a href="#（三）图层" class="headerlink" title="（三）图层"></a>（三）图层</h3><p>图层后续会详细说到，先说个印象。每一个图层就是每一张纸，然后很多张纸叠在一起就是最后的效果。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/22/Wechatfirst/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/12/JsBasic/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
