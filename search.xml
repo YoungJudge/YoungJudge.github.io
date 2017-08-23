@@ -3,6 +3,70 @@
   
     
     <entry>
+      <title><![CDATA[小程序学习(二)]]></title>
+      <url>/23/Wechatsecond/</url>
+      <content type="html"><![CDATA[<h1 id="小程序教程-二-之开发工具"><a href="#小程序教程-二-之开发工具" class="headerlink" title="小程序教程(二)之开发工具"></a>小程序教程(二)之开发工具</h1><p>标签（空格分隔）： 小程序</p>
+<hr>
+<p>本节主要介绍小程序开发工具的使用</p>
+<h2 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点:"></a>本节知识点:</h2><p>(1)  <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="external">点击下载工具</a><br>(2)  模拟器<br>(3)  调试工具<br>(4)  小程序操作区<br>(5)  自定义数据上报</p>
+<h2 id="第一步-模拟器"><a href="#第一步-模拟器" class="headerlink" title="第一步 模拟器"></a>第一步 模拟器</h2><p>模拟器模拟微信小程序在客户端真实的逻辑表现，对于绝大部分的API均能够在模拟器上呈现正确的状态。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay6.png" alt="图片1"></p>
+<h3 id="编译代码"><a href="#编译代码" class="headerlink" title="编译代码"></a>编译代码</h3><p>点击工具左下角的编译按钮或者使用快捷键ctrl+B 可以编译当前代码，并自动刷新模拟器。<br>同时为了帮助开发者调试具体页面或者进入的场景值，如图：开发者可以选择自定义编译模式。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay7.png" alt="图片1"></p>
+<h2 id="第二步-调试工具"><a href="#第二步-调试工具" class="headerlink" title="第二步 调试工具"></a>第二步 调试工具</h2><p>调试工具分为7大功能板块:Wxml,Console,Sources,Network,Appdata,Storage,Sensor</p>
+<h3 id="Wxml-panel"><a href="#Wxml-panel" class="headerlink" title="Wxml panel"></a>Wxml panel</h3><p>Wxml panel 用于帮助开发者开发Wxml转化后的界面，在这里可以看到真实的页面结构以及结构对应的WXSS属性，同时可以通过修改对应wxss属性，在模拟器中实时看到修改的情况。通过调试模块左上角的选择器，还饿可以快速找到页面中对应的wxml代码</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay8.gif" alt="图片1"></p>
+<h3 id="Sources-panel"><a href="#Sources-panel" class="headerlink" title="Sources panel"></a>Sources panel</h3><p>Source panel 用于显示当前项目的脚本文件，同浏览器不同，微信小程序框架对脚本文件进行编译的工作，所以在Source panel中开发者看到的文件是经过处理之后的脚本文件，开发者的代码都会包裹在define函数中，并且对于Page代码，在尾部会有require的主动调用。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay9.png" alt="图片二"></p>
+<h3 id="Network-pannel"><a href="#Network-pannel" class="headerlink" title="Network pannel"></a>Network pannel</h3><p>Network Panel 用于观察和现实request和socket的请求情况</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay10.png" alt="图片三"></p>
+<blockquote>
+<p>注意:uploadFile和downloadFile暂时不支持在Network Panel中查看</p>
+</blockquote>
+<h3 id="Appdata-panel"><a href="#Appdata-panel" class="headerlink" title="Appdata panel"></a>Appdata panel</h3><p>Appdata panel用于显示当前项目，当前时刻appdata具体数据，实时的反馈项目数据情况，可以在此处编辑数据，并及时的反馈到界面上。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay10.gif" alt="图片三"></p>
+<h3 id="Storage-panel"><a href="#Storage-panel" class="headerlink" title="Storage panel"></a>Storage panel</h3><p>Storage panel 用于显示当前项目使用的wx.setStorage或者wx.setStorageSync后的数据存储情况。<br>（可以理解为本地数据库）</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay11.gif" alt="图片三"></p>
+<h3 id="Console-panel"><a href="#Console-panel" class="headerlink" title="Console panel"></a>Console panel</h3><p>(一) 开发者可以再次输入和调试代码</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay12.gif" alt="图片三"></p>
+<p>(二)小程序的错误输出，会显示在此处</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay13.png" alt="图片三"></p>
+<h3 id="Sensor-panel"><a href="#Sensor-panel" class="headerlink" title="Sensor panel"></a>Sensor panel</h3><p>(一) 开发者可以在这里模拟地理位置</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay14.gif" alt="图片三"></p>
+<p>(二) 开发者可以在这里模拟移动设备的表现，用于调试重力感应的API</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay15.gif" alt="图片三"></p>
+<h2 id="小程序操作区"><a href="#小程序操作区" class="headerlink" title="小程序操作区"></a>小程序操作区</h2><p>小程序操作区帮助开发者模拟一些客户端的环境操作。例如当用户从小程序回到聊天窗口，会触发一个小程序被设置为后台的api</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay16.png" alt="图片三"></p>
+<p>当小程序使用到多窗口的时候，可以在顶部操作区进行页面的切换，需要注意的是这个操作只是为了方便开发者才存在的，在真实的微信客户端不会存在。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay17.png" alt="图片三"></p>
+<h2 id="自定义数据上报"><a href="#自定义数据上报" class="headerlink" title="自定义数据上报"></a>自定义数据上报</h2><p>开发者工具可以编辑和调试自定义分析的数据上报功能，点击菜单栏目的”工具-自定义分析”即可弹窗打开自定义分析</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay18.png" alt="图片三"></p>
+<p>在页面中可以新建，查看或者修改事件，再修改的页面中编辑完毕后，点击底部的保存并测试按钮将保存当前的配置，同时工具将在调试器上收到最新配置，并展示的内容包括事件ID的名称，以及每个动作的触发条件和上报数据。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay19.png" alt="图片三"></p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay20.png" alt="图片三"></p>
+<p>接着可以在模拟器中操作和触发事件，在模拟器中刷新小程序也将获取该测试配置。除非窗口被关闭。窗口关闭后模拟器不会在收到配置当事件被触发上报时，工具上会展示上报信息，包括事件ID，触发页面，触发方式，触发时动作，以及上报的字段值和数据:</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay21.png" alt="图片三"></p>
+<p>同时可以在窗口中点击同步结构，会同步显示上报的数据</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/FirstDay/firstDay22.png" alt="图片三"></p>
+<p>关闭窗口后，配置项全部失效，模拟器不再受到配置并不再触发上报(小程序中使用wx.reportAnalytics API进行的数据上报，仍会在工具中输出。)测试成功后，可到小程序后台发布事件配置。即可正式生效手机所定义的事件数据。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小程序学习(一)]]></title>
       <url>/22/Wechatfirst/</url>
       <content type="html"><![CDATA[<p>通过本节的学习对小程序有个大概的认识和了解，具体见本节知识点。</p>
@@ -766,14 +830,8 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -784,8 +842,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
