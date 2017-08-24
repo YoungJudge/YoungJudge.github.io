@@ -3,6 +3,360 @@
   
     
     <entry>
+      <title><![CDATA[小程序学习(三)]]></title>
+      <url>/24/WeChatThird/</url>
+      <content type="html"><![CDATA[<h2 id="小程序总结-三-之目录结构和配置"><a href="#小程序总结-三-之目录结构和配置" class="headerlink" title="小程序总结(三)之目录结构和配置"></a>小程序总结(三)之目录结构和配置</h2><h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><h4 id="1-目录结构"><a href="#1-目录结构" class="headerlink" title="1.目录结构"></a>1.目录结构</h4><h4 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h4><hr>
+<h3 id="一-目录结构"><a href="#一-目录结构" class="headerlink" title="(一) 目录结构"></a>(一) 目录结构</h3><p>小程序包含一个描述整体程序的app和多个描述各自页面的page<br>一个小程序主体部分由三个文件组成，必须放在项目的根目录下。</p>
+<h4 id="1-app-js"><a href="#1-app-js" class="headerlink" title="(1) app.js"></a>(1) app.js</h4><p>必须需要，他存放的是小程序的业务逻辑</p>
+<h4 id="2-app-json"><a href="#2-app-json" class="headerlink" title="(2) app.json"></a>(2) app.json</h4><p>必须需要，他存放的是小程序的公共设置</p>
+<h4 id="3-app-wxss"><a href="#3-app-wxss" class="headerlink" title="(3) app.wxss"></a>(3) app.wxss</h4><p>不是必须需要，他是小程序的公共样式表</p>
+<h4 id="总结-一个小程序由4个文件组成，分别是"><a href="#总结-一个小程序由4个文件组成，分别是" class="headerlink" title="总结: 一个小程序由4个文件组成，分别是:"></a>总结: 一个小程序由4个文件组成，分别是:</h4><table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th style="text-align:center">必填</th>
+<th style="text-align:right">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JS文件</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">页面逻辑</td>
+</tr>
+<tr>
+<td>wxml</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">页面结构</td>
+</tr>
+<tr>
+<td>wxss</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">页面样式表</td>
+</tr>
+<tr>
+<td>json</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">页面配置</td>
+</tr>
+</tbody>
+</table>
+<h6 id="为了方便开发者减少配置项，我们规定描述页面的这4个文件必须具有相同的路径与文件名。"><a href="#为了方便开发者减少配置项，我们规定描述页面的这4个文件必须具有相同的路径与文件名。" class="headerlink" title="为了方便开发者减少配置项，我们规定描述页面的这4个文件必须具有相同的路径与文件名。"></a>为了方便开发者减少配置项，我们规定描述页面的这4个文件必须具有相同的路径与文件名。</h6><hr>
+<h3 id="（二）配置结构"><a href="#（二）配置结构" class="headerlink" title="（二）配置结构"></a>（二）配置结构</h3><p>我们使用app.json文件来对小程序进行全局配置，决定页面文件的路径，窗口表现，设置网络超时时间，设置多Tab等。</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second1.jpg" alt="小程序配置文件"></p>
+<h4 id="app-json配置项列表"><a href="#app-json配置项列表" class="headerlink" title="app.json配置项列表"></a>app.json配置项列表</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pages</td>
+<td style="text-align:center">数组</td>
+<td style="text-align:right">是</td>
+<td>设置页面路径</td>
+</tr>
+<tr>
+<td>window</td>
+<td style="text-align:center">object</td>
+<td style="text-align:right">否</td>
+<td>设置默认页面的窗口表现</td>
+</tr>
+<tr>
+<td>tabbar</td>
+<td style="text-align:center">object</td>
+<td style="text-align:right">否</td>
+<td>设置底部tab的表现</td>
+</tr>
+<tr>
+<td>networkTimeout</td>
+<td style="text-align:center">object</td>
+<td style="text-align:right">否</td>
+<td>设置网络的超时时间</td>
+</tr>
+<tr>
+<td>debug</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:right">否</td>
+<td>是否开启debug模式</td>
+</tr>
+</tbody>
+</table>
+<h5 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h5><p>接受一个数组，每一项都是字符串，来制定小程序由哪些页面组成的。每一项代表对应页面的【路径+文件名】信息，<strong>数组的第一项代表小程序的初始页面。小程序中新增/减少页面，都需要对pages进行修改.</strong></p>
+<p>文件名不需要写文件后缀，因为框架会自动寻找路径.json ,.js ,.wxml,.wxss 的4个文件来整合。</p>
+<p>如开发目录</p>
+<p>pages/index/index.wxml<br>pages/index/index.js<br>pages/index/index.wxss<br>pages/index/index.json<br>pages/logs/logs.wxml<br>pages/logs/logs.js<br>pages/logs/logs.wxss<br>pages/logs/logs.json</p>
+<p>则我们需要在pages中写</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second2.jpg" alt="小程序配置文件"></p>
+<h5 id="window"><a href="#window" class="headerlink" title="window"></a>window</h5><p>用于设置小程序的状态栏，导航条，标题，窗口背景色</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>navigationBarBackgroundColor</td>
+<td>HexColor</td>
+<td>#000000</td>
+<td>导航栏背景颜色，如”#000000”</td>
+</tr>
+<tr>
+<td>navigationBarTextStyle</td>
+<td>String</td>
+<td>white</td>
+<td>导航栏标题颜色默认仅支持black/white</td>
+</tr>
+<tr>
+<td>navigationBarTitleText</td>
+<td>string</td>
+<td></td>
+<td>导航栏标题文字内容</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td>#ffffff</td>
+<td>窗口的背景颜色</td>
+</tr>
+<tr>
+<td>backgroundTextStyle</td>
+<td>String</td>
+<td>dark</td>
+<td>下拉背景字体，loading图的样式，仅支持dark/light</td>
+</tr>
+<tr>
+<td>enablePullDownRefresh</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否开启下拉刷新。</td>
+</tr>
+<tr>
+<td>onReachBottomDistance</td>
+<td>Number</td>
+<td>50</td>
+<td>页面上啦触底事件触发时距离页面底部的距离。单位是PX</td>
+</tr>
+</tbody>
+</table>
+<h6 id="HexColor-十六进制-如-”-ff00ff”"><a href="#HexColor-十六进制-如-”-ff00ff”" class="headerlink" title="HexColor (十六进制) 如:”#ff00ff”"></a>HexColor (十六进制) 如:”#ff00ff”</h6><p>如app.json</p>
+<p><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second3.jpg" alt="app.json"><br><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second4.jpg" alt="演示"></p>
+<h5 id="tabbar"><a href="#tabbar" class="headerlink" title="tabbar"></a>tabbar</h5><p>如果我们的小程序是一个多tab应用(客户端串口的底部或者顶部有tab栏目可以切换页面) 那么我们可以通过tabbar配置指定tabbar配置指定tab栏目的表现。以及tab切换时候显示的对应页面。</p>
+<p>PS： 当设置为position为top时，将不会显示icon<br>tabbar中的list是一个数组，只能配置最少2个,最多5个tab,tab按数组的顺序排序</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab上的文字默认颜色</td>
+</tr>
+<tr>
+<td>selectedColor</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab上的文字选中的颜色</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab的背景色</td>
+</tr>
+<tr>
+<td>borderStyle</td>
+<td>String</td>
+<td>否</td>
+<td>black</td>
+<td>tabar上边框的颜色仅仅支持balck,white</td>
+</tr>
+<tr>
+<td>list</td>
+<td>数组</td>
+<td>是</td>
+<td></td>
+<td>tab的列表，详见list的属性使用说明，最少2个，最多5个</td>
+</tr>
+<tr>
+<td>position</td>
+<td>String</td>
+<td>否</td>
+<td>bottom</td>
+<td>可选top或者bottom</td>
+</tr>
+</tbody>
+</table>
+<p>其中list是一个数组,数组中的每一个项都是一个对象，其属性值如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pagePath</td>
+<td>String</td>
+<td>是</td>
+<td>页面路径，必须在pages中先定义</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>是</td>
+<td>tab上按钮的文字</td>
+</tr>
+<tr>
+<td>iconPath</td>
+<td>String</td>
+<td>否</td>
+<td>图片路径，icon限制为40KB ,建议尺寸81px*81px当position为top时候，icon无效</td>
+</tr>
+<tr>
+<td>selectediconPath</td>
+<td>String</td>
+<td>否</td>
+<td>选中时的图片路径，icon限制为40KB，建议尺寸是81px*81px,当position为top时候，无效</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second5.jpg" alt="演示"></p>
+<h5 id="networkTimeout"><a href="#networkTimeout" class="headerlink" title="networkTimeout"></a>networkTimeout</h5><p>可以设置各种网络请求的超时时间</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>num</td>
+<td>否</td>
+<td>wx.request的超时时间，单位毫秒，默认为：60000</td>
+</tr>
+<tr>
+<td>connectSocket</td>
+<td>num</td>
+<td>否</td>
+<td>wx.connectSocket的超时时间，单位毫秒，默认为：60000</td>
+</tr>
+<tr>
+<td>uploadFile</td>
+<td>num</td>
+<td>否</td>
+<td>wx.uploadFile的超时时间，单位毫秒，默认为：60000</td>
+</tr>
+<tr>
+<td>downloadFile</td>
+<td>num</td>
+<td>否</td>
+<td>wx.downloadFile的超时时间，单位毫秒，默认为：60000</td>
+</tr>
+</tbody>
+</table>
+<h5 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h5><p>可以在调试模式里开启debug模式，这样在开发者工具面板，调试信息以info形式出现的，其包含的信息由page的注册，页面路由，数据更新，事件触发。可以帮助开发者快速定位</p>
+<hr>
+<h3 id="每一个页面的page-json"><a href="#每一个页面的page-json" class="headerlink" title="每一个页面的page.json"></a>每一个页面的page.json</h3><p>每一个小程序的页面也可以使用.json文件对本页面的窗口进行配置。页面的配置会覆盖掉app.json里面的内容</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>navigationBarBackgroundColor</td>
+<td>HexColor</td>
+<td>#000000</td>
+<td>导航栏背景颜色，如”#000000”</td>
+</tr>
+<tr>
+<td>navigationBarTextStyle</td>
+<td>String</td>
+<td>white</td>
+<td>导航栏标题颜色默认仅支持black/white</td>
+</tr>
+<tr>
+<td>navigationBarTitleText</td>
+<td>string</td>
+<td></td>
+<td>导航栏标题文字内容</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td>#ffffff</td>
+<td>窗口的背景颜色</td>
+</tr>
+<tr>
+<td>backgroundTextStyle</td>
+<td>String</td>
+<td>dark</td>
+<td>下拉背景字体，loading图的样式，仅支持dark/light</td>
+</tr>
+<tr>
+<td>enablePullDownRefresh</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否开启下拉刷新。</td>
+</tr>
+<tr>
+<td>onReachBottomDistance</td>
+<td>Number</td>
+<td>50</td>
+<td>页面上啦触底事件触发时距离页面底部的距离。单位是PX</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://www.uiyin.com/tuku/weixin/SecondDay/Second6.jpg" alt="解释"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小程序学习(二)]]></title>
       <url>/23/Wechatsecond/</url>
       <content type="html"><![CDATA[<p>本节主要介绍小程序开发工具的使用</p>
@@ -879,6 +1233,12 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[图库]]></title>
       <url>/gallery/index.html</url>
       <content type="html"></content>
@@ -887,12 +1247,6 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[时光隧道]]></title>
       <url>/timeline/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
