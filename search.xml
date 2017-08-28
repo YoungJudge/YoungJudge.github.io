@@ -1227,12 +1227,6 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[友情链接]]></title>
-      <url>/links/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[标签云]]></title>
       <url>/tags/index.html</url>
       <content type="html"></content>
@@ -1241,6 +1235,12 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[图库]]></title>
       <url>/gallery/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
