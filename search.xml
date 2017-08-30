@@ -9,7 +9,189 @@
 <li>WXML</li>
 <li>WXSS</li>
 </ul>
-<h2 id="WXML"><a href="#WXML" class="headerlink" title="WXML"></a>WXML</h2>]]></content>
+<h2 id="WXML"><a href="#WXML" class="headerlink" title="WXML"></a>WXML</h2><p>WXML是框架设计的一套标签语言。可以构建出页面的结构。</p>
+<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h4><pre><code>&lt;!--wxml--&gt;
+&lt;view&gt;{{message}}&lt;/view&gt;
+</code></pre><p>然后在逻辑层</p>
+<pre><code>//page.js
+Page({
+data:{
+ message:&quot;Hello!&quot;
+}
+})
+</code></pre><h4 id="循环渲染"><a href="#循环渲染" class="headerlink" title="循环渲染"></a>循环渲染</h4><pre><code>&lt;!--wxml--&gt;
+&lt;view wx:for=&quot;{{array}}&quot;&gt;{{item}}&lt;/view&gt;
+</code></pre><p>逻辑层代码</p>
+<pre><code>Page({
+data:{
+ array:[1,2,3,4,5]
+}
+})
+</code></pre><h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><pre><code>&lt;!--wxml--&gt;
+&lt;view wx:if=&quot;{{view =='app'}}&quot;&gt;APP&lt;/view&gt;
+&lt;view wx:else=&quot;{{view == 'MINA'}}&quot;&gt;&lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+data:{
+   view:&#39;MINA&#39;
+}
+})
+</code></pre><h4 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h4><pre><code>&lt;!--head.wxml--&gt;
+&lt;template name = &quot;staffName&quot;&gt;
+&lt;view&gt;
+FirstName:{{firstName}},LastName:{{lastName}}
+&lt;/view&gt;
+&lt;/template&gt;
+&lt;!--使用页面--&gt;
+&lt;import src=&quot;../template/head.wxml&quot;/&gt;
+&lt;template is=&quot;staffName&quot; data =&quot;{{staffA}}&quot;&gt;&lt;/template&gt;
+</code></pre><p>page.js使用</p>
+<pre><code>// page.js
+Page({
+  data: {
+    staffA: {firstName: &#39;Hulk&#39;, lastName: &#39;Hu&#39;},
+    staffB: {firstName: &#39;Shang&#39;, lastName: &#39;You&#39;},
+    staffC: {firstName: &#39;Gideon&#39;, lastName: &#39;Lin&#39;}
+  }
+})
+</code></pre><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><pre><code>&lt;view bindtap = &quot;add&quot;&gt;{{count}}&lt;/view&gt;
+</code></pre><p>在逻辑层里面</p>
+<pre><code>Page({
+  data: {
+    count: 1
+  },
+  add: function(e) {
+    this.setData({
+      count: this.data.count + 1
+    })
+  }
+})
+</code></pre><h2 id="数据绑定-1"><a href="#数据绑定-1" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>wxml中的动态数据均来自Page中的data</p>
+<h4 id="简单绑定"><a href="#简单绑定" class="headerlink" title="简单绑定"></a>简单绑定</h4><p>数据绑定使用双大括号将变量包起来，可以作用于数据</p>
+<p>内容</p>
+<pre><code>&lt;view&gt;{{message}}&lt;/view&gt;
+</code></pre><p>绑定的数据</p>
+<pre><code>Page({
+ data:{
+ message:&quot;Hello&quot;
+ }
+})
+</code></pre><p>组件属性(需要在双括号里)</p>
+<pre><code>&lt;view id=&quot;item-{{id}}&quot;&gt;&lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+ data:{
+  id:0
+ }
+})
+</code></pre><h4 id="控制属性-需要在双引号之内"><a href="#控制属性-需要在双引号之内" class="headerlink" title="控制属性(需要在双引号之内)"></a>控制属性(需要在双引号之内)</h4><pre><code>&lt;view wx:if = &quot;{{condition}}&quot;&gt;&lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+ data:{
+  condition:true
+ }
+})
+</code></pre><h4 id="关键字-需要在双引号之内"><a href="#关键字-需要在双引号之内" class="headerlink" title="关键字(需要在双引号之内)"></a>关键字(需要在双引号之内)</h4><pre><code>true : boolean 类型的true ，代表真值
+false: boolean 类型的false，代表假值
+&lt;checkbox checked = &quot;{{false}}&quot;&gt;&lt;/checkbox&gt;
+</code></pre><p>######特别注意:不要直接写checked = “false”,其计算结果是一个字符串，转成BOOLEAN类型后代表真值。</p>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>可以在2个大括号内进行简单的运算，支持方式有如下几种:</p>
+<p>三元运算</p>
+<pre><code>&lt;view hidden = &quot;{{flag?true:false}}&quot;&gt;Hidden&lt;/view&gt;
+</code></pre><p>算数运算</p>
+<pre><code>&lt;view&gt;{{a+b}}+{{c}}+d &lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+data:{
+a:1,
+b:2,
+c:3
+}
+})
+</code></pre><p>view中的内容为3+3+d</p>
+<p>逻辑判断</p>
+<pre><code>&lt;view wx:if = &quot;{{length>5}}&quot;&gt;&lt;/view&gt;
+</code></pre><p>字符串运算</p>
+<pre><code>&lt;view&gt;{{"hello"+name}}&lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+data:{
+ name:&#39;MINA&#39;
+}
+})
+</code></pre><p>组合</p>
+<p>数组</p>
+<pre><code>&lt;view wx:for=&quot;{{[zero,1,2,3,4]}}&quot;&gt;{{item}}&lt;/view&gt;
+</code></pre><p>逻辑层</p>
+<pre><code>Page({
+ data:{
+  zero:0
+ }
+})
+</code></pre><p>所以最终的组合就是[0,1,2,3,4]</p>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p>wx:for</p>
+<p>在组件上使用wx:for控制属性绑定一个数组，可以使用数组中的各项数据重复渲染。<br>默认数组当前项的下标变量名默认是index,数组当前项的变量名是item</p>
+<pre><code>&lt;view wx:for = &quot;{{array}}&quot;&gt;
+{{index}}:{{item.message}}
+&lt;/view&gt;
+</code></pre><p>逻辑层代码</p>
+<pre><code>Page({
+data:{
+ array:[
+ {
+  message:&#39;foo&#39;,
+ },
+ {
+ message:&#39;bar&#39;
+ }
+ ]
+}
+})
+</code></pre><p>使用 wx:for-item 可以指定数组当前元素的变量名<br>使用 wx:for-index 可以指定数组当前下标的变量名</p>
+<pre><code>&lt;view wx:for=&quot;{{array}}&quot; wx:for-index=&quot;idx&quot; wx:for-item=&quot;itemName&quot;&gt;
+  {{idx}}: {{itemName.message}}
+&lt;/view&gt;
+</code></pre><h4 id="事件分类"><a href="#事件分类" class="headerlink" title="事件分类"></a>事件分类</h4><p>事件分为冒泡事件和非冒泡事件</p>
+<ul>
+<li>冒泡事件:当一个组件上的事件被触发后，该事件会向父节点传递</li>
+<li>非冒泡事件:当一个组件上的事件被触发后，该事件不会向父节点传递</li>
+</ul>
+<h5 id="WXML冒泡事件列表"><a href="#WXML冒泡事件列表" class="headerlink" title="WXML冒泡事件列表"></a>WXML冒泡事件列表</h5><ul>
+<li>touchstart 手指触摸开始</li>
+<li>touchmove  手指触摸后移动</li>
+<li>touchcancel 手指触摸动作被打断，如弹窗，来电提醒等等。</li>
+<li>touchend    手指触摸动作结束</li>
+<li>tap         手指触摸后马上离开</li>
+<li>longpress   手指触摸后，超过350MS在离开，如果指定了事件回调函数并触发了这个事件，tap事件不被触发</li>
+<li>longtap     手指触摸后超过350MS在离开(推荐使用longpress代替)</li>
+</ul>
+<h5 id="以上都属于冒泡事件，其他申明的都是非冒泡事件。如的submit事件等等。"><a href="#以上都属于冒泡事件，其他申明的都是非冒泡事件。如的submit事件等等。" class="headerlink" title="以上都属于冒泡事件，其他申明的都是非冒泡事件。如的submit事件等等。"></a>以上都属于冒泡事件，其他申明的都是非冒泡事件。如<form>的submit事件等等。</form></h5><h5 id="事件绑定和冒泡"><a href="#事件绑定和冒泡" class="headerlink" title="事件绑定和冒泡"></a>事件绑定和冒泡</h5><p>bind事件绑定不会阻止冒泡事件向上冒泡catch事件会阻止事件冒泡</p>
+<pre><code>&lt;view id=&quot;outer&quot; bindtap=&quot;handleTap1&quot;&gt;
+  outer view
+  &lt;view id=&quot;middle&quot; catchtap=&quot;handleTap2&quot;&gt;
+    middle view
+    &lt;view id=&quot;inner&quot; bindtap=&quot;handleTap3&quot;&gt;
+      inner view
+    &lt;/view&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><p>每个事件里面都会接收到一个事件参数。这个参数里面的事件属性就是e，e里面的属性能获取到用户输入的，pagex,pagey等等</p>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><p>类似CSS,与CSS相比我们的拓展属性有:</p>
+<ul>
+<li>尺寸单位</li>
+<li>样式导入</li>
+</ul>
+<h4 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h4><p>rpx他依据屏幕宽度自适应。屏幕宽度为750rpx,如果在Iphone6上，屏幕宽度为375px，共有750个物理像素，则750rpx=375px=750 物理像素.1rpx=0.5px=1物理像素</p>
+<h4 id="样式导入"><a href="#样式导入" class="headerlink" title="样式导入"></a>样式导入</h4><pre><code>@import &quot;common.wxss&quot;;
+.middle-p {
+  padding:15px;
+}
+</code></pre><h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>框架上组件支持使用style.class样式.</p>
+<ul>
+<li>style 静态的样式统一写到class中。style接收动态的样式，在运行时会解析,请尽量避免将静态的样式写进style中，影响渲染速度</li>
+</ul>
+<pre><code>&lt;view style=&quot;color:{{color}};&quot; /&gt;
+</code></pre>]]></content>
       
         <categories>
             
