@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[小程序学习(五)]]></title>
+      <url>/30/WeChatFive/</url>
+      <content type="html"><![CDATA[<h2 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h2><ul>
+<li>WXML</li>
+<li>WXSS</li>
+</ul>
+<h2 id="WXML"><a href="#WXML" class="headerlink" title="WXML"></a>WXML</h2>]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小程序学习(四)之逻辑层]]></title>
       <url>/29/WeChatFour/</url>
       <content type="html"><![CDATA[<p>小程序学习(四)之逻辑层(主要说的是对应的js文件)</p>
@@ -1499,6 +1523,12 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[友情链接]]></title>
       <url>/links/index.html</url>
       <content type="html"></content>
@@ -1507,12 +1537,6 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[标签云]]></title>
       <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
