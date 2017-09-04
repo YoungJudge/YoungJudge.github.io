@@ -220,7 +220,6 @@ data:{
 <li><h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4></li>
 <li><h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4></li>
 </ul>
-<hr>
 <h2 id="App"><a href="#App" class="headerlink" title="App()"></a>App()</h2><p>App()函数用来注册一个小程序，接受一个object参数，其指定小程序的生命周期函数等。</p>
 <p>object参数说明:</p>
 <ul>
@@ -1705,12 +1704,6 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[友情链接]]></title>
       <url>/links/index.html</url>
       <content type="html"></content>
@@ -1719,6 +1712,12 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[标签云]]></title>
       <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
