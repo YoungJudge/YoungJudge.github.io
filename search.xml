@@ -3,6 +3,409 @@
   
     
     <entry>
+      <title></title>
+      <url>/08/WeChatSix/</url>
+      <content type="html"><![CDATA[<h2 id="小程序-六-之滑块与轮播"><a href="#小程序-六-之滑块与轮播" class="headerlink" title="小程序(六)之滑块与轮播"></a>小程序(六)之滑块与轮播</h2><h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><ul>
+<li>视图容器</li>
+<li>基础内容</li>
+<li>表单组件</li>
+<li>导航</li>
+<li>媒体组件</li>
+<li>地图</li>
+<li>画布</li>
+<li>开放数据</li>
+<li>客服会话</li>
+</ul>
+<p>###（1）组件概述</p>
+<p>概述: 框架为开发者提供了一系列基础组件。开发者可以通过这些基础组件快速开发。<br>1.组件是视图层的基本组成单元。<br>2.组件是自带一些功能与微信风格的样式。<br>3.一个组件通常包括开始标签和结束标签。属性用来修饰这个组件。内容在两个标签之内。</p>
+<pre><code>&lt;tagname propety=&quot;value&quot;&gt;
+Content goes here
+&lt;/tagname&gt;
+</code></pre><p>如<view>组件就可以如下书写。</view></p>
+<pre><code>&lt;view class=&quot;container&quot;&gt;&lt;/view&gt;
+</code></pre><p>所有组件与属性都是小写，以连字符-连接。<br>属性:<br>1.属性类型<br>2.共同属性<br>3.特殊属性</p>
+<h3 id="（2）视图容器"><a href="#（2）视图容器" class="headerlink" title="（2）视图容器"></a>（2）视图容器</h3><h4 id="view-视图容器"><a href="#view-视图容器" class="headerlink" title="view 视图容器"></a>view 视图容器</h4><ul>
+<li>组件之view，view是视图容器。所谓容器就是页面上用来划分区域的块,view就是用来将页面划分块的，使用view，我们可以将一个页面按照我们的需要划分成多个区块。在不同的区块，存放我们相应的内容。类似HTML里面的div</li>
+<li>hover-class 类型string  默认值none 指定按下去的样式类。当hover-class = “none”时候，没有点击态效果</li>
+<li>hover-stop-propagation 类型Boolean false 指定是否阻止本节点的祖先节点数显点击态</li>
+<li>hover-start-time 默认值50  按住后多久出现点击态，单位毫秒</li>
+<li>hover-stay-time  默认值400 手指松开后点击态保留时间。单位毫秒</li>
+</ul>
+<h4 id="scroll-view-可滚动视图的区域"><a href="#scroll-view-可滚动视图的区域" class="headerlink" title="scroll-view 可滚动视图的区域"></a>scroll-view 可滚动视图的区域</h4><ul>
+<li><p>组件之scroll-view 这个标签不支持flex布局。<strong>必须要在里面在套一层view标签才可以实现view布局。横向的需要子元素撑开</strong><br> scroll-view具有view相同的功能。但是它是可以滚动的。使用竖向滚动的时候，需要给<scroll-view>一个固定高度,通过wxss设置height</scroll-view></p>
+</li>
+<li><p>scroll-x<br>类型Boolean   默认值false   允许横向滚动</p>
+</li>
+<li><p>scroll-y<br>类型Boolean   默认值false   允许纵向滚动</p>
+</li>
+<li><p>upper-threshold<br>类型Numer 默认值50  距离顶部/左边多远(单位PX)触发scrolltoupper事件</p>
+</li>
+<li><p>lower-threshold<br> 类型Number 默认值50  距离底部/右边多远(单位PX)触发scrolltolower事件</p>
+</li>
+<li><p>scroll-top<br>类型Number  设置竖向滚动条位置</p>
+</li>
+<li><p>scroll-left<br>类型Number 设置横向滚动条位置</p>
+</li>
+<li><p>scroll-into-view<br>类型String 值应为某子元素id（id不能用数字开头）设置哪个方向可滚动，则在哪个方向滚动到该元素</p>
+</li>
+<li><p>scroll-with-animation<br>类型Boolean 默认值false 在设置滚动条位置时候使用动画过渡。</p>
+</li>
+<li><p>enable-back-to-top<br>类型Boolean 默认值是false IOS点击顶部状态栏。安卓双击标题栏，滚动条返回顶部，只支持竖向。</p>
+</li>
+<li><p>bindscrolltoupper<br>类型EventHandle 滚动到顶部/左边。触发scrolltoupper事件.</p>
+</li>
+<li><p>bingdscrolltolower<br>类型:EventHandlw滚动到底部/右边。会触发scrolltolower事件</p>
+</li>
+<li><p>bindscroll<br>类型:EventHandle 滚动时候触发。</p>
+</li>
+</ul>
+<p>使用竖向滚动的时候需要给容器一个固定高度，通过wxss设置height,</p>
+<p>下面见实例代码:</p>
+<pre><code>index.html文件里面
+&lt;!--index.html--&gt;
+&lt;view class=&quot;container&quot;&gt;
+&lt;!--纵向滚动--&gt;
+ &lt;scroll-view scroll-y style=&quot;height:400rpx;&quot; bindscrolltoupper=&quot;upper&quot; bindscrolltolower=&quot;lower&quot; bindscroll=&quot;scroll&quot; scroll-into-view=&quot;{{toView}}&quot; scroll-top=&quot;{{scrollTop}}&quot;&gt;
+   &lt;view class=&quot;part1&quot;&gt;
+     &lt;view id=&quot;red&quot;class=&quot;scroll-item&quot;&gt;1&lt;/view&gt;
+      &lt;view class=&quot;scroll-item&quot;&gt;2&lt;/view&gt;
+       &lt;view class=&quot;scroll-item&quot;&gt;3&lt;/view&gt;
+        &lt;view class=&quot;scroll-item&quot;&gt;4&lt;/view&gt;
+         &lt;view class=&quot;scroll-item&quot;&gt;5&lt;/view&gt;
+   &lt;/view&gt;
+ &lt;/scroll-view&gt;
+&lt;!--纵向滚动结束--&gt;
+&lt;view class=&quot;part2&quot;&gt;
+
+&lt;/view&gt;
+&lt;!--横向滚动--&gt;
+ &lt;scroll-view scroll-x style=&#39;width:100%;&#39;&gt;
+
+   &lt;view class=&quot;part3&quot;&gt;
+     &lt;view class=&quot;scroll-item1&quot;&gt;1&lt;/view&gt;
+      &lt;view class=&quot;scroll-item1&quot;&gt;2&lt;/view&gt;
+       &lt;view class=&quot;scroll-item1&quot;&gt;3&lt;/view&gt;
+        &lt;view class=&quot;scroll-item1&quot;&gt;4&lt;/view&gt;
+         &lt;view class=&quot;scroll-item1&quot;&gt;5&lt;/view&gt;
+   &lt;/view&gt;
+&lt;/scroll-view&gt;
+&lt;!--横向滚动结束--&gt;
+&lt;/view&gt;
+</code></pre><p>下面是index.js</p>
+<pre><code>//index.js
+//获取应用实例
+Page({
+  data: {
+    toView: &#39;red&#39;,
+    upper:200,
+    scrolltop:200
+  }
+  top:function(){
+    console.log(&quot;距离顶部200的位置&quot;);
+  },
+  tapMove:function(){
+     this.setData({
+       scrolltop:this.data.scrolltop+100
+     })
+  }
+})
+</code></pre><p>下面是index.wxss文件</p>
+<pre><code>.container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.part1{
+  flex:1 1 400rpx;
+  width:100%;
+  background:red;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.scroll-item{
+  flex: 0 1 200rpx;
+  background:blue;
+  width:100%;
+}
+.part2{
+  flex:1 1 300rpx;
+  width:100%;
+  background:yellow;
+}
+.part3{
+  flex:1 1 200rpx;
+  width:100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.scroll-item1{
+  flex: 0 0 200rpx;
+  border:1px solid white;
+  margin-right:10px;
+  background:blue;
+  height:200rpx;
+  background:red;
+}
+</code></pre><h4 id="Swiper-滑块容器"><a href="#Swiper-滑块容器" class="headerlink" title="Swiper 滑块容器"></a>Swiper 滑块容器</h4><ul>
+<li>swiper是滑块视图容器</li>
+<li>它可以通过手指对于屏幕的滑动达到切换容器内的效果其中只可以放置<swiper-item>组件，其他节点会被自动删除。</swiper-item></li>
+<li>swiper-item仅可放置在<swiper>组件中，宽高设置为100%要是想循环，请把循环加在他的上面wx:for</swiper></li>
+</ul>
+<h4 id="Swiper属性"><a href="#Swiper属性" class="headerlink" title="Swiper属性"></a>Swiper属性</h4><ul>
+<li>indicator-dots<br>类型Boolean 默认值false  说明是否显示面板指示点</li>
+<li>autoplay<br>类型Boolean  默认值false  是否自动切换</li>
+<li>current<br>类型Number   默认值 0   当前所在页面的index</li>
+<li>interval<br>类型Number   默认值 5000 自动切换时间间隔</li>
+<li>duration<br>类型Number   默认值 1000 滑动动画时长</li>
+<li>bindchange<br>类型EventHandle   current改变时会触发change事件，event.detail = {current:current}</li>
+</ul>
+<pre><code>&lt;!--swiperhtml文件--&gt;
+&lt;!--pages/swiper/swiper.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+&lt;swiper class=&quot;swiperall&quot; indicator-dots=&#39;{{anniu}}&#39;autoplay=&#39;{{autoplay}}&#39;interval=&#39;{{interval}}&#39;duration=&#39;{{duration}}&#39;&gt;
+&lt;swiper-item wx:for=&quot;{{textall}}&quot;&gt;
+   &lt;view class=&quot;swiper1&quot;&gt;
+        &lt;text&gt;{{item}}&lt;/text&gt;
+   &lt;/view&gt;
+&lt;/swiper-item&gt;
+&lt;/swiper&gt;
+&lt;!--按钮开始--&gt;
+&lt;view&gt;
+ &lt;button type=&quot;primary&quot; bindtap=&quot;changebutton&quot;&gt;changebutton&lt;/button&gt;
+ &lt;button type=&quot;primary&quot; bindtap=&quot;changeAutoPlay&quot;&gt;changeAutoPlay&lt;/button&gt;
+&lt;/view&gt;
+&lt;!--按钮结束--&gt;
+&lt;!--滑块开始--&gt;
+&lt;view&gt;
+ &lt;slider bindchange=&#39;changeInterval&#39;show-value min=&quot;500&quot;max=&quot;2000&quot;&gt;changeInterval&lt;/slider&gt;
+  &lt;slider bindchange=&#39;changeduration&#39;show-value min=&quot;1000&quot;max=&quot;10000&quot;&gt;changeDuration&lt;/slider&gt;
+&lt;/view&gt;
+&lt;!--滑块结束--&gt;
+&lt;/view&gt;
+</code></pre><p>swiper.css文件</p>
+<pre><code>/* pages/swiper/swiper.wxss */
+.container{
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.swiperall{
+height:300rpx;
+width:100%;
+flex-flow:row wrap;
+justify-content: space-around;
+align-content: space-around;
+}
+.swiper1{
+  width:100%;
+  height:100%;
+  background:pink;
+  font-size: 18px;
+  text-align:center;
+  color:white;
+  line-height:300rpx;
+}
+</code></pre><p>swiper.js文件</p>
+<pre><code>// pages/swiper/swiper.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+       &quot;textall&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],
+       &quot;anniu&quot;:true,
+       &quot;autoplay&quot;:true,
+       &quot;interval&quot;:5000,
+       &quot;duration&quot;:1000
+  },
+  /*轮播开始*/
+  changebutton:function(){
+    this.setData({
+      anniu:!this.data.anniu
+    })
+  },
+  changeAutoPlay:function(){
+     this.setData({
+       autoplay:!this.data.autoplay
+     })
+  },
+  changeInterval:function(e){
+    this.setData({
+      interval:e.detail.value
+    })
+  },
+  changeduration:function(e){
+      this.setData({
+        duration: e.detail.value
+      })
+  },
+  /*轮播结束*/
+})
+</code></pre><h4 id="自定义轮播-简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了"><a href="#自定义轮播-简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了" class="headerlink" title="自定义轮播 简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了"></a>自定义轮播 简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了</h4><pre><code>&lt;!--pages/lunbo/lunbo.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;wrap&quot;&gt;
+  &lt;!--内容开始--&gt;
+  &lt;swiper class=&quot;wrap_content&quot; bindchange=&quot;swiperchange&quot; current=&quot;{{swiperCurrent}}&quot;&gt;
+    &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;1&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;2&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;3&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;4&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;5&lt;/view&gt;
+    &lt;/swiper-item&gt;
+  &lt;/swiper&gt;   
+    &lt;!--内容结束--&gt;
+    &lt;!--左边箭头开始--&gt;
+    &lt;view class=&quot;left&quot; bindtap = &quot;Changeleft&quot;&gt;
+    左
+    &lt;/view&gt;
+    &lt;!--左边箭头结束--&gt;
+    &lt;!--右边箭头开始--&gt;
+     &lt;view class=&quot;right&quot; bindtap = &quot;Changeright&quot;&gt;
+    右
+     &lt;/view&gt;
+    &lt;!--右边箭头结束--&gt;   
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><p>index.js文件</p>
+<pre><code>// pages/lunbo/lunbo.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+     swiperCurrent:0
+  },
+  /*右边按钮开始*/
+  Changeright:function(e){
+       var swiperindex = this.data.swiperCurrent;
+       console.log(swiperindex);
+       swiperindex++;
+       if(swiperindex&gt;4)
+       {
+        swiperindex=0;
+       }
+      this.setData({
+        swiperCurrent:swiperindex
+      })
+  },
+  /*左边按钮开始*/
+  Changeleft: function (e) {
+    var swiperindex = this.data.swiperCurrent;
+    console.log(swiperindex);
+    swiperindex--;
+    if (swiperindex &lt;0) {
+      swiperindex = 4;
+    }
+    this.setData({
+      swiperCurrent: swiperindex
+    })
+  },
+  /*给swiper容器绑定好了,只要改变就都改变*/
+  swiperchange:function(e){
+    this.setData({
+      swiperCurrent: e.detail.current
+    })
+    console.log(this.data.swiperCurrent);
+  }
+</code></pre><p>index.css</p>
+<pre><code>/* pages/lunbo/lunbo.wxss */
+.container{
+  display: flex;
+  flex-flow:column nowrap;
+}
+.wrap{
+  width:100%;
+  height:400rpx;
+  position:relative;
+}
+.left{
+  position:absolute;
+  left:0px;
+  width:100rpx;
+  height:100rpx;
+  top:150rpx;
+  background:black;
+  color:white;
+  line-height:100rpx;
+  text-align:center;
+}
+.right{
+  position:absolute;
+  right:0px;
+  top:150rpx;
+  width:100rpx;
+  height:100rpx;
+  background:black;
+  color:white;
+  line-height:100rpx;
+  text-align:center;
+}
+.wrap_content{
+  width:100%;
+  height:400rpx;
+  display: flex;
+  flex-flow:row nowrap;
+}
+.wrap_content_1{
+  width:100%;
+  height:400rpx;
+  background:red;
+}
+</code></pre><h2 id="轮播从上到下"><a href="#轮播从上到下" class="headerlink" title="轮播从上到下"></a>轮播从上到下</h2><p>简单来说就是把vertical这个属性</p>
+<pre><code>&lt;!--index.html--&gt;
+&lt;view class=&quot;swipershangxia&quot;&gt;
+ &lt;swiper class=&quot;swiperall_shang&quot; vertical=&quot;{{true}}&quot; indicator-dots=&quot;{{false}}&quot; autoplay=&quot;{{autoplay}}&quot; interval=&quot;{{interval}}&quot; duration=&quot;{{duration}}&quot;&gt;
+     &lt;swiper-item wx:for=&quot;{{textall}}&quot;&gt;
+          &lt;view class=&quot;swiper_shu&quot;&gt;
+          &lt;text&gt;{{item}}&lt;/text&gt;
+          &lt;/view&gt;
+     &lt;/swiper-item&gt;
+ &lt;/swiper&gt;
+&lt;/view&gt;
+</code></pre><p>下面是index.css文件</p>
+<pre><code>.swipershangxia
+{
+  flex:1 1 400rpx;
+  width:100%;
+  background:pink;
+}
+.swiperall_shang
+{
+  width:100%;
+  height:400rpx;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.swiper_shu
+{
+  width:100%;
+  height:400rpx;
+  background:#ccc;
+  color:white;
+  text-align:center;
+  line-height:400rpx;
+}
+</code></pre>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小程序学习(五)]]></title>
       <url>/30/WeChatFive/</url>
       <content type="html"><![CDATA[<h2 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h2><ul>
@@ -1704,26 +2107,26 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[友情链接]]></title>
-      <url>/links/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[标签云]]></title>
       <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[时光隧道]]></title>
       <url>/timeline/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     

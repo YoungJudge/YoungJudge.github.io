@@ -12,8 +12,6 @@
     
     <title>
         
-            分类: 小程序 | 
-        
         我的前端之路
     </title>
 
@@ -67,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.uiyin.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 小程序 | 我的前端之路">
+    <meta property="og:title" content="我的前端之路">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     
 
     
+        <meta property="article:published_time" content="9月 08, 2017" />
+        <meta property="article:modified_time" content="9月 08, 2017" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 小程序 | 我的前端之路">
+    <meta name="twitter:title" content="我的前端之路">
     <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.uiyin.com/categories/小程序/index.html" />
+        <link rel="canonical" href="http://www.uiyin.com/08/WeChatSix/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "",
+    "url": "http://www.uiyin.com/08/WeChatSix/index.html",
+    "datePublished": "9月 08, 2017",
+    "dateModified": "9月 08, 2017",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
 
 
     
@@ -273,367 +304,633 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序-六-之滑块与轮播"><span class="post-toc-number">1.</span> <span class="post-toc-text">小程序(六)之滑块与轮播</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#本节知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">本节知识点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（2）视图容器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">（2）视图容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#view-视图容器"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">view 视图容器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#scroll-view-可滚动视图的区域"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">scroll-view 可滚动视图的区域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Swiper-滑块容器"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Swiper 滑块容器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Swiper属性"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">Swiper属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义轮播-简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">自定义轮播 简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#轮播从上到下"><span class="post-toc-number">2.</span> <span class="post-toc-text">轮播从上到下</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/30/WeChatFive/">小程序学习(五)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节知识点
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/30/WeChatFive/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::30/WeChatFive/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/29/WeChatFour/">小程序学习(四)之逻辑层</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            小程序学习(四)之逻辑层(主要说的是对应的js文件)
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/29/WeChatFour/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::29/WeChatFour/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/24/WeChatThird/">小程序学习(三)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/24/WeChatThird/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 24, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::24/WeChatThird/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/23/Wechatsecond/">小程序学习(二)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要介绍小程序开发工具的使用
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/23/Wechatsecond/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 23, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::23/Wechatsecond/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/22/Wechatfirst/">小程序学习(一)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            通过本节的学习对小程序有个大概的认识和了解，具体见本节知识点。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/22/Wechatfirst/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::22/Wechatfirst/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>9月 08, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWklEQVR42u3aUa7DIAwEwN7/0u8doEq0toG01eSrqhLC5ANbC6+/n75eeHh4eHh4eHh4H8Z7xVc09Nv9V//cPzWZGx4eHt4ZXjLp+YSuxryaQ3NueHh4eAd5VxO6/50/lRSbfAQ8PDy87+Ll//QaZTw8PLzf4yWNb37nh9Y9PDw8vEVhRL6gVwtMHlJszFrw8PDwYt6kzd39++j+Hh4eHl7AKx9pWtpSV48mbD9ThoeHhxfwqu3yfXSbR733xak6Hzw8PLyneMlC36PmQe3kXXh4eHgneflwq5rvaImPPxkeHh7eeV5eBpI786n33oKHh4f3LK8XFkxKxeQIVxQN4+Hh4W3mVaPSpLXNg+Dy1JOn8PDw8B7iJfhJW5x8oObHxcPDw3uUVw0d8qW8Fx83sxY8PDy8pbxkwS1sPgXTmh/hamYteHh4eIt4+fbVfDOsF08ko+Hh4eGd5+UvqAYHOSaBRaUCDw8PbzOvGqf2AtZqYciDDDw8PLzzvDwaSJrjvDWvjjk6dIWHh4e3gXc/xfnS32vN8/gDDw8P7zxvEsKuCm2rm2HNrAUPDw9vKa8ay+bHsyYR8OjQFR4eHt4RXrVg5JteyVUtLeWsBQ8PD2/Me+D1xVi2HIvg4eHhbeZVt6OqE62GDnmIXAgj8PDw8Dbw8sggPyyVB7j341fDXDw8PLyTvHyLaxLCVj9NNeDAw8PD+y5eofFddFzgaGHAw8PDW8qrstcWAzw8PLyneEkYsaNp7rHx8PDwnuXlS3MevE4KQ+9T4uHh4Z3h/d6Fh4eHh4eHh4f3Adc/IXt8uMsDG2cAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://www.uiyin.com/08/WeChatSix/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/08/WeChatSix/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="小程序-六-之滑块与轮播"><a href="#小程序-六-之滑块与轮播" class="headerlink" title="小程序(六)之滑块与轮播"></a>小程序(六)之滑块与轮播</h2><h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><ul>
+<li>视图容器</li>
+<li>基础内容</li>
+<li>表单组件</li>
+<li>导航</li>
+<li>媒体组件</li>
+<li>地图</li>
+<li>画布</li>
+<li>开放数据</li>
+<li>客服会话</li>
+</ul>
+<p>###（1）组件概述</p>
+<p>概述: 框架为开发者提供了一系列基础组件。开发者可以通过这些基础组件快速开发。<br>1.组件是视图层的基本组成单元。<br>2.组件是自带一些功能与微信风格的样式。<br>3.一个组件通常包括开始标签和结束标签。属性用来修饰这个组件。内容在两个标签之内。</p>
+<pre><code>&lt;tagname propety=&quot;value&quot;&gt;
+Content goes here
+&lt;/tagname&gt;
+</code></pre><p>如<view>组件就可以如下书写。</view></p>
+<pre><code>&lt;view class=&quot;container&quot;&gt;&lt;/view&gt;
+</code></pre><p>所有组件与属性都是小写，以连字符-连接。<br>属性:<br>1.属性类型<br>2.共同属性<br>3.特殊属性</p>
+<h3 id="（2）视图容器"><a href="#（2）视图容器" class="headerlink" title="（2）视图容器"></a>（2）视图容器</h3><h4 id="view-视图容器"><a href="#view-视图容器" class="headerlink" title="view 视图容器"></a>view 视图容器</h4><ul>
+<li>组件之view，view是视图容器。所谓容器就是页面上用来划分区域的块,view就是用来将页面划分块的，使用view，我们可以将一个页面按照我们的需要划分成多个区块。在不同的区块，存放我们相应的内容。类似HTML里面的div</li>
+<li>hover-class 类型string  默认值none 指定按下去的样式类。当hover-class = “none”时候，没有点击态效果</li>
+<li>hover-stop-propagation 类型Boolean false 指定是否阻止本节点的祖先节点数显点击态</li>
+<li>hover-start-time 默认值50  按住后多久出现点击态，单位毫秒</li>
+<li>hover-stay-time  默认值400 手指松开后点击态保留时间。单位毫秒</li>
+</ul>
+<h4 id="scroll-view-可滚动视图的区域"><a href="#scroll-view-可滚动视图的区域" class="headerlink" title="scroll-view 可滚动视图的区域"></a>scroll-view 可滚动视图的区域</h4><ul>
+<li><p>组件之scroll-view 这个标签不支持flex布局。<strong>必须要在里面在套一层view标签才可以实现view布局。横向的需要子元素撑开</strong><br> scroll-view具有view相同的功能。但是它是可以滚动的。使用竖向滚动的时候，需要给<scroll-view>一个固定高度,通过wxss设置height</scroll-view></p>
+</li>
+<li><p>scroll-x<br>类型Boolean   默认值false   允许横向滚动</p>
+</li>
+<li><p>scroll-y<br>类型Boolean   默认值false   允许纵向滚动</p>
+</li>
+<li><p>upper-threshold<br>类型Numer 默认值50  距离顶部/左边多远(单位PX)触发scrolltoupper事件</p>
+</li>
+<li><p>lower-threshold<br> 类型Number 默认值50  距离底部/右边多远(单位PX)触发scrolltolower事件</p>
+</li>
+<li><p>scroll-top<br>类型Number  设置竖向滚动条位置</p>
+</li>
+<li><p>scroll-left<br>类型Number 设置横向滚动条位置</p>
+</li>
+<li><p>scroll-into-view<br>类型String 值应为某子元素id（id不能用数字开头）设置哪个方向可滚动，则在哪个方向滚动到该元素</p>
+</li>
+<li><p>scroll-with-animation<br>类型Boolean 默认值false 在设置滚动条位置时候使用动画过渡。</p>
+</li>
+<li><p>enable-back-to-top<br>类型Boolean 默认值是false IOS点击顶部状态栏。安卓双击标题栏，滚动条返回顶部，只支持竖向。</p>
+</li>
+<li><p>bindscrolltoupper<br>类型EventHandle 滚动到顶部/左边。触发scrolltoupper事件.</p>
+</li>
+<li><p>bingdscrolltolower<br>类型:EventHandlw滚动到底部/右边。会触发scrolltolower事件</p>
+</li>
+<li><p>bindscroll<br>类型:EventHandle 滚动时候触发。</p>
+</li>
+</ul>
+<p>使用竖向滚动的时候需要给容器一个固定高度，通过wxss设置height,</p>
+<p>下面见实例代码:</p>
+<pre><code>index.html文件里面
+&lt;!--index.html--&gt;
+&lt;view class=&quot;container&quot;&gt;
+&lt;!--纵向滚动--&gt;
+ &lt;scroll-view scroll-y style=&quot;height:400rpx;&quot; bindscrolltoupper=&quot;upper&quot; bindscrolltolower=&quot;lower&quot; bindscroll=&quot;scroll&quot; scroll-into-view=&quot;{{toView}}&quot; scroll-top=&quot;{{scrollTop}}&quot;&gt;
+   &lt;view class=&quot;part1&quot;&gt;
+     &lt;view id=&quot;red&quot;class=&quot;scroll-item&quot;&gt;1&lt;/view&gt;
+      &lt;view class=&quot;scroll-item&quot;&gt;2&lt;/view&gt;
+       &lt;view class=&quot;scroll-item&quot;&gt;3&lt;/view&gt;
+        &lt;view class=&quot;scroll-item&quot;&gt;4&lt;/view&gt;
+         &lt;view class=&quot;scroll-item&quot;&gt;5&lt;/view&gt;
+   &lt;/view&gt;
+ &lt;/scroll-view&gt;
+&lt;!--纵向滚动结束--&gt;
+&lt;view class=&quot;part2&quot;&gt;
+
+&lt;/view&gt;
+&lt;!--横向滚动--&gt;
+ &lt;scroll-view scroll-x style=&#39;width:100%;&#39;&gt;
+
+   &lt;view class=&quot;part3&quot;&gt;
+     &lt;view class=&quot;scroll-item1&quot;&gt;1&lt;/view&gt;
+      &lt;view class=&quot;scroll-item1&quot;&gt;2&lt;/view&gt;
+       &lt;view class=&quot;scroll-item1&quot;&gt;3&lt;/view&gt;
+        &lt;view class=&quot;scroll-item1&quot;&gt;4&lt;/view&gt;
+         &lt;view class=&quot;scroll-item1&quot;&gt;5&lt;/view&gt;
+   &lt;/view&gt;
+&lt;/scroll-view&gt;
+&lt;!--横向滚动结束--&gt;
+&lt;/view&gt;
+</code></pre><p>下面是index.js</p>
+<pre><code>//index.js
+//获取应用实例
+Page({
+  data: {
+    toView: &#39;red&#39;,
+    upper:200,
+    scrolltop:200
+  }
+  top:function(){
+    console.log(&quot;距离顶部200的位置&quot;);
+  },
+  tapMove:function(){
+     this.setData({
+       scrolltop:this.data.scrolltop+100
+     })
+  }
+})
+</code></pre><p>下面是index.wxss文件</p>
+<pre><code>.container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.part1{
+  flex:1 1 400rpx;
+  width:100%;
+  background:red;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.scroll-item{
+  flex: 0 1 200rpx;
+  background:blue;
+  width:100%;
+}
+.part2{
+  flex:1 1 300rpx;
+  width:100%;
+  background:yellow;
+}
+.part3{
+  flex:1 1 200rpx;
+  width:100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.scroll-item1{
+  flex: 0 0 200rpx;
+  border:1px solid white;
+  margin-right:10px;
+  background:blue;
+  height:200rpx;
+  background:red;
+}
+</code></pre><h4 id="Swiper-滑块容器"><a href="#Swiper-滑块容器" class="headerlink" title="Swiper 滑块容器"></a>Swiper 滑块容器</h4><ul>
+<li>swiper是滑块视图容器</li>
+<li>它可以通过手指对于屏幕的滑动达到切换容器内的效果其中只可以放置<swiper-item>组件，其他节点会被自动删除。</swiper-item></li>
+<li>swiper-item仅可放置在<swiper>组件中，宽高设置为100%要是想循环，请把循环加在他的上面wx:for</swiper></li>
+</ul>
+<h4 id="Swiper属性"><a href="#Swiper属性" class="headerlink" title="Swiper属性"></a>Swiper属性</h4><ul>
+<li>indicator-dots<br>类型Boolean 默认值false  说明是否显示面板指示点</li>
+<li>autoplay<br>类型Boolean  默认值false  是否自动切换</li>
+<li>current<br>类型Number   默认值 0   当前所在页面的index</li>
+<li>interval<br>类型Number   默认值 5000 自动切换时间间隔</li>
+<li>duration<br>类型Number   默认值 1000 滑动动画时长</li>
+<li>bindchange<br>类型EventHandle   current改变时会触发change事件，event.detail = {current:current}</li>
+</ul>
+<pre><code>&lt;!--swiperhtml文件--&gt;
+&lt;!--pages/swiper/swiper.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+&lt;swiper class=&quot;swiperall&quot; indicator-dots=&#39;{{anniu}}&#39;autoplay=&#39;{{autoplay}}&#39;interval=&#39;{{interval}}&#39;duration=&#39;{{duration}}&#39;&gt;
+&lt;swiper-item wx:for=&quot;{{textall}}&quot;&gt;
+   &lt;view class=&quot;swiper1&quot;&gt;
+        &lt;text&gt;{{item}}&lt;/text&gt;
+   &lt;/view&gt;
+&lt;/swiper-item&gt;
+&lt;/swiper&gt;
+&lt;!--按钮开始--&gt;
+&lt;view&gt;
+ &lt;button type=&quot;primary&quot; bindtap=&quot;changebutton&quot;&gt;changebutton&lt;/button&gt;
+ &lt;button type=&quot;primary&quot; bindtap=&quot;changeAutoPlay&quot;&gt;changeAutoPlay&lt;/button&gt;
+&lt;/view&gt;
+&lt;!--按钮结束--&gt;
+&lt;!--滑块开始--&gt;
+&lt;view&gt;
+ &lt;slider bindchange=&#39;changeInterval&#39;show-value min=&quot;500&quot;max=&quot;2000&quot;&gt;changeInterval&lt;/slider&gt;
+  &lt;slider bindchange=&#39;changeduration&#39;show-value min=&quot;1000&quot;max=&quot;10000&quot;&gt;changeDuration&lt;/slider&gt;
+&lt;/view&gt;
+&lt;!--滑块结束--&gt;
+&lt;/view&gt;
+</code></pre><p>swiper.css文件</p>
+<pre><code>/* pages/swiper/swiper.wxss */
+.container{
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.swiperall{
+height:300rpx;
+width:100%;
+flex-flow:row wrap;
+justify-content: space-around;
+align-content: space-around;
+}
+.swiper1{
+  width:100%;
+  height:100%;
+  background:pink;
+  font-size: 18px;
+  text-align:center;
+  color:white;
+  line-height:300rpx;
+}
+</code></pre><p>swiper.js文件</p>
+<pre><code>// pages/swiper/swiper.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+       &quot;textall&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],
+       &quot;anniu&quot;:true,
+       &quot;autoplay&quot;:true,
+       &quot;interval&quot;:5000,
+       &quot;duration&quot;:1000
+  },
+  /*轮播开始*/
+  changebutton:function(){
+    this.setData({
+      anniu:!this.data.anniu
+    })
+  },
+  changeAutoPlay:function(){
+     this.setData({
+       autoplay:!this.data.autoplay
+     })
+  },
+  changeInterval:function(e){
+    this.setData({
+      interval:e.detail.value
+    })
+  },
+  changeduration:function(e){
+      this.setData({
+        duration: e.detail.value
+      })
+  },
+  /*轮播结束*/
+})
+</code></pre><h4 id="自定义轮播-简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了"><a href="#自定义轮播-简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了" class="headerlink" title="自定义轮播 简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了"></a>自定义轮播 简单来说就是改变swiper上面current的值。但是自定义的就没有办法加定时器了</h4><pre><code>&lt;!--pages/lunbo/lunbo.wxml--&gt;
+&lt;view class=&quot;container&quot;&gt;
+  &lt;view class=&quot;wrap&quot;&gt;
+  &lt;!--内容开始--&gt;
+  &lt;swiper class=&quot;wrap_content&quot; bindchange=&quot;swiperchange&quot; current=&quot;{{swiperCurrent}}&quot;&gt;
+    &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;1&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;2&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;3&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;4&lt;/view&gt;
+    &lt;/swiper-item&gt;
+        &lt;swiper-item&gt;
+        &lt;view class=&quot;wrap_content_1&quot;&gt;5&lt;/view&gt;
+    &lt;/swiper-item&gt;
+  &lt;/swiper&gt;   
+    &lt;!--内容结束--&gt;
+    &lt;!--左边箭头开始--&gt;
+    &lt;view class=&quot;left&quot; bindtap = &quot;Changeleft&quot;&gt;
+    左
+    &lt;/view&gt;
+    &lt;!--左边箭头结束--&gt;
+    &lt;!--右边箭头开始--&gt;
+     &lt;view class=&quot;right&quot; bindtap = &quot;Changeright&quot;&gt;
+    右
+     &lt;/view&gt;
+    &lt;!--右边箭头结束--&gt;   
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre><p>index.js文件</p>
+<pre><code>// pages/lunbo/lunbo.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+     swiperCurrent:0
+  },
+  /*右边按钮开始*/
+  Changeright:function(e){
+       var swiperindex = this.data.swiperCurrent;
+       console.log(swiperindex);
+       swiperindex++;
+       if(swiperindex&gt;4)
+       {
+        swiperindex=0;
+       }
+      this.setData({
+        swiperCurrent:swiperindex
+      })
+  },
+  /*左边按钮开始*/
+  Changeleft: function (e) {
+    var swiperindex = this.data.swiperCurrent;
+    console.log(swiperindex);
+    swiperindex--;
+    if (swiperindex &lt;0) {
+      swiperindex = 4;
+    }
+    this.setData({
+      swiperCurrent: swiperindex
+    })
+  },
+  /*给swiper容器绑定好了,只要改变就都改变*/
+  swiperchange:function(e){
+    this.setData({
+      swiperCurrent: e.detail.current
+    })
+    console.log(this.data.swiperCurrent);
+  }
+</code></pre><p>index.css</p>
+<pre><code>/* pages/lunbo/lunbo.wxss */
+.container{
+  display: flex;
+  flex-flow:column nowrap;
+}
+.wrap{
+  width:100%;
+  height:400rpx;
+  position:relative;
+}
+.left{
+  position:absolute;
+  left:0px;
+  width:100rpx;
+  height:100rpx;
+  top:150rpx;
+  background:black;
+  color:white;
+  line-height:100rpx;
+  text-align:center;
+}
+.right{
+  position:absolute;
+  right:0px;
+  top:150rpx;
+  width:100rpx;
+  height:100rpx;
+  background:black;
+  color:white;
+  line-height:100rpx;
+  text-align:center;
+}
+.wrap_content{
+  width:100%;
+  height:400rpx;
+  display: flex;
+  flex-flow:row nowrap;
+}
+.wrap_content_1{
+  width:100%;
+  height:400rpx;
+  background:red;
+}
+</code></pre><h2 id="轮播从上到下"><a href="#轮播从上到下" class="headerlink" title="轮播从上到下"></a>轮播从上到下</h2><p>简单来说就是把vertical这个属性</p>
+<pre><code>&lt;!--index.html--&gt;
+&lt;view class=&quot;swipershangxia&quot;&gt;
+ &lt;swiper class=&quot;swiperall_shang&quot; vertical=&quot;{{true}}&quot; indicator-dots=&quot;{{false}}&quot; autoplay=&quot;{{autoplay}}&quot; interval=&quot;{{interval}}&quot; duration=&quot;{{duration}}&quot;&gt;
+     &lt;swiper-item wx:for=&quot;{{textall}}&quot;&gt;
+          &lt;view class=&quot;swiper_shu&quot;&gt;
+          &lt;text&gt;{{item}}&lt;/text&gt;
+          &lt;/view&gt;
+     &lt;/swiper-item&gt;
+ &lt;/swiper&gt;
+&lt;/view&gt;
+</code></pre><p>下面是index.css文件</p>
+<pre><code>.swipershangxia
+{
+  flex:1 1 400rpx;
+  width:100%;
+  background:pink;
+}
+.swiperall_shang
+{
+  width:100%;
+  height:400rpx;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.swiper_shu
+{
+  width:100%;
+  height:400rpx;
+  background:#ccc;
+  color:white;
+  text-align:center;
+  line-height:400rpx;
+}
+</code></pre>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="08/WeChatSix/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt8WGown';
+var conf = 'prod_7f128a445aeb761f8f67a4cff4b26cac';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/30/WeChatFive/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
