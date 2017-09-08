@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[小程序学习(六)]]></title>
       <url>/08/WeChatSix/</url>
-      <content type="html"><![CDATA[<h2 id="小程序-六-之滑块与轮播"><a href="#小程序-六-之滑块与轮播" class="headerlink" title="小程序(六)之滑块与轮播"></a>小程序(六)之滑块与轮播</h2><h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><ul>
+      <content type="html"><![CDATA[<h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><ul>
 <li>视图容器</li>
 <li>基础内容</li>
 <li>表单组件</li>
@@ -402,6 +402,18 @@ Page({
 }
 </code></pre>]]></content>
       
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
         
     </entry>
     
@@ -2107,8 +2119,8 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[图库]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -2119,14 +2131,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[图库]]></title>
-      <url>/gallery/index.html</url>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
