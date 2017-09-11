@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017/9 | 
+            小程序学习(九) | 
         
         我的前端之路
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eric Yin">
     <meta name="description" itemprop="description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue">
+    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue,小程序">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.uiyin.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/9 | 我的前端之路">
+    <meta property="og:title" content="小程序学习(九) | 我的前端之路">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    
+    <meta property="og:article:tag" content="小程序"> 
 
+    
+        <meta property="article:published_time" content="9月 11, 2017" />
+        <meta property="article:modified_time" content="9月 11, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017/9 | 我的前端之路">
+    <meta name="twitter:title" content="小程序学习(九) | 我的前端之路">
     <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.uiyin.com/archives/2017/09/index.html" />
+        <link rel="canonical" href="http://www.uiyin.com/11/WeChatNine/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "小程序学习(九)",
+    "url": "http://www.uiyin.com/11/WeChatNine/index.html",
+    "datePublished": "9月 11, 2017",
+    "dateModified": "9月 11, 2017",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
 
 
     
@@ -273,299 +306,395 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序-九-之操作反馈"><span class="post-toc-number">1.</span> <span class="post-toc-text">小程序(九)之操作反馈</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#action-sheet-底部弹出框"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">action-sheet  底部弹出框</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#action-sheet-item"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">action-sheet-item</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#modal-模态弹窗"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">modal 模态弹窗</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#toast消息提示框，一般用来提示用户登录，密码之类的"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">toast消息提示框，一般用来提示用户登录，密码之类的.</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#loading加载动画"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">loading加载动画</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/11/WeChatNine/">小程序学习(九)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/11/WeChatNine/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>9月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::11/WeChatNine/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/11/WeChatEight/">小程序学习(八)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/11/WeChatEight/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>9月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::11/WeChatEight/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/08/WeChatSeven/">小程序学习(七)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/08/WeChatSeven/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>9月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::08/WeChatSeven/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/08/WeChatSix/">小程序学习(六)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节知识点
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/08/WeChatSix/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>9月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::08/WeChatSix/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                小程序学习(九)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>9月 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aQY7CMAwF0N7/0jNbJET5dupQ0MuqgpbkdZEY28ffT48DDw8PDw8PDw/vZrwjHs9PvZzg4dvk2fNZymvDw8PD28J7s9XGE58v+vn61bNLa8PDw8PbyHs1ZXKdbPQJrPo68PDw8L6Rl4fd+VGBh4eH93u8PJjOw+XkkMDDw8O7Gy9Py+ahcH4w3CLXgoeHhxfz8iLT/uut9T08PDy8gFduaQomWC+eXdZ0hYeHhzfAyzfiJNTOScm31fXg4eHh7eH1Sv7VVGyeqkhSHoU0Lh4eHt4Ar/fnvxooV9O+eTHssnMPDw8Pr8hrBq/FhO9K6WupdQAPDw/vUl6vXSBfXO8Iydut8PDw8Pbz8g032b7zsHg9GYGHh4d3N14vaM5Trr1EbVSWw8PDwxvmVbf7fIvPfydBFmbHw8PD28LLj4SkYFYuWa2Uu5JcCx4eHt4wr1cAq6YYeqFzswCGh4eHN8brTbZyf96M1Wy6wsPDwxvgLbU3FUtcebCeP4WHh4f3Kd75X/2Jdqvk/rxEh4eHh/dZXg9TTWpUw+vCJ3h4eHhbeNVGgfJmHYfmSZntzUGCh4eHt5GXUJPwd/3VVNsU8PDw8D7LW0ngrrS6HsFIZsTDw8Ob5lVHtR0qubN65JSbrvDw8PAu5R3xSKZcT+OONF3h4eHhDfdz5oyrguPxgwEPDw9vjJdv0NWQuhean7+akVwLHh4e3jAvSVjkh1AzgMbDw8P7Wt61yYheChgPDw9vP6+aIKi2W821EeDh4eHt5/W25upTK+0I+evDw8PDm+b93sDDw8PDw8PDw7vB+AdqQ3y4hF40KAAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/小程序/">小程序</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=小程序学习(九)&url=http://www.uiyin.com/11/WeChatNine/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=小程序学习(九)&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/11/WeChatNine/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="小程序-九-之操作反馈"><a href="#小程序-九-之操作反馈" class="headerlink" title="小程序(九)之操作反馈"></a>小程序(九)之操作反馈</h2><ul>
+<li>action-sheet</li>
+<li>modal</li>
+<li>toast</li>
+<li>loading</li>
+</ul>
+<h4 id="action-sheet-底部弹出框"><a href="#action-sheet-底部弹出框" class="headerlink" title="action-sheet  底部弹出框"></a>action-sheet  底部弹出框</h4><p>从屏幕底部弹出来的菜单列表</p>
+<p>bindchange   事件名称                     点击背景或者action-sheet-cancel 按钮触发change事件。不携带数据.</p>
+<h4 id="action-sheet-item"><a href="#action-sheet-item" class="headerlink" title="action-sheet-item"></a>action-sheet-item</h4><p>底部菜单表的子选项</p>
+<p>action-sheet-cancel</p>
+<p>底部菜单表的取消按钮，和<action-sheet-item>的区别是。点击它会触发<action-sheet>的change事件，并且外观上会痛它上面的内容间隔开来</action-sheet></action-sheet-item></p>
+<p>具体见代码:</p>
+<p>index.html</p>
+<pre><code>&lt;button type=&quot;default&quot; bindtap=&quot;actionSheetTap&quot;&gt;弹出action sheet&lt;/button&gt;
+&lt;action-sheet hidden=&quot;{{actionSheetHidden}}&quot; bindchange=&quot;actionSheetbindchange&quot;&gt;
+    &lt;block wx:for-items=&quot;{{actionSheetItems}}&quot;&gt;
+        &lt;action-sheet-item bindtap=&quot;bind{{item.bindtap}}&quot;&gt;{{item.txt}}&lt;/action-sheet-item&gt;
+    &lt;/block&gt;
+    &lt;action-sheet-cancel class=&quot;cancel&quot;&gt;取消&lt;/action-sheet-cancel&gt;
+&lt;/action-sheet&gt;
+&lt;view&gt;
+    提示：您选择了菜单{{menu}}
+&lt;/view&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+  data: {
+    // text:&quot;这是一个页面&quot;
+    actionSheetHidden: true,
+    actionSheetItems: [
+      { bindtap: &#39;Menu1&#39;, txt: &#39;菜单1&#39; },
+      { bindtap: &#39;Menu2&#39;, txt: &#39;菜单2&#39; },
+      { bindtap: &#39;Menu3&#39;, txt: &#39;菜单3&#39; }
+    ],
+    menu: &#39;&#39;
+  },
+  actionSheetTap: function () {
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  actionSheetbindchange: function () {
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu1: function () {
+    this.setData({
+      menu: 1,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu2: function () {
+    this.setData({
+      menu: 2,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu3: function () {
+    this.setData({
+      menu: 3,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  }
+})
+</code></pre><h4 id="modal-模态弹窗"><a href="#modal-模态弹窗" class="headerlink" title="modal 模态弹窗"></a>modal 模态弹窗</h4><p>模拟弹窗</p>
+<ul>
+<li>title  String         标题</li>
+<li>no-cancel    Boolean    默认false  是否隐藏cancel按钮</li>
+<li>confirm-text String   确定   confirm 按钮文字</li>
+<li>cancel-text  String   确定   取消   cancel按钮文字</li>
+<li>bindconfirm  事件名称   点击confirm触发的回调</li>
+<li>bindcancel   事件名称   点击cancel以及蒙层触发的回调</li>
+</ul>
+<pre><code>&lt;!--模态弹窗开始--&gt;
+&lt;view&gt;提示：{{tip}}&lt;/view&gt;
+&lt;button type=&quot;default&quot; bindtap=&quot;showModal&quot;&gt;点击我弹出modal对话框&lt;/button&gt;
+&lt;view&gt;
+  &lt;modal title=&quot;modal对话框&quot; hidden=&quot;{{modalHidden}}&quot; confirm-text=&quot;确定&quot; cancel-text=&quot;取消&quot;
+  bindconfirm=&quot;modalBindaconfirm&quot; bindcancel=&quot;modalBindcancel&quot;&gt;您好，我是modal对话框&lt;/modal&gt;
+&lt;/view&gt;
+&lt;!--模态弹窗结束--&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+  data:{
+    // text:&quot;这是一个页面&quot;
+    tip:&#39;&#39;,
+    modalHidden:true
+  },
+  showModal:function(){
+    this.setData({
+      modalHidden:!this.data.modalHidden
+    })
+  },
+  modalBindaconfirm:function(){
+     this.setData({
+      modalHidden:!this.data.modalHidden,
+      tip:&#39;您点击了【确认】按钮！&#39;
+    })
+  },
+  modalBindcancel:function(){
+     this.setData({
+      modalHidden:!this.data.modalHidden,
+      tip:&#39;您点击了【取消】按钮！&#39;
+    })
+  }
+})
+</code></pre><h4 id="toast消息提示框，一般用来提示用户登录，密码之类的"><a href="#toast消息提示框，一般用来提示用户登录，密码之类的" class="headerlink" title="toast消息提示框，一般用来提示用户登录，密码之类的."></a>toast消息提示框，一般用来提示用户登录，密码之类的.</h4><p>使用toast 必须要绑定bindchange事件</p>
+<pre><code>&lt;form bindsubmit=&quot;formBindsubmit&quot; bindreset=&quot;formReset&quot;&gt;
+  &lt;view style=&quot;display:flex;&quot;&gt;
+    &lt;label&gt;用户名：&lt;/label&gt;
+    &lt;input name=&quot;userName&quot; placeholder=&quot;请输入用户名！&quot; /&gt;
+  &lt;/view&gt;
+  &lt;view style=&quot;display:flex;&quot;&gt;
+    &lt;label&gt;密码：&lt;/label&gt;
+    &lt;input name=&quot;psw&quot; placeholder=&quot;请输入密码！&quot; password=&quot;true&quot; /&gt;
+  &lt;/view&gt;
+  &lt;view style=&quot;display:flex;margin-top:30px;&quot;&gt;
+    &lt;button style=&quot;width:30%;&quot; formType=&quot;submit&quot; &gt;登录&lt;/button&gt;
+    &lt;button style=&quot;width:30%&quot; formType=&quot;reset&quot; &gt;重置&lt;/button&gt;
+  &lt;/view&gt;
+&lt;/form&gt;
+&lt;view&gt;{{userName}}&lt;/view&gt;
+&lt;view&gt;{{psw}}&lt;/view&gt;
+&lt;toast duration=&quot;2000&quot; hidden=&quot;{{toastHidden}}&quot; bindchange=&quot;toastBindChange&quot;&gt;用户名或密码不能为空！&lt;/toast&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+  data:{
+    // text:&quot;这是一个页面&quot;
+    toastHidden:true,
+    userName:&#39;&#39;,
+    psw:&#39;&#39;
+  },
+  formBindsubmit:function(e){
+    if(e.detail.value.userName.length==0||e.detail.value.psw.length==0){
+      this.setData({
+        toastHidden:!this.data.toastHidden
+      })
+    }else{
+      this.setData({
+        tip:&#39;&#39;,
+        userName:&#39;用户名：&#39;+e.detail.value.userName,
+        psw:&#39;密码：&#39;+e.detail.value.psw
+      })
+    }
+  },
+  formReset:function(){
+    this.setData({
+      userName:&#39;&#39;,
+      psw:&#39;&#39;
+    })
+  },
+  toastBindChange:function(){
+    this.setData({
+        toastHidden:!this.data.toastHidden
+    })
+  }
+})
+</code></pre><h4 id="loading加载动画"><a href="#loading加载动画" class="headerlink" title="loading加载动画"></a>loading加载动画</h4><p>与toast一样，只不过他不能自己设置时间</p>
+<pre><code>&lt;loading hidden=&quot;{{loadingHidden}}&quot;&gt;
+    加载中...
+&lt;/loading&gt;
+&lt;button type=&quot;default&quot; bindtap=&quot;loadingTap&quot;&gt;点击弹出loading&lt;/button&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+    data: {
+        loadingHidden: true
+    },
+    loadingTap: function(){
+        this.setData({
+          loadingHidden: false
+        });
+        var that = this;
+        setTimeout(function(){
+          that.setData({
+              loadingHidden: true
+          });
+        }, 3000);
+    }
+})
+</code></pre>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/11/WeChatEight/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
