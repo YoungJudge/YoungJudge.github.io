@@ -12,7 +12,7 @@
     
     <title>
         
-            归档 | 
+            小程序学习(十) | 
         
         我的前端之路
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eric Yin">
     <meta name="description" itemprop="description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue">
+    <meta name="keywords" content="尹杰,个人博客,个人网站,WEB前端,html,css,Javascript,vue,小程序">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.uiyin.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | 我的前端之路">
+    <meta property="og:title" content="小程序学习(十) | 我的前端之路">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
-    
+    <meta property="og:article:tag" content="小程序"> 
 
+    
+        <meta property="article:published_time" content="9月 11, 2017" />
+        <meta property="article:modified_time" content="9月 11, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | 我的前端之路">
+    <meta name="twitter:title" content="小程序学习(十) | 我的前端之路">
     <meta name="twitter:description" content="关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.uiyin.com/archives/page/2/index.html" />
+        <link rel="canonical" href="http://www.uiyin.com/11/WeChatTen/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "我的前端之路",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Yin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "一旦害怕失去,你就不再拥有。"
+    },
+    "headline": "小程序学习(十)",
+    "url": "http://www.uiyin.com/11/WeChatTen/index.html",
+    "datePublished": "9月 11, 2017",
+    "dateModified": "9月 11, 2017",
+    "description": "关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.uiyin.com"
+    }
+}
+</script>
 
 
     
@@ -273,242 +306,278 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序十之导航"><span class="post-toc-number">1.</span> <span class="post-toc-text">小程序十之导航</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一-navigator组件"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">(一) navigator组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二-多媒体"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">(二)多媒体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image-图片"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">image 图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#audio-音频"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">audio 音频</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/22/Wechatfirst/">小程序学习(一)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            通过本节的学习对小程序有个大概的认识和了解，具体见本节知识点。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/22/Wechatfirst/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>8月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/小程序/">小程序</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::22/Wechatfirst/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/12/JsBasic/">Js基础用法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            通过本节的学习，主要掌握到Js的常态知识点。重点掌握的是思想。获取DOM，封装函数。以及FOR循环的思想
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/12/JsBasic/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 12, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Js基础用法/">Js基础用法</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::12/JsBasic/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/09/MarkDown/">MarkDown</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本节主要是介绍 Markdown语法的使用，里面介绍了关于Markdown的大致用法,方便后期记忆
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/09/MarkDown/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Eric Yin's avatar">
-            </div>
-            <div>
-                <strong>Eric Yin</strong>
-                <span>1月 09, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/MarkDown语法/">MarkDown语法</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::09/MarkDown/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                小程序学习(十)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eric Yin</strong>
+        <span>9月 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACa0lEQVR42u3aQXLCMBAEQP7/6eQBKcyMFgmHap+oQGy1D9LW7D5+vvp64OHh4eHh4eHh3Yz3iK+/v7++z7PfX//vZG14eHh4J3kvttrLxV3fLYclLyJ6Ih4eHt5BXv6YZ5vys8fnB8kb1oaHh4d3M17+eVIo4+Hh4X0TLynHrwvrNqTAw8PDuzOvjRjyw6CFfSxrwcPDw4t5kzJ39+cP9Pfw8PDwLnn1SFNcLueHQX6o1ENXeHh4eBt4yYBUu7h86CoPI5LV4uHh4Z3ktQOpSZs/X2Kx9LUYFw8PD28Dby2euF7EWiDbjmfh4eHhnefNY4VJ8d22x+qSGg8PD28b711tsHbrz4+QovTHw8PD28zLI9e8zG0L4rUw9+na8PDw8I7z8og2KabbkdM8HFkcHcDDw8PbzNvSoIqD4PZIwMPDwzvPazfiFp/cv/07Hh4e3nneWvOpLY7bAYU8KKn7e3h4eHhjXjsy1TbJkmGp/GAYxbh4eHh4b+IlW3y79a8V4m27qz738PDw8Dbw2sK3bk0tjVuNYlw8PDy8DbwdLaj2qJiD8fDw8E7y8jA3HxSYhLnt68DDw8P7FC8fWp2Q5pFutE48PDy8zbxJBJC3uPIrjzkWRwfw8PDwxrzJ4/PtOx9+XfsWDw8P7ySvbWvlBfHkBa3dGQ8PD+8kb9LKWmuhJUHG2kvEw8PDO8lrA9PJEMDagFcUguDh4eHdjNd+mwDWxgXw8PDw/hevLXnb0ask9t1SUuPh4eFtCCPyoYG15Sav78Xa8PDw8I7wJg2w5IBZG1RtXwEeHh7eGd73XXh4eHh4eHh4eDe4fgGUAismUTckSQAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/小程序/">小程序</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=小程序学习(十)&url=http://www.uiyin.com/11/WeChatTen/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=我的前端之路&title=小程序学习(十)&summary=关注前端知识的最新动态,记录分享前端知识的技能,学习记录css,Javascript等前端技能的点击.分享心得体会.尹杰长期致力于前端知识的累积,分享前端最新的框架和动态.&pics=http://www.uiyin.com/img/favicon.png&url=http://www.uiyin.com/11/WeChatTen/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="小程序十之导航"><a href="#小程序十之导航" class="headerlink" title="小程序十之导航"></a>小程序十之导航</h2><ul>
+<li>图片</li>
+<li>音频</li>
+<li>视频</li>
+</ul>
+<h4 id="一-navigator组件"><a href="#一-navigator组件" class="headerlink" title="(一) navigator组件"></a>(一) navigator组件</h4><pre><code>&lt;navigator url=&quot;../logs/logs&quot;&gt;
+&lt;view&gt;
+123
+&lt;/view&gt;
+&lt;/navigator&gt;
+这个功能类似wx.navigatorto
+</code></pre><h4 id="二-多媒体"><a href="#二-多媒体" class="headerlink" title="(二)多媒体"></a>(二)多媒体</h4><ul>
+<li>image  图片</li>
+<li>audio  声音</li>
+<li>video  视频</li>
+</ul>
+<h4 id="image-图片"><a href="#image-图片" class="headerlink" title="image 图片"></a>image 图片</h4><ul>
+<li>src 地址</li>
+<li>mode 属性 种类有很多有scaleToFill, top left 等等</li>
+</ul>
+<pre><code>&lt;image src=&quot;{{imgsrc}}&quot; mode=&quot;scaleToFill&quot;&gt;&lt;/image&gt;
+</code></pre><h4 id="audio-音频"><a href="#audio-音频" class="headerlink" title="audio 音频"></a>audio 音频</h4><p>音频下面的html文件</p>
+<pre><code>&lt;audio poster=&quot;{{poster}}&quot; name=&quot;{{name}}&quot; author=&quot;{{author}}&quot; src=&quot;{{src}}&quot; id=&quot;myAudio&quot; controls loop&gt;&lt;/audio&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPlay&quot;&gt;播放&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPause&quot;&gt;暂停&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audio14&quot;&gt;设置当前播放时间为14秒&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioStart&quot;&gt;回到开头&lt;/button&gt;
+</code></pre><p>音频下面的js文件</p>
+<pre><code>
+Page({
+
+  data: {
+     poster: &#39;http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000&#39;,
+     name: &#39;此时此刻&#39;,
+     author: &#39;许巍&#39;,
+     src: &#39;http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46&#39;,
+  },
+  audioPlay: function () {
+    this.audioCtx.play()
+  },
+  audioPause: function () {
+    this.audioCtx.pause()
+  },
+  audio14: function () {
+    this.audioCtx.seek(14)
+  },
+  audioStart: function () {
+    this.audioCtx.seek(0)
+  },
+  onReady: function (e) {
+    this.audioCtx = wx.createAudioContext(&#39;myAudio&#39;);
+  }
+})
+</code></pre><p>```</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/11/WeChatEight/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/08/WeChatSix/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

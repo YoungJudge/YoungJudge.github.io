@@ -3,172 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[小程序学习(八)]]></title>
-      <url>/11/WeChatEight/</url>
-      <content type="html"><![CDATA[<h2 id="小程序组件之表单组件"><a href="#小程序组件之表单组件" class="headerlink" title="小程序组件之表单组件"></a>小程序组件之表单组件</h2><h4 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h4><ul>
-<li>button 按钮</li>
-<li>checkbox 复选框</li>
-<li>input 输入框</li>
-<li>label 单机框</li>
-<li>picker 弹出选择</li>
-<li>radio  单选框</li>
-<li>slider 滑块</li>
-<li>switch 开关</li>
-<li>form   表单</li>
-</ul>
-<h4 id="表单之button"><a href="#表单之button" class="headerlink" title="表单之button"></a>表单之button</h4><ul>
-<li>loading   类型布尔    名称前是否带loading图标</li>
-<li>form-type 类型String  用于<form>组件点击分别会触发<form>组件的submit/reset事件</form></form></li>
-<li>open-type 类型contact 进入人工客服</li>
-<li>send-message-title 类型String 当前标题  会话内消息卡片标题  必须搭配open-type=”contact”</li>
-<li>send-message-path 类型String 当前分享路径  会话内消息卡片点击跳转小程序路径  必须搭配open-type=”contact”</li>
-<li>send-message-img 类型String 截图  会话内消息卡片图片  必须搭配open-type=”contact”</li>
-<li>show-message-card  类型Boolean 值false 显示会话内消息卡片  必须搭配 opern-type=”contact”</li>
-<li>bindcontact   事件名称    客服消息回调   必须搭配 opern-type=”contact”</li>
-<li>bindgetphonenumber 事件名称  获取用户手机号回调 open-type=”getphonenumber”</li>
-</ul>
-<p>关于这个使用说明:</p>
-<pre><code>&lt;!--index.html--&gt;
-&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;button open-type=&quot;getPhoneNumber&quot; bindgetphonenumber=&quot;getPhoneNumber&quot;&gt;&lt;/button&gt;&lt;/span&gt;
-</code></pre><p>但是使用之前必须要调用login方法</p>
-<pre><code>App({  
-    onLaunch: function () {  
-        wx.login({  
-            success: function (res) {  
-                if (res.code) {  
-                    //发起网络请求  
-                    console.log(res.code)  
-                } else {  
-                    console.log(&#39;获取用户登录态失败！&#39; + res.errMsg)  
-                }  
-            }  
-        });  
-    }  
-})
-</code></pre><p>通过bindgetphonenumber绑定的事件来获取回调，回调函数有3个<br>errMsg:用户点击取消或授权的信息回调<br>iv:加密算法的初始向量。(如果用户没有同意授权则是undefined)<br>encrytedData:用户信息的加密数据(如果用户没有同意则返回undefined)</p>
-<pre><code>getPhoneNumber: function(e) {
-    console.log(e.detail.errMsg);
-    console.log(e.detail.iv);
-    console.log(e.detail.encryptedData);
-    if (e.detail.errMsg == &#39;getPhoneNumber:fail user deny&#39;){
-      wx.showModal({
-          title: &#39;提示&#39;,
-          showCancel: false,
-          content: &#39;未授权&#39;,
-          success: function (res) { }
-      })
-    } else {
-      wx.showModal({
-          title: &#39;提示&#39;,
-          showCancel: false,
-          content: &#39;同意授权&#39;,
-          success: function (res) { }
-      })
-    }
-  }
-</code></pre><h4 id="表单之checkbox"><a href="#表单之checkbox" class="headerlink" title="表单之checkbox"></a>表单之checkbox</h4><ul>
-<li><p>checkbox-group<br>多项选择器，内部由多个checkbox组成<br>bingchange  类型事件名  说明<checkbox-group>中选项发生改变是触发change事件。detail={value:[选中的checkbox的value的数组]}</checkbox-group></p>
-</li>
-<li><p>checkbox 最外面必须套一层checkbox-group配合使用 这个标签使用的时候一定要小心。他没有闭口，只有/<br>多选项目<br>value   String  <checkbox>标识，选中时触发<checkbox-group>的 change事件，并携带<checkbox>的value<br>disabled Boolean false   是否禁用<br>checked  Boolean false   当前是否选中，可用来设置默认选中<br>color    Color           checkbox的颜色，同css的color</checkbox></checkbox-group></checkbox></p>
-</li>
-</ul>
-<pre><code>&lt;!--index.html--&gt;
-&lt;checkbox-group bindchange=&quot;checkboxChange&quot;&gt;
-&lt;label class=&quot;checkcolor&quot; wx:for=&quot;{{items}}&quot;&gt;
-&lt;checkbox  value=&quot;{{item.value}}&quot;checked=&quot;{{item.checked}}&quot;/&gt;{{item.name}}
-&lt;/label&gt;
-&lt;/checkbox-group&gt;
-</code></pre><p>index.js文件</p>
-<pre><code>  data: {
-     items:[
-       {&quot;name&quot;:&quot;美国&quot;,&quot;value&quot;:&quot;1&quot;},
-        {&quot;name&quot;: &quot;中国&quot;, &quot;value&quot;: &quot;2&quot; },
-         {&quot;name&quot;: &quot;韩国&quot;, &quot;value&quot;: &quot;3&quot; },
-          {&quot;name&quot;: &quot;日本&quot;, &quot;value&quot;: &quot;4&quot; },
-           {&quot;name&quot;: &quot;英国&quot;, &quot;value&quot;: &quot;5&quot; }
-     ]
-  },
-  checkboxChange:function(e){
-    console.log(e);
-    console.log(e.detail.value);
-  }
-</code></pre><h4 id="input输入框"><a href="#input输入框" class="headerlink" title="input输入框"></a>input输入框</h4><ul>
-<li>value 类型Sting  输入框的初始内容</li>
-<li>type  类型String  默认值:text  input类型</li>
-<li>password Boolean 默认值false   是否是密码类型</li>
-<li>placeholder  String   输入框为空时，占位符</li>
-<li>placeholder-style String  指定placeholder的样式</li>
-<li>placeholder-class String  指定placeholder的样式类</li>
-<li>disabled  Boolean  是否禁用</li>
-<li>maxlength Number  140   最大输入长度，设置为-1的时候不限制最大长度</li>
-<li>cursor-spacing Number  0  指定光标与键盘的距离  单位PX</li>
-<li>confirm-type   String  设置右下角按钮的文字。</li>
-<li>confirm-hold   Boolean  false 点击键盘右下角按钮时候是否保持键盘不收起</li>
-<li>cursor    Number  指定focus的光标位置</li>
-</ul>
-<pre><code>&lt;!--input输入框--&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input placeholder=&quot;这是一个可以自动聚焦的input&quot; auto-focus/&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input placeholder=&quot;这个只有在按钮点击的时候才聚焦&quot; focus=&quot;{{focus}}&quot; /&gt;
-  &lt;view class=&quot;btn-area&quot;&gt;
-    &lt;button bindtap=&quot;bindButtonTap&quot;&gt;使得输入框获取焦点&lt;/button&gt;
-  &lt;/view&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input  maxlength=&quot;10&quot; placeholder=&quot;最大输入长度10&quot; /&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;view class=&quot;section__title&quot;&gt;你输入的是：{{inputValue}}&lt;/view&gt;
-  &lt;input  bindinput=&quot;bindKeyInput&quot; placeholder=&quot;输入同步到view中&quot;/&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input  bindinput=&quot;bindReplaceInput&quot; placeholder=&quot;连续的两个1会变成2&quot; /&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input password type=&quot;number&quot; /&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input password type=&quot;text&quot; /&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input type=&quot;digit&quot; placeholder=&quot;带小数点的数字键盘&quot;/&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input type=&quot;idcard&quot; placeholder=&quot;身份证输入键盘&quot; /&gt;
-&lt;/view&gt;
-&lt;view class=&quot;section&quot;&gt;
-  &lt;input placeholder-style=&quot;color:red&quot; placeholder=&quot;占位符字体是红色的&quot; /&gt;
-&lt;/view&gt;
-&lt;!--input输入框结束--&gt;
-</code></pre><h4 id="picker"><a href="#picker" class="headerlink" title="picker"></a>picker</h4><p>滚动选择器，现在支持3种选择器，通过mode来区分。分别是普通选择器，时间选择器，日期选择器，默认是普通选择器</p>
-<p>普通选择器 mode = selector</p>
-<ul>
-<li>range  Array  默认值[] 当mode为selector时候，range有效</li>
-<li>value  Number 0       当mode为selector时候，是数字，表示了range中的第几个，从0开始</li>
-<li>bindchange 事件名称     value改变时候触发change事件。e.detail = {value:value}</li>
-</ul>
-<p>时间选择器 mode = time<br>多列选择器 mode = multiSelector<br>日期选择器 mode = date<br>省市选择器 mode = region</p>
-<h4 id="radio-group-单项选择器同checkbox-group-事件名称-bindchange-“bindchange”"><a href="#radio-group-单项选择器同checkbox-group-事件名称-bindchange-“bindchange”" class="headerlink" title="radio-group  单项选择器同checkbox-group 事件名称:bindchange = “bindchange”"></a>radio-group  单项选择器同checkbox-group 事件名称:bindchange = “bindchange”</h4><p>具体看checkbox</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 小程序 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 小程序 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[小程序学习(九)]]></title>
       <url>/11/WeChatNine/</url>
       <content type="html"><![CDATA[<h4 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h4><ul>
@@ -351,6 +185,246 @@ Page({
     }
 })
 </code></pre>]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[小程序学习(八)]]></title>
+      <url>/11/WeChatEight/</url>
+      <content type="html"><![CDATA[<h2 id="小程序组件之表单组件"><a href="#小程序组件之表单组件" class="headerlink" title="小程序组件之表单组件"></a>小程序组件之表单组件</h2><h4 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h4><ul>
+<li>button 按钮</li>
+<li>checkbox 复选框</li>
+<li>input 输入框</li>
+<li>label 单机框</li>
+<li>picker 弹出选择</li>
+<li>radio  单选框</li>
+<li>slider 滑块</li>
+<li>switch 开关</li>
+<li>form   表单</li>
+</ul>
+<h4 id="表单之button"><a href="#表单之button" class="headerlink" title="表单之button"></a>表单之button</h4><ul>
+<li>loading   类型布尔    名称前是否带loading图标</li>
+<li>form-type 类型String  用于<form>组件点击分别会触发<form>组件的submit/reset事件</form></form></li>
+<li>open-type 类型contact 进入人工客服</li>
+<li>send-message-title 类型String 当前标题  会话内消息卡片标题  必须搭配open-type=”contact”</li>
+<li>send-message-path 类型String 当前分享路径  会话内消息卡片点击跳转小程序路径  必须搭配open-type=”contact”</li>
+<li>send-message-img 类型String 截图  会话内消息卡片图片  必须搭配open-type=”contact”</li>
+<li>show-message-card  类型Boolean 值false 显示会话内消息卡片  必须搭配 opern-type=”contact”</li>
+<li>bindcontact   事件名称    客服消息回调   必须搭配 opern-type=”contact”</li>
+<li>bindgetphonenumber 事件名称  获取用户手机号回调 open-type=”getphonenumber”</li>
+</ul>
+<p>关于这个使用说明:</p>
+<pre><code>&lt;!--index.html--&gt;
+&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;button open-type=&quot;getPhoneNumber&quot; bindgetphonenumber=&quot;getPhoneNumber&quot;&gt;&lt;/button&gt;&lt;/span&gt;
+</code></pre><p>但是使用之前必须要调用login方法</p>
+<pre><code>App({  
+    onLaunch: function () {  
+        wx.login({  
+            success: function (res) {  
+                if (res.code) {  
+                    //发起网络请求  
+                    console.log(res.code)  
+                } else {  
+                    console.log(&#39;获取用户登录态失败！&#39; + res.errMsg)  
+                }  
+            }  
+        });  
+    }  
+})
+</code></pre><p>通过bindgetphonenumber绑定的事件来获取回调，回调函数有3个<br>errMsg:用户点击取消或授权的信息回调<br>iv:加密算法的初始向量。(如果用户没有同意授权则是undefined)<br>encrytedData:用户信息的加密数据(如果用户没有同意则返回undefined)</p>
+<pre><code>getPhoneNumber: function(e) {
+    console.log(e.detail.errMsg);
+    console.log(e.detail.iv);
+    console.log(e.detail.encryptedData);
+    if (e.detail.errMsg == &#39;getPhoneNumber:fail user deny&#39;){
+      wx.showModal({
+          title: &#39;提示&#39;,
+          showCancel: false,
+          content: &#39;未授权&#39;,
+          success: function (res) { }
+      })
+    } else {
+      wx.showModal({
+          title: &#39;提示&#39;,
+          showCancel: false,
+          content: &#39;同意授权&#39;,
+          success: function (res) { }
+      })
+    }
+  }
+</code></pre><h4 id="表单之checkbox"><a href="#表单之checkbox" class="headerlink" title="表单之checkbox"></a>表单之checkbox</h4><ul>
+<li><p>checkbox-group<br>多项选择器，内部由多个checkbox组成<br>bingchange  类型事件名  说明<checkbox-group>中选项发生改变是触发change事件。detail={value:[选中的checkbox的value的数组]}</checkbox-group></p>
+</li>
+<li><p>checkbox 最外面必须套一层checkbox-group配合使用 这个标签使用的时候一定要小心。他没有闭口，只有/<br>多选项目<br>value   String  <checkbox>标识，选中时触发<checkbox-group>的 change事件，并携带<checkbox>的value<br>disabled Boolean false   是否禁用<br>checked  Boolean false   当前是否选中，可用来设置默认选中<br>color    Color           checkbox的颜色，同css的color</checkbox></checkbox-group></checkbox></p>
+</li>
+</ul>
+<pre><code>&lt;!--index.html--&gt;
+&lt;checkbox-group bindchange=&quot;checkboxChange&quot;&gt;
+&lt;label class=&quot;checkcolor&quot; wx:for=&quot;{{items}}&quot;&gt;
+&lt;checkbox  value=&quot;{{item.value}}&quot;checked=&quot;{{item.checked}}&quot;/&gt;{{item.name}}
+&lt;/label&gt;
+&lt;/checkbox-group&gt;
+</code></pre><p>index.js文件</p>
+<pre><code>  data: {
+     items:[
+       {&quot;name&quot;:&quot;美国&quot;,&quot;value&quot;:&quot;1&quot;},
+        {&quot;name&quot;: &quot;中国&quot;, &quot;value&quot;: &quot;2&quot; },
+         {&quot;name&quot;: &quot;韩国&quot;, &quot;value&quot;: &quot;3&quot; },
+          {&quot;name&quot;: &quot;日本&quot;, &quot;value&quot;: &quot;4&quot; },
+           {&quot;name&quot;: &quot;英国&quot;, &quot;value&quot;: &quot;5&quot; }
+     ]
+  },
+  checkboxChange:function(e){
+    console.log(e);
+    console.log(e.detail.value);
+  }
+</code></pre><h4 id="input输入框"><a href="#input输入框" class="headerlink" title="input输入框"></a>input输入框</h4><ul>
+<li>value 类型Sting  输入框的初始内容</li>
+<li>type  类型String  默认值:text  input类型</li>
+<li>password Boolean 默认值false   是否是密码类型</li>
+<li>placeholder  String   输入框为空时，占位符</li>
+<li>placeholder-style String  指定placeholder的样式</li>
+<li>placeholder-class String  指定placeholder的样式类</li>
+<li>disabled  Boolean  是否禁用</li>
+<li>maxlength Number  140   最大输入长度，设置为-1的时候不限制最大长度</li>
+<li>cursor-spacing Number  0  指定光标与键盘的距离  单位PX</li>
+<li>confirm-type   String  设置右下角按钮的文字。</li>
+<li>confirm-hold   Boolean  false 点击键盘右下角按钮时候是否保持键盘不收起</li>
+<li>cursor    Number  指定focus的光标位置</li>
+</ul>
+<pre><code>&lt;!--input输入框--&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input placeholder=&quot;这是一个可以自动聚焦的input&quot; auto-focus/&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input placeholder=&quot;这个只有在按钮点击的时候才聚焦&quot; focus=&quot;{{focus}}&quot; /&gt;
+  &lt;view class=&quot;btn-area&quot;&gt;
+    &lt;button bindtap=&quot;bindButtonTap&quot;&gt;使得输入框获取焦点&lt;/button&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input  maxlength=&quot;10&quot; placeholder=&quot;最大输入长度10&quot; /&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;view class=&quot;section__title&quot;&gt;你输入的是：{{inputValue}}&lt;/view&gt;
+  &lt;input  bindinput=&quot;bindKeyInput&quot; placeholder=&quot;输入同步到view中&quot;/&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input  bindinput=&quot;bindReplaceInput&quot; placeholder=&quot;连续的两个1会变成2&quot; /&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input password type=&quot;number&quot; /&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input password type=&quot;text&quot; /&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input type=&quot;digit&quot; placeholder=&quot;带小数点的数字键盘&quot;/&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input type=&quot;idcard&quot; placeholder=&quot;身份证输入键盘&quot; /&gt;
+&lt;/view&gt;
+&lt;view class=&quot;section&quot;&gt;
+  &lt;input placeholder-style=&quot;color:red&quot; placeholder=&quot;占位符字体是红色的&quot; /&gt;
+&lt;/view&gt;
+&lt;!--input输入框结束--&gt;
+</code></pre><h4 id="picker"><a href="#picker" class="headerlink" title="picker"></a>picker</h4><p>滚动选择器，现在支持3种选择器，通过mode来区分。分别是普通选择器，时间选择器，日期选择器，默认是普通选择器</p>
+<p>普通选择器 mode = selector</p>
+<ul>
+<li>range  Array  默认值[] 当mode为selector时候，range有效</li>
+<li>value  Number 0       当mode为selector时候，是数字，表示了range中的第几个，从0开始</li>
+<li>bindchange 事件名称     value改变时候触发change事件。e.detail = {value:value}</li>
+</ul>
+<p>时间选择器 mode = time<br>多列选择器 mode = multiSelector<br>日期选择器 mode = date<br>省市选择器 mode = region</p>
+<h4 id="radio-group-单项选择器同checkbox-group-事件名称-bindchange-“bindchange”"><a href="#radio-group-单项选择器同checkbox-group-事件名称-bindchange-“bindchange”" class="headerlink" title="radio-group  单项选择器同checkbox-group 事件名称:bindchange = “bindchange”"></a>radio-group  单项选择器同checkbox-group 事件名称:bindchange = “bindchange”</h4><p>具体看checkbox</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[小程序学习(十)]]></title>
+      <url>/11/WeChatTen/</url>
+      <content type="html"><![CDATA[<h2 id="小程序十之导航"><a href="#小程序十之导航" class="headerlink" title="小程序十之导航"></a>小程序十之导航</h2><ul>
+<li>图片</li>
+<li>音频</li>
+<li>视频</li>
+</ul>
+<h4 id="一-navigator组件"><a href="#一-navigator组件" class="headerlink" title="(一) navigator组件"></a>(一) navigator组件</h4><pre><code>&lt;navigator url=&quot;../logs/logs&quot;&gt;
+&lt;view&gt;
+123
+&lt;/view&gt;
+&lt;/navigator&gt;
+这个功能类似wx.navigatorto
+</code></pre><h4 id="二-多媒体"><a href="#二-多媒体" class="headerlink" title="(二)多媒体"></a>(二)多媒体</h4><ul>
+<li>image  图片</li>
+<li>audio  声音</li>
+<li>video  视频</li>
+</ul>
+<h4 id="image-图片"><a href="#image-图片" class="headerlink" title="image 图片"></a>image 图片</h4><ul>
+<li>src 地址</li>
+<li>mode 属性 种类有很多有scaleToFill, top left 等等</li>
+</ul>
+<pre><code>&lt;image src=&quot;{{imgsrc}}&quot; mode=&quot;scaleToFill&quot;&gt;&lt;/image&gt;
+</code></pre><h4 id="audio-音频"><a href="#audio-音频" class="headerlink" title="audio 音频"></a>audio 音频</h4><p>音频下面的html文件</p>
+<pre><code>&lt;audio poster=&quot;{{poster}}&quot; name=&quot;{{name}}&quot; author=&quot;{{author}}&quot; src=&quot;{{src}}&quot; id=&quot;myAudio&quot; controls loop&gt;&lt;/audio&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPlay&quot;&gt;播放&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPause&quot;&gt;暂停&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audio14&quot;&gt;设置当前播放时间为14秒&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioStart&quot;&gt;回到开头&lt;/button&gt;
+</code></pre><p>音频下面的js文件</p>
+<pre><code>
+Page({
+
+  data: {
+     poster: &#39;http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000&#39;,
+     name: &#39;此时此刻&#39;,
+     author: &#39;许巍&#39;,
+     src: &#39;http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46&#39;,
+  },
+  audioPlay: function () {
+    this.audioCtx.play()
+  },
+  audioPause: function () {
+    this.audioCtx.pause()
+  },
+  audio14: function () {
+    this.audioCtx.seek(14)
+  },
+  audioStart: function () {
+    this.audioCtx.seek(0)
+  },
+  onReady: function (e) {
+    this.audioCtx = wx.createAudioContext(&#39;myAudio&#39;);
+  }
+})
+</code></pre><p>```</p>
+]]></content>
       
         <categories>
             
@@ -2600,14 +2674,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
