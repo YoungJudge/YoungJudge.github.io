@@ -169,6 +169,166 @@
     </entry>
     
     <entry>
+      <title><![CDATA[小程序学习(十一)]]></title>
+      <url>/11/WeChatEleven/</url>
+      <content type="html"><![CDATA[<h2 id="小程序-十一-之地图"><a href="#小程序-十一-之地图" class="headerlink" title="小程序(十一)之地图"></a>小程序(十一)之地图</h2><h3 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h3><ul>
+<li>地图map的基本使用</li>
+<li>地图标记</li>
+<li>地图覆盖物</li>
+</ul>
+<h4 id="map属性"><a href="#map属性" class="headerlink" title="map属性"></a>map属性</h4><ul>
+<li>longitude   类型Num  经度</li>
+<li>latitude   类型Num   纬度</li>
+<li>scale    类型Num    缩放级别取值范围5-18</li>
+<li>markers  Array    标记点</li>
+<li>polyline  Array  路线</li>
+<li>circles   Array  圆</li>
+<li>controls  Array  控件</li>
+<li>include-points  Array  缩放视野以包含所有给定的坐标点</li>
+<li>show-location  Boolean   显示带有方向的当前定位点</li>
+<li>bindmarkertap 事件名称    点击标记点时候触发</li>
+<li>bindcallouttap  事件名称  点击标记点对应的气泡触发</li>
+<li>bindcontroltap  事件名称  点击控件时候触发</li>
+<li>bindregionchange  事件名称  视野发生变化时触发</li>
+<li>bindtap    事件名称         点击地图时候触发</li>
+</ul>
+<pre><code>&lt;map id=&quot;map&quot; longitude=&quot;113.324520&quot; latitude=&quot;23.099994&quot; scale=&quot;14&quot; controls=&quot;{{controls}}&quot; bindcontroltap=&quot;controltap&quot; markers=&quot;{{markers}}&quot; bindmarkertap=&quot;markertap&quot; polyline=&quot;{{polyline}}&quot; bindregionchange=&quot;regionchange&quot; show-location style=&quot;width: 100%; height: 300px;&quot;&gt;&lt;/map&gt;
+</code></pre><p>index.js文件,要是简单的使用只需要把标记点和map里面的经纬度换换即可</p>
+<pre><code>Page({
+  data: {
+    markers: [{
+      iconPath: &quot;/resources/others.png&quot;,
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 50,
+      height: 50
+    }],
+    polyline: [{
+      points: [{
+        longitude: 113.3245211,
+        latitude: 23.10229
+      }, {
+        longitude: 113.324520,
+        latitude: 23.21229
+      }],
+      color:&quot;#FF0000DD&quot;,
+      width: 2,
+      dottedLine: true
+    }],
+    controls: [{
+      id: 1,
+      iconPath: &#39;/resources/location.png&#39;,
+      position: {
+        left: 0,
+        top: 300 - 50,
+        width: 50,
+        height: 50
+      },
+      clickable: true
+    }]
+  },
+  regionchange(e) {
+    console.log(e.type)
+  },
+  markertap(e) {
+    console.log(e.markerId)
+  },
+  controltap(e) {
+    console.log(e.controlId)
+  }
+})
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[小程序学习(十)]]></title>
+      <url>/11/WeChatTen/</url>
+      <content type="html"><![CDATA[<h2 id="小程序十之导航"><a href="#小程序十之导航" class="headerlink" title="小程序十之导航"></a>小程序十之导航</h2><ul>
+<li>图片</li>
+<li>音频</li>
+<li>视频</li>
+</ul>
+<h4 id="一-navigator组件"><a href="#一-navigator组件" class="headerlink" title="(一) navigator组件"></a>(一) navigator组件</h4><pre><code>&lt;navigator url=&quot;../logs/logs&quot;&gt;
+&lt;view&gt;
+123
+&lt;/view&gt;
+&lt;/navigator&gt;
+这个功能类似wx.navigatorto
+</code></pre><h4 id="二-多媒体"><a href="#二-多媒体" class="headerlink" title="(二)多媒体"></a>(二)多媒体</h4><ul>
+<li>image  图片</li>
+<li>audio  声音</li>
+<li>video  视频</li>
+</ul>
+<h4 id="image-图片"><a href="#image-图片" class="headerlink" title="image 图片"></a>image 图片</h4><ul>
+<li>src 地址</li>
+<li>mode 属性 种类有很多有scaleToFill, top left 等等</li>
+</ul>
+<pre><code>&lt;image src=&quot;{{imgsrc}}&quot; mode=&quot;scaleToFill&quot;&gt;&lt;/image&gt;
+</code></pre><h4 id="audio-音频"><a href="#audio-音频" class="headerlink" title="audio 音频"></a>audio 音频</h4><p>音频下面的html文件</p>
+<pre><code>&lt;audio poster=&quot;{{poster}}&quot; name=&quot;{{name}}&quot; author=&quot;{{author}}&quot; src=&quot;{{src}}&quot; id=&quot;myAudio&quot; controls loop&gt;&lt;/audio&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPlay&quot;&gt;播放&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioPause&quot;&gt;暂停&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audio14&quot;&gt;设置当前播放时间为14秒&lt;/button&gt;
+&lt;button type=&quot;primary&quot; bindtap=&quot;audioStart&quot;&gt;回到开头&lt;/button&gt;
+</code></pre><p>音频下面的js文件</p>
+<pre><code>
+Page({
+
+  data: {
+     poster: &#39;http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000&#39;,
+     name: &#39;此时此刻&#39;,
+     author: &#39;许巍&#39;,
+     src: &#39;http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46&#39;,
+  },
+  audioPlay: function () {
+    this.audioCtx.play()
+  },
+  audioPause: function () {
+    this.audioCtx.pause()
+  },
+  audio14: function () {
+    this.audioCtx.seek(14)
+  },
+  audioStart: function () {
+    this.audioCtx.seek(0)
+  },
+  onReady: function (e) {
+    this.audioCtx = wx.createAudioContext(&#39;myAudio&#39;);
+  }
+})
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小程序学习(九)]]></title>
       <url>/11/WeChatNine/</url>
       <content type="html"><![CDATA[<h4 id="本节知识点"><a href="#本节知识点" class="headerlink" title="本节知识点"></a>本节知识点</h4><ul>
@@ -368,59 +528,90 @@ Page({
     </entry>
     
     <entry>
-      <title><![CDATA[小程序学习(十)]]></title>
-      <url>/11/WeChatTen/</url>
-      <content type="html"><![CDATA[<h2 id="小程序十之导航"><a href="#小程序十之导航" class="headerlink" title="小程序十之导航"></a>小程序十之导航</h2><ul>
-<li>图片</li>
-<li>音频</li>
-<li>视频</li>
+      <title><![CDATA[小程序学习(七)]]></title>
+      <url>/08/WeChatSeven/</url>
+      <content type="html"><![CDATA[<h2 id="小程序-7-之movablearea与coverview"><a href="#小程序-7-之movablearea与coverview" class="headerlink" title="小程序(7)之movablearea与coverview"></a>小程序(7)之movablearea与coverview</h2><h4 id="组件之movable-view"><a href="#组件之movable-view" class="headerlink" title="组件之movable-view"></a>组件之movable-view</h4><ul>
+<li>direction  类型string  默认值none   说明movable-view移动的方向，属性值有all.vertical,horizontal,none</li>
+<li>inertia    类型Boolean 默认值false  说明movable-view是否带有惯性</li>
+<li>out0of-bounds 类型boolean 默认值false  超过可移动区域后，movable-view是否可以移动</li>
+<li>x            类型Number   定义X轴向的偏移。如果X的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
+<li>y            类型Number   定义y轴的偏移。如果y的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
+<li>damping  类型Number  阻尼系数用于控制X或Y改变时候的动画和过界回弹的动画，值越大移动越快</li>
+<li>friction  类型Number 摩擦系数。用于控制惯性滑动的动画。值越大。摩擦力越大。滑动越快停止。必须大于0否则会被设置为默认值</li>
 </ul>
-<h4 id="一-navigator组件"><a href="#一-navigator组件" class="headerlink" title="(一) navigator组件"></a>(一) navigator组件</h4><pre><code>&lt;navigator url=&quot;../logs/logs&quot;&gt;
-&lt;view&gt;
-123
+<blockquote>
+<p>movable-view  必须设置width和height属性，不设置默认为10PX<br>moable-view默认为绝对定位，top和left属性为0px<br>当moable-view小于moanle-area时候，moable-view的移动范围在movable-area内，当movable-view大于moable-area时候<br>movable-view的移动范围必须包含movable-area(X轴和Y轴方向分开考虑)</p>
+</blockquote>
+<h4 id="注意movable-view必须在组件中，必须是直接子节点否则不能移动"><a href="#注意movable-view必须在组件中，必须是直接子节点否则不能移动" class="headerlink" title="注意movable-view必须在组件中，必须是直接子节点否则不能移动"></a>注意movable-view必须在<movable-area>组件中，必须是直接子节点否则不能移动</movable-area></h4><pre><code>&lt;view &gt;
+  &lt;view&gt;movable-view区域小于movable-area&lt;/view&gt;
+  &lt;movable-area style=&quot;height: 200px;width: 200px;background: red;&quot;&gt;
+    &lt;movable-view style=&quot;height: 50px; width: 50px; background: blue;&quot; x=&quot;{{x}}&quot; y=&quot;{{y}}&quot; direction=&quot;all&quot;&gt;
+    &lt;/movable-view&gt;
+  &lt;/movable-area&gt;
+  &lt;view&gt;
+    &lt;button size=&quot;mini&quot; bindtap=&quot;tap&quot;&gt;click me to move to (30px, 30px)&lt;/button&gt;
+  &lt;/view&gt;
+  &lt;view&gt;movable-view区域大于movable-area&lt;/view&gt;
+  &lt;movable-area style=&quot;height: 100px;width: 100px;background: red;&quot; direction=&quot;all&quot;&gt;
+    &lt;movable-view style=&quot;height: 200px; width: 200px; background: blue;&quot;&gt;
+    &lt;/movable-view&gt;
+  &lt;/movable-area&gt;
 &lt;/view&gt;
-&lt;/navigator&gt;
-这个功能类似wx.navigatorto
-</code></pre><h4 id="二-多媒体"><a href="#二-多媒体" class="headerlink" title="(二)多媒体"></a>(二)多媒体</h4><ul>
-<li>image  图片</li>
-<li>audio  声音</li>
-<li>video  视频</li>
+</code></pre><h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><p>覆盖在原生组件上的文本视图，可覆盖的原生组件包括map,video,canvas，支持嵌套类似绝对定位之类的的。（用处不大）</p>
+<h4 id="cover-image"><a href="#cover-image" class="headerlink" title="cover-image"></a>cover-image</h4><p>覆盖在源生组件上的图片视图，可覆盖源生组件，同cover-view，支持嵌套</p>
+<p>属性名:src 类型String  说明图标路径，支持临时路径，暂时不支持网络地址</p>
+<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><ul>
+<li>只可以嵌套在源生组件map.video,canvas内，避免嵌套在其他组件内</li>
+<li>事件模型遵循冒泡模型，但不会冒泡到源生组件</li>
+<li>文本建议都套上cover-view标签。避免排版错误</li>
+<li>只支持基本的定位，布局，文本样式。不支持设置单边的border,opacity,background-image等.</li>
+<li>建议子节点不要溢出父节点</li>
+<li>暂时不支持css动画</li>
 </ul>
-<h4 id="image-图片"><a href="#image-图片" class="headerlink" title="image 图片"></a>image 图片</h4><ul>
-<li>src 地址</li>
-<li>mode 属性 种类有很多有scaleToFill, top left 等等</li>
-</ul>
-<pre><code>&lt;image src=&quot;{{imgsrc}}&quot; mode=&quot;scaleToFill&quot;&gt;&lt;/image&gt;
-</code></pre><h4 id="audio-音频"><a href="#audio-音频" class="headerlink" title="audio 音频"></a>audio 音频</h4><p>音频下面的html文件</p>
-<pre><code>&lt;audio poster=&quot;{{poster}}&quot; name=&quot;{{name}}&quot; author=&quot;{{author}}&quot; src=&quot;{{src}}&quot; id=&quot;myAudio&quot; controls loop&gt;&lt;/audio&gt;
-&lt;button type=&quot;primary&quot; bindtap=&quot;audioPlay&quot;&gt;播放&lt;/button&gt;
-&lt;button type=&quot;primary&quot; bindtap=&quot;audioPause&quot;&gt;暂停&lt;/button&gt;
-&lt;button type=&quot;primary&quot; bindtap=&quot;audio14&quot;&gt;设置当前播放时间为14秒&lt;/button&gt;
-&lt;button type=&quot;primary&quot; bindtap=&quot;audioStart&quot;&gt;回到开头&lt;/button&gt;
-</code></pre><p>音频下面的js文件</p>
-<pre><code>
-Page({
+<pre><code>&lt;!--inde.html--&gt;
+&lt;video id=&quot;myVideo&quot; src=&quot;http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400&quot; controls=&quot;{{false}}&quot; event-model=&quot;bubble&quot;&gt;
+  &lt;cover-view class=&quot;controls&quot;&gt;
+    &lt;cover-view class=&quot;play&quot; bindtap=&quot;play&quot;&gt;
+      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_play&quot; /&gt;
+    &lt;/cover-view&gt;
+    &lt;cover-view class=&quot;pause&quot; bindtap=&quot;pause&quot;&gt;
+      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_pause&quot; /&gt;
+    &lt;/cover-view&gt;
+    &lt;cover-view class=&quot;time&quot;&gt;00:00&lt;/cover-view&gt;
+  &lt;/cover-view&gt;
+&lt;/video&gt;
+</code></pre><p>index.css</p>
+<pre><code>.container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.part1{
+  flex: 1 1 100rpx;
+  width:100%;
+  border-bottom:1px solid #ffffff;
+  background:green;
+  line-height:100rpx;
+  text-align:center;
+  color:white;
+}
+</code></pre><p>index.js</p>
+<pre><code>Page({
 
+  /**
+   * 页面的初始数据
+   */
   data: {
-     poster: &#39;http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000&#39;,
-     name: &#39;此时此刻&#39;,
-     author: &#39;许巍&#39;,
-     src: &#39;http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46&#39;,
   },
-  audioPlay: function () {
-    this.audioCtx.play()
+  onReady() {
+    this.videoCtx = wx.createVideoContext(&#39;myVideo&#39;)
   },
-  audioPause: function () {
-    this.audioCtx.pause()
+  play() {
+    this.videoCtx.play()
   },
-  audio14: function () {
-    this.audioCtx.seek(14)
-  },
-  audioStart: function () {
-    this.audioCtx.seek(0)
-  },
-  onReady: function (e) {
-    this.audioCtx = wx.createAudioContext(&#39;myAudio&#39;);
+  pause() {
+    this.videoCtx.pause()
   }
 })
 </code></pre>]]></content>
@@ -838,110 +1029,6 @@ Page({
   text-align:center;
   line-height:400rpx;
 }
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> 小程序 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 小程序 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[小程序学习(七)]]></title>
-      <url>/08/WeChatSeven/</url>
-      <content type="html"><![CDATA[<h2 id="小程序-7-之movablearea与coverview"><a href="#小程序-7-之movablearea与coverview" class="headerlink" title="小程序(7)之movablearea与coverview"></a>小程序(7)之movablearea与coverview</h2><h4 id="组件之movable-view"><a href="#组件之movable-view" class="headerlink" title="组件之movable-view"></a>组件之movable-view</h4><ul>
-<li>direction  类型string  默认值none   说明movable-view移动的方向，属性值有all.vertical,horizontal,none</li>
-<li>inertia    类型Boolean 默认值false  说明movable-view是否带有惯性</li>
-<li>out0of-bounds 类型boolean 默认值false  超过可移动区域后，movable-view是否可以移动</li>
-<li>x            类型Number   定义X轴向的偏移。如果X的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
-<li>y            类型Number   定义y轴的偏移。如果y的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
-<li>damping  类型Number  阻尼系数用于控制X或Y改变时候的动画和过界回弹的动画，值越大移动越快</li>
-<li>friction  类型Number 摩擦系数。用于控制惯性滑动的动画。值越大。摩擦力越大。滑动越快停止。必须大于0否则会被设置为默认值</li>
-</ul>
-<blockquote>
-<p>movable-view  必须设置width和height属性，不设置默认为10PX<br>moable-view默认为绝对定位，top和left属性为0px<br>当moable-view小于moanle-area时候，moable-view的移动范围在movable-area内，当movable-view大于moable-area时候<br>movable-view的移动范围必须包含movable-area(X轴和Y轴方向分开考虑)</p>
-</blockquote>
-<h4 id="注意movable-view必须在组件中，必须是直接子节点否则不能移动"><a href="#注意movable-view必须在组件中，必须是直接子节点否则不能移动" class="headerlink" title="注意movable-view必须在组件中，必须是直接子节点否则不能移动"></a>注意movable-view必须在<movable-area>组件中，必须是直接子节点否则不能移动</movable-area></h4><pre><code>&lt;view &gt;
-  &lt;view&gt;movable-view区域小于movable-area&lt;/view&gt;
-  &lt;movable-area style=&quot;height: 200px;width: 200px;background: red;&quot;&gt;
-    &lt;movable-view style=&quot;height: 50px; width: 50px; background: blue;&quot; x=&quot;{{x}}&quot; y=&quot;{{y}}&quot; direction=&quot;all&quot;&gt;
-    &lt;/movable-view&gt;
-  &lt;/movable-area&gt;
-  &lt;view&gt;
-    &lt;button size=&quot;mini&quot; bindtap=&quot;tap&quot;&gt;click me to move to (30px, 30px)&lt;/button&gt;
-  &lt;/view&gt;
-  &lt;view&gt;movable-view区域大于movable-area&lt;/view&gt;
-  &lt;movable-area style=&quot;height: 100px;width: 100px;background: red;&quot; direction=&quot;all&quot;&gt;
-    &lt;movable-view style=&quot;height: 200px; width: 200px; background: blue;&quot;&gt;
-    &lt;/movable-view&gt;
-  &lt;/movable-area&gt;
-&lt;/view&gt;
-</code></pre><h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><p>覆盖在原生组件上的文本视图，可覆盖的原生组件包括map,video,canvas，支持嵌套类似绝对定位之类的的。（用处不大）</p>
-<h4 id="cover-image"><a href="#cover-image" class="headerlink" title="cover-image"></a>cover-image</h4><p>覆盖在源生组件上的图片视图，可覆盖源生组件，同cover-view，支持嵌套</p>
-<p>属性名:src 类型String  说明图标路径，支持临时路径，暂时不支持网络地址</p>
-<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><ul>
-<li>只可以嵌套在源生组件map.video,canvas内，避免嵌套在其他组件内</li>
-<li>事件模型遵循冒泡模型，但不会冒泡到源生组件</li>
-<li>文本建议都套上cover-view标签。避免排版错误</li>
-<li>只支持基本的定位，布局，文本样式。不支持设置单边的border,opacity,background-image等.</li>
-<li>建议子节点不要溢出父节点</li>
-<li>暂时不支持css动画</li>
-</ul>
-<pre><code>&lt;!--inde.html--&gt;
-&lt;video id=&quot;myVideo&quot; src=&quot;http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400&quot; controls=&quot;{{false}}&quot; event-model=&quot;bubble&quot;&gt;
-  &lt;cover-view class=&quot;controls&quot;&gt;
-    &lt;cover-view class=&quot;play&quot; bindtap=&quot;play&quot;&gt;
-      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_play&quot; /&gt;
-    &lt;/cover-view&gt;
-    &lt;cover-view class=&quot;pause&quot; bindtap=&quot;pause&quot;&gt;
-      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_pause&quot; /&gt;
-    &lt;/cover-view&gt;
-    &lt;cover-view class=&quot;time&quot;&gt;00:00&lt;/cover-view&gt;
-  &lt;/cover-view&gt;
-&lt;/video&gt;
-</code></pre><p>index.css</p>
-<pre><code>.container{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-content: space-around;
-}
-.part1{
-  flex: 1 1 100rpx;
-  width:100%;
-  border-bottom:1px solid #ffffff;
-  background:green;
-  line-height:100rpx;
-  text-align:center;
-  color:white;
-}
-</code></pre><p>index.js</p>
-<pre><code>Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  },
-  onReady() {
-    this.videoCtx = wx.createVideoContext(&#39;myVideo&#39;)
-  },
-  play() {
-    this.videoCtx.play()
-  },
-  pause() {
-    this.videoCtx.pause()
-  }
-})
 </code></pre>]]></content>
       
         <categories>
@@ -2661,6 +2748,12 @@ alert(arr1); // [3, 2, 1]
   
     
     <entry>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[友情链接]]></title>
       <url>/links/index.html</url>
       <content type="html"></content>
@@ -2669,12 +2762,6 @@ alert(arr1); // [3, 2, 1]
     <entry>
       <title><![CDATA[图库]]></title>
       <url>/gallery/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
