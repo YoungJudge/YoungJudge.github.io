@@ -194,6 +194,162 @@
 &lt;view&gt;
     提示：您选择了菜单{{menu}}
 &lt;/view&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+  data: {
+    actionSheetHidden: true,
+    actionSheetItems: [
+      { bindtap: &#39;Menu1&#39;, txt: &#39;菜单1&#39; },
+      { bindtap: &#39;Menu2&#39;, txt: &#39;菜单2&#39; },
+      { bindtap: &#39;Menu3&#39;, txt: &#39;菜单3&#39; }
+    ],
+    menu: &#39;&#39;
+  },
+  actionSheetTap: function () {
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  actionSheetbindchange: function () {
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu1: function () {
+    this.setData({
+      menu: 1,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu2: function () {
+    this.setData({
+      menu: 2,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  },
+  bindMenu3: function () {
+    this.setData({
+      menu: 3,
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
+  }
+})
+</code></pre><h4 id="modal-模态弹窗"><a href="#modal-模态弹窗" class="headerlink" title="modal 模态弹窗"></a>modal 模态弹窗</h4><p>模拟弹窗</p>
+<ul>
+<li>title  String         标题</li>
+<li>no-cancel    Boolean    默认false  是否隐藏cancel按钮</li>
+<li>confirm-text String   确定   confirm 按钮文字</li>
+<li>cancel-text  String   确定   取消   cancel按钮文字</li>
+<li>bindconfirm  事件名称   点击confirm触发的回调</li>
+<li>bindcancel   事件名称   点击cancel以及蒙层触发的回调</li>
+</ul>
+<pre><code>
+&lt;!--模态弹窗开始--&gt;
+&lt;view&gt;提示：{{tip}}&lt;/view&gt;
+&lt;button type=&quot;default&quot; bindtap=&quot;showModal&quot;&gt;点击我弹出modal对话框&lt;/button&gt;
+&lt;view&gt;
+  &lt;modal title=&quot;modal对话框&quot; hidden=&quot;{{modalHidden}}&quot; confirm-text=&quot;确定&quot; cancel-text=&quot;取消&quot;
+  bindconfirm=&quot;modalBindaconfirm&quot; bindcancel=&quot;modalBindcancel&quot;&gt;您好，我是modal对话框&lt;/modal&gt;
+&lt;/view&gt;
+&lt;!--模态弹窗结束--&gt;
+</code></pre><p>index.js</p>
+<pre><code>
+Page({
+  data:{
+    tip:&#39;&#39;,
+    modalHidden:true
+  },
+  showModal:function(){
+    this.setData({
+      modalHidden:!this.data.modalHidden
+    })
+  },
+  modalBindaconfirm:function(){
+     this.setData({
+      modalHidden:!this.data.modalHidden,
+      tip:&#39;您点击了【确认】按钮！&#39;
+    })
+  },
+  modalBindcancel:function(){
+     this.setData({
+      modalHidden:!this.data.modalHidden,
+      tip:&#39;您点击了【取消】按钮！&#39;
+    })
+  }
+})
+</code></pre><h4 id="toast消息提示框，一般用来提示用户登录，密码之类的"><a href="#toast消息提示框，一般用来提示用户登录，密码之类的" class="headerlink" title="toast消息提示框，一般用来提示用户登录，密码之类的."></a>toast消息提示框，一般用来提示用户登录，密码之类的.</h4><p>使用toast 必须要绑定bindchange事件</p>
+<pre><code>
+&lt;form bindsubmit=&quot;formBindsubmit&quot; bindreset=&quot;formReset&quot;&gt;
+  &lt;view style=&quot;display:flex;&quot;&gt;
+    &lt;label&gt;用户名：&lt;/label&gt;
+    &lt;input name=&quot;userName&quot; placeholder=&quot;请输入用户名！&quot; /&gt;
+  &lt;/view&gt;
+  &lt;view style=&quot;display:flex;&quot;&gt;
+    &lt;label&gt;密码：&lt;/label&gt;
+    &lt;input name=&quot;psw&quot; placeholder=&quot;请输入密码！&quot; password=&quot;true&quot; /&gt;
+  &lt;/view&gt;
+  &lt;view style=&quot;display:flex;margin-top:30px;&quot;&gt;
+    &lt;button style=&quot;width:30%;&quot; formType=&quot;submit&quot; &gt;登录&lt;/button&gt;
+    &lt;button style=&quot;width:30%&quot; formType=&quot;reset&quot; &gt;重置&lt;/button&gt;
+  &lt;/view&gt;
+&lt;/form&gt;
+&lt;view&gt;{{userName}}&lt;/view&gt;
+&lt;view&gt;{{psw}}&lt;/view&gt;
+&lt;toast duration=&quot;2000&quot; hidden=&quot;{{toastHidden}}&quot; bindchange=&quot;toastBindChange&quot;&gt;用户名或密码不能为空！&lt;/toast&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+  data:{
+    toastHidden:true,
+    userName:&#39;&#39;,
+    psw:&#39;&#39;
+  },
+  formBindsubmit:function(e){
+    if(e.detail.value.userName.length==0||e.detail.value.psw.length==0){
+      this.setData({
+        toastHidden:!this.data.toastHidden
+      })
+    }else{
+      this.setData({
+        tip:&#39;&#39;,
+        userName:&#39;用户名：&#39;+e.detail.value.userName,
+        psw:&#39;密码：&#39;+e.detail.value.psw
+      })
+    }
+  },
+  formReset:function(){
+    this.setData({
+      userName:&#39;&#39;,
+      psw:&#39;&#39;
+    })
+  },
+  toastBindChange:function(){
+    this.setData({
+        toastHidden:!this.data.toastHidden
+    })
+  }
+})
+</code></pre><h4 id="loading加载动画"><a href="#loading加载动画" class="headerlink" title="loading加载动画"></a>loading加载动画</h4><p>与toast一样，只不过他不能自己设置时间</p>
+<pre><code>&lt;loading hidden=&quot;{{loadingHidden}}&quot;&gt;
+    加载中...
+&lt;/loading&gt;
+&lt;button type=&quot;default&quot; bindtap=&quot;loadingTap&quot;&gt;点击弹出loading&lt;/button&gt;
+</code></pre><p>index.js</p>
+<pre><code>Page({
+    data: {
+        loadingHidden: true
+    },
+    loadingTap: function(){
+        this.setData({
+          loadingHidden: false
+        });
+        var that = this;
+        setTimeout(function(){
+          that.setData({
+              loadingHidden: true
+          });
+        }, 3000);
+    }
+})
 </code></pre>]]></content>
       
         <categories>
@@ -2444,14 +2600,14 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[标签云]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[标签云]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
