@@ -194,268 +194,6 @@
 &lt;view&gt;
     提示：您选择了菜单{{menu}}
 &lt;/view&gt;
-</code></pre><p>index.js</p>
-<pre><code>Page({
-  data: {
-    // text:&quot;这是一个页面&quot;
-    actionSheetHidden: true,
-    actionSheetItems: [
-      { bindtap: &#39;Menu1&#39;, txt: &#39;菜单1&#39; },
-      { bindtap: &#39;Menu2&#39;, txt: &#39;菜单2&#39; },
-      { bindtap: &#39;Menu3&#39;, txt: &#39;菜单3&#39; }
-    ],
-    menu: &#39;&#39;
-  },
-  actionSheetTap: function () {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  actionSheetbindchange: function () {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu1: function () {
-    this.setData({
-      menu: 1,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu2: function () {
-    this.setData({
-      menu: 2,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  bindMenu3: function () {
-    this.setData({
-      menu: 3,
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  }
-})
-</code></pre><h4 id="modal-模态弹窗"><a href="#modal-模态弹窗" class="headerlink" title="modal 模态弹窗"></a>modal 模态弹窗</h4><p>模拟弹窗</p>
-<ul>
-<li>title  String         标题</li>
-<li>no-cancel    Boolean    默认false  是否隐藏cancel按钮</li>
-<li>confirm-text String   确定   confirm 按钮文字</li>
-<li>cancel-text  String   确定   取消   cancel按钮文字</li>
-<li>bindconfirm  事件名称   点击confirm触发的回调</li>
-<li>bindcancel   事件名称   点击cancel以及蒙层触发的回调</li>
-</ul>
-<pre><code>
-&lt;!--模态弹窗开始--&gt;
-&lt;view&gt;提示：{{tip}}&lt;/view&gt;
-&lt;button type=&quot;default&quot; bindtap=&quot;showModal&quot;&gt;点击我弹出modal对话框&lt;/button&gt;
-&lt;view&gt;
-  &lt;modal title=&quot;modal对话框&quot; hidden=&quot;{{modalHidden}}&quot; confirm-text=&quot;确定&quot; cancel-text=&quot;取消&quot;
-  bindconfirm=&quot;modalBindaconfirm&quot; bindcancel=&quot;modalBindcancel&quot;&gt;您好，我是modal对话框&lt;/modal&gt;
-&lt;/view&gt;
-&lt;!--模态弹窗结束--&gt;
-</code></pre><p>index.js</p>
-<pre><code>
-Page({
-  data:{
-    // text:&quot;这是一个页面&quot;
-    tip:&#39;&#39;,
-    modalHidden:true
-  },
-  showModal:function(){
-    this.setData({
-      modalHidden:!this.data.modalHidden
-    })
-  },
-  modalBindaconfirm:function(){
-     this.setData({
-      modalHidden:!this.data.modalHidden,
-      tip:&#39;您点击了【确认】按钮！&#39;
-    })
-  },
-  modalBindcancel:function(){
-     this.setData({
-      modalHidden:!this.data.modalHidden,
-      tip:&#39;您点击了【取消】按钮！&#39;
-    })
-  }
-})
-</code></pre><h4 id="toast消息提示框，一般用来提示用户登录，密码之类的"><a href="#toast消息提示框，一般用来提示用户登录，密码之类的" class="headerlink" title="toast消息提示框，一般用来提示用户登录，密码之类的."></a>toast消息提示框，一般用来提示用户登录，密码之类的.</h4><p>使用toast 必须要绑定bindchange事件</p>
-<pre><code>
-&lt;form bindsubmit=&quot;formBindsubmit&quot; bindreset=&quot;formReset&quot;&gt;
-  &lt;view style=&quot;display:flex;&quot;&gt;
-    &lt;label&gt;用户名：&lt;/label&gt;
-    &lt;input name=&quot;userName&quot; placeholder=&quot;请输入用户名！&quot; /&gt;
-  &lt;/view&gt;
-  &lt;view style=&quot;display:flex;&quot;&gt;
-    &lt;label&gt;密码：&lt;/label&gt;
-    &lt;input name=&quot;psw&quot; placeholder=&quot;请输入密码！&quot; password=&quot;true&quot; /&gt;
-  &lt;/view&gt;
-  &lt;view style=&quot;display:flex;margin-top:30px;&quot;&gt;
-    &lt;button style=&quot;width:30%;&quot; formType=&quot;submit&quot; &gt;登录&lt;/button&gt;
-    &lt;button style=&quot;width:30%&quot; formType=&quot;reset&quot; &gt;重置&lt;/button&gt;
-  &lt;/view&gt;
-&lt;/form&gt;
-&lt;view&gt;{{userName}}&lt;/view&gt;
-&lt;view&gt;{{psw}}&lt;/view&gt;
-&lt;toast duration=&quot;2000&quot; hidden=&quot;{{toastHidden}}&quot; bindchange=&quot;toastBindChange&quot;&gt;用户名或密码不能为空！&lt;/toast&gt;
-</code></pre><p>index.js</p>
-<pre><code>Page({
-  data:{
-    toastHidden:true,
-    userName:&#39;&#39;,
-    psw:&#39;&#39;
-  },
-  formBindsubmit:function(e){
-    if(e.detail.value.userName.length==0||e.detail.value.psw.length==0){
-      this.setData({
-        toastHidden:!this.data.toastHidden
-      })
-    }else{
-      this.setData({
-        tip:&#39;&#39;,
-        userName:&#39;用户名：&#39;+e.detail.value.userName,
-        psw:&#39;密码：&#39;+e.detail.value.psw
-      })
-    }
-  },
-  formReset:function(){
-    this.setData({
-      userName:&#39;&#39;,
-      psw:&#39;&#39;
-    })
-  },
-  toastBindChange:function(){
-    this.setData({
-        toastHidden:!this.data.toastHidden
-    })
-  }
-})
-</code></pre><h4 id="loading加载动画"><a href="#loading加载动画" class="headerlink" title="loading加载动画"></a>loading加载动画</h4><p>与toast一样，只不过他不能自己设置时间</p>
-<pre><code>&lt;loading hidden=&quot;{{loadingHidden}}&quot;&gt;
-    加载中...
-&lt;/loading&gt;
-&lt;button type=&quot;default&quot; bindtap=&quot;loadingTap&quot;&gt;点击弹出loading&lt;/button&gt;
-</code></pre><p>index.js</p>
-<pre><code>Page({
-    data: {
-        loadingHidden: true
-    },
-    loadingTap: function(){
-        this.setData({
-          loadingHidden: false
-        });
-        var that = this;
-        setTimeout(function(){
-          that.setData({
-              loadingHidden: true
-          });
-        }, 3000);
-    }
-})
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> 小程序 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 小程序 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[小程序学习(七)]]></title>
-      <url>/08/WeChatSeven/</url>
-      <content type="html"><![CDATA[<h2 id="小程序-7-之movablearea与coverview"><a href="#小程序-7-之movablearea与coverview" class="headerlink" title="小程序(7)之movablearea与coverview"></a>小程序(7)之movablearea与coverview</h2><h4 id="组件之movable-view"><a href="#组件之movable-view" class="headerlink" title="组件之movable-view"></a>组件之movable-view</h4><ul>
-<li>direction  类型string  默认值none   说明movable-view移动的方向，属性值有all.vertical,horizontal,none</li>
-<li>inertia    类型Boolean 默认值false  说明movable-view是否带有惯性</li>
-<li>out0of-bounds 类型boolean 默认值false  超过可移动区域后，movable-view是否可以移动</li>
-<li>x            类型Number   定义X轴向的偏移。如果X的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
-<li>y            类型Number   定义y轴的偏移。如果y的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
-<li>damping  类型Number  阻尼系数用于控制X或Y改变时候的动画和过界回弹的动画，值越大移动越快</li>
-<li>friction  类型Number 摩擦系数。用于控制惯性滑动的动画。值越大。摩擦力越大。滑动越快停止。必须大于0否则会被设置为默认值</li>
-</ul>
-<blockquote>
-<p>movable-view  必须设置width和height属性，不设置默认为10PX<br>moable-view默认为绝对定位，top和left属性为0px<br>当moable-view小于moanle-area时候，moable-view的移动范围在movable-area内，当movable-view大于moable-area时候<br>movable-view的移动范围必须包含movable-area(X轴和Y轴方向分开考虑)</p>
-</blockquote>
-<h4 id="注意movable-view必须在组件中，必须是直接子节点否则不能移动"><a href="#注意movable-view必须在组件中，必须是直接子节点否则不能移动" class="headerlink" title="注意movable-view必须在组件中，必须是直接子节点否则不能移动"></a>注意movable-view必须在<movable-area>组件中，必须是直接子节点否则不能移动</movable-area></h4><pre><code>&lt;view &gt;
-  &lt;view&gt;movable-view区域小于movable-area&lt;/view&gt;
-  &lt;movable-area style=&quot;height: 200px;width: 200px;background: red;&quot;&gt;
-    &lt;movable-view style=&quot;height: 50px; width: 50px; background: blue;&quot; x=&quot;{{x}}&quot; y=&quot;{{y}}&quot; direction=&quot;all&quot;&gt;
-    &lt;/movable-view&gt;
-  &lt;/movable-area&gt;
-  &lt;view&gt;
-    &lt;button size=&quot;mini&quot; bindtap=&quot;tap&quot;&gt;click me to move to (30px, 30px)&lt;/button&gt;
-  &lt;/view&gt;
-  &lt;view&gt;movable-view区域大于movable-area&lt;/view&gt;
-  &lt;movable-area style=&quot;height: 100px;width: 100px;background: red;&quot; direction=&quot;all&quot;&gt;
-    &lt;movable-view style=&quot;height: 200px; width: 200px; background: blue;&quot;&gt;
-    &lt;/movable-view&gt;
-  &lt;/movable-area&gt;
-&lt;/view&gt;
-</code></pre><h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><p>覆盖在原生组件上的文本视图，可覆盖的原生组件包括map,video,canvas，支持嵌套类似绝对定位之类的的。（用处不大）</p>
-<h4 id="cover-image"><a href="#cover-image" class="headerlink" title="cover-image"></a>cover-image</h4><p>覆盖在源生组件上的图片视图，可覆盖源生组件，同cover-view，支持嵌套</p>
-<p>属性名:src 类型String  说明图标路径，支持临时路径，暂时不支持网络地址</p>
-<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><ul>
-<li>只可以嵌套在源生组件map.video,canvas内，避免嵌套在其他组件内</li>
-<li>事件模型遵循冒泡模型，但不会冒泡到源生组件</li>
-<li>文本建议都套上cover-view标签。避免排版错误</li>
-<li>只支持基本的定位，布局，文本样式。不支持设置单边的border,opacity,background-image等.</li>
-<li>建议子节点不要溢出父节点</li>
-<li>暂时不支持css动画</li>
-</ul>
-<pre><code>&lt;!--inde.html--&gt;
-&lt;video id=&quot;myVideo&quot; src=&quot;http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400&quot; controls=&quot;{{false}}&quot; event-model=&quot;bubble&quot;&gt;
-  &lt;cover-view class=&quot;controls&quot;&gt;
-    &lt;cover-view class=&quot;play&quot; bindtap=&quot;play&quot;&gt;
-      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_play&quot; /&gt;
-    &lt;/cover-view&gt;
-    &lt;cover-view class=&quot;pause&quot; bindtap=&quot;pause&quot;&gt;
-      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_pause&quot; /&gt;
-    &lt;/cover-view&gt;
-    &lt;cover-view class=&quot;time&quot;&gt;00:00&lt;/cover-view&gt;
-  &lt;/cover-view&gt;
-&lt;/video&gt;
-</code></pre><p>index.css</p>
-<pre><code>.container{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-content: space-around;
-}
-.part1{
-  flex: 1 1 100rpx;
-  width:100%;
-  border-bottom:1px solid #ffffff;
-  background:green;
-  line-height:100rpx;
-  text-align:center;
-  color:white;
-}
-</code></pre><p>index.js</p>
-<pre><code>Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  },
-  onReady() {
-    this.videoCtx = wx.createVideoContext(&#39;myVideo&#39;)
-  },
-  play() {
-    this.videoCtx.play()
-  },
-  pause() {
-    this.videoCtx.pause()
-  }
-})
 </code></pre>]]></content>
       
         <categories>
@@ -871,6 +609,110 @@ Page({
   text-align:center;
   line-height:400rpx;
 }
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[小程序学习(七)]]></title>
+      <url>/08/WeChatSeven/</url>
+      <content type="html"><![CDATA[<h2 id="小程序-7-之movablearea与coverview"><a href="#小程序-7-之movablearea与coverview" class="headerlink" title="小程序(7)之movablearea与coverview"></a>小程序(7)之movablearea与coverview</h2><h4 id="组件之movable-view"><a href="#组件之movable-view" class="headerlink" title="组件之movable-view"></a>组件之movable-view</h4><ul>
+<li>direction  类型string  默认值none   说明movable-view移动的方向，属性值有all.vertical,horizontal,none</li>
+<li>inertia    类型Boolean 默认值false  说明movable-view是否带有惯性</li>
+<li>out0of-bounds 类型boolean 默认值false  超过可移动区域后，movable-view是否可以移动</li>
+<li>x            类型Number   定义X轴向的偏移。如果X的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
+<li>y            类型Number   定义y轴的偏移。如果y的值不在可移动范围内，会自动移动到可移动范围。改变X的值会触发动画。</li>
+<li>damping  类型Number  阻尼系数用于控制X或Y改变时候的动画和过界回弹的动画，值越大移动越快</li>
+<li>friction  类型Number 摩擦系数。用于控制惯性滑动的动画。值越大。摩擦力越大。滑动越快停止。必须大于0否则会被设置为默认值</li>
+</ul>
+<blockquote>
+<p>movable-view  必须设置width和height属性，不设置默认为10PX<br>moable-view默认为绝对定位，top和left属性为0px<br>当moable-view小于moanle-area时候，moable-view的移动范围在movable-area内，当movable-view大于moable-area时候<br>movable-view的移动范围必须包含movable-area(X轴和Y轴方向分开考虑)</p>
+</blockquote>
+<h4 id="注意movable-view必须在组件中，必须是直接子节点否则不能移动"><a href="#注意movable-view必须在组件中，必须是直接子节点否则不能移动" class="headerlink" title="注意movable-view必须在组件中，必须是直接子节点否则不能移动"></a>注意movable-view必须在<movable-area>组件中，必须是直接子节点否则不能移动</movable-area></h4><pre><code>&lt;view &gt;
+  &lt;view&gt;movable-view区域小于movable-area&lt;/view&gt;
+  &lt;movable-area style=&quot;height: 200px;width: 200px;background: red;&quot;&gt;
+    &lt;movable-view style=&quot;height: 50px; width: 50px; background: blue;&quot; x=&quot;{{x}}&quot; y=&quot;{{y}}&quot; direction=&quot;all&quot;&gt;
+    &lt;/movable-view&gt;
+  &lt;/movable-area&gt;
+  &lt;view&gt;
+    &lt;button size=&quot;mini&quot; bindtap=&quot;tap&quot;&gt;click me to move to (30px, 30px)&lt;/button&gt;
+  &lt;/view&gt;
+  &lt;view&gt;movable-view区域大于movable-area&lt;/view&gt;
+  &lt;movable-area style=&quot;height: 100px;width: 100px;background: red;&quot; direction=&quot;all&quot;&gt;
+    &lt;movable-view style=&quot;height: 200px; width: 200px; background: blue;&quot;&gt;
+    &lt;/movable-view&gt;
+  &lt;/movable-area&gt;
+&lt;/view&gt;
+</code></pre><h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><p>覆盖在原生组件上的文本视图，可覆盖的原生组件包括map,video,canvas，支持嵌套类似绝对定位之类的的。（用处不大）</p>
+<h4 id="cover-image"><a href="#cover-image" class="headerlink" title="cover-image"></a>cover-image</h4><p>覆盖在源生组件上的图片视图，可覆盖源生组件，同cover-view，支持嵌套</p>
+<p>属性名:src 类型String  说明图标路径，支持临时路径，暂时不支持网络地址</p>
+<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><ul>
+<li>只可以嵌套在源生组件map.video,canvas内，避免嵌套在其他组件内</li>
+<li>事件模型遵循冒泡模型，但不会冒泡到源生组件</li>
+<li>文本建议都套上cover-view标签。避免排版错误</li>
+<li>只支持基本的定位，布局，文本样式。不支持设置单边的border,opacity,background-image等.</li>
+<li>建议子节点不要溢出父节点</li>
+<li>暂时不支持css动画</li>
+</ul>
+<pre><code>&lt;!--inde.html--&gt;
+&lt;video id=&quot;myVideo&quot; src=&quot;http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400&quot; controls=&quot;{{false}}&quot; event-model=&quot;bubble&quot;&gt;
+  &lt;cover-view class=&quot;controls&quot;&gt;
+    &lt;cover-view class=&quot;play&quot; bindtap=&quot;play&quot;&gt;
+      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_play&quot; /&gt;
+    &lt;/cover-view&gt;
+    &lt;cover-view class=&quot;pause&quot; bindtap=&quot;pause&quot;&gt;
+      &lt;cover-image class=&quot;img&quot; src=&quot;/path/to/icon_pause&quot; /&gt;
+    &lt;/cover-view&gt;
+    &lt;cover-view class=&quot;time&quot;&gt;00:00&lt;/cover-view&gt;
+  &lt;/cover-view&gt;
+&lt;/video&gt;
+</code></pre><p>index.css</p>
+<pre><code>.container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.part1{
+  flex: 1 1 100rpx;
+  width:100%;
+  border-bottom:1px solid #ffffff;
+  background:green;
+  line-height:100rpx;
+  text-align:center;
+  color:white;
+}
+</code></pre><p>index.js</p>
+<pre><code>Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+  },
+  onReady() {
+    this.videoCtx = wx.createVideoContext(&#39;myVideo&#39;)
+  },
+  play() {
+    this.videoCtx.play()
+  },
+  pause() {
+    this.videoCtx.pause()
+  }
+})
 </code></pre>]]></content>
       
         <categories>
@@ -2596,8 +2438,8 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[时光隧道]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[友情链接]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -2608,8 +2450,8 @@ alert(arr1); // [3, 2, 1]
     </entry>
     
     <entry>
-      <title><![CDATA[友情链接]]></title>
-      <url>/links/index.html</url>
+      <title><![CDATA[时光隧道]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
